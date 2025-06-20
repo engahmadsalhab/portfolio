@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="بورتفوليو احمد سلهب - عرض المشاريع والمهارات والخبرات في مجال إدخال البيانات وتفريغها بالإضافة إلى جلب البيانات تلقائياً والقيام بتصميم المواقع الالكترونية وتصميم الصور ومقاطع الفيديو م خلال كانفا."
+    />
+    <meta
+      name="keywords"
+      content="بورتفوليو, احمد سلهب, مطور مواقع ويب, مشاريع, مهارات, خبرات, تواصل, خدمات, تعليم"
+    />
+    <title>بورتفوليو احمد سلهب</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Cairo:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      @font-face {
+        font-family: "LucideIcons";
+        src: url(https://cdn.jsdelivr.net/npm/lucide-static@latest/font/lucide.ttf)
+          format("truetype");
+      }
+      .lucide {
+        font-family: "LucideIcons";
+        font-size: 1.25rem; /* Adjust size as needed */
+        line-height: 1;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      body {
+        font-family: "Cairo", "Inter", sans-serif;
+        overflow-x: hidden; /* Prevent horizontal scrollbar caused by AOS */
+      }
+      /* Style for active navigation link */
+      .nav-link.active {
+        font-weight: bold;
+        color: #3b82f6; /* blue-500 */
+        border-bottom: 2px solid #3b82f6;
+      }
+      /* Smooth scrolling behavior & Header offset */
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px; /* Adjust based on sticky header's height */
+      }
+      /* Ensure sections are always visible and offset for anchor links */
+      .page-section {
+        display: block;
+        padding-top: 5rem; /* Increased padding for anchor offset + spacing */
+        margin-top: -4rem; /* Adjust negative margin if needed */
+      }
+      #home {
+        padding-top: 0;
+        margin-top: 0;
+      }
+      /* Simple transition for interactive elements */
+      .btn-primary,
+      .btn-secondary,
+      .project-card,
+      .service-card,
+      .certificate-item,
+      .blog-card {
+        transition: all 0.3s ease-in-out;
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3); /* blue-500 shadow */
+      }
+      .btn-secondary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(107, 114, 128, 0.2); /* gray-500 shadow */
+      }
+      .project-card:hover,
+      .service-card:hover,
+      .certificate-item:hover,
+      .blog-card:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <header class="bg-white shadow-md sticky top-0 z-50" data-aos="fade-down">
+      <nav
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <div class="text-2xl font-bold text-blue-600">احمد سلهب</div>
+        <div
+          class="hidden md:flex space-x-4 lg:space-x-6 space-x-reverse items-center text-sm lg:text-base"
+        >
+          <a
+            href="#home"
+            class="nav-link text-gray-600 hover:text-blue-500 active"
+            data-target="home"
+          ></a>
+          <a
+            href="#about"
+            class="nav-link text-gray-600 hover:text-blue-500"
+            data-target="about"
+            >من أنا</a
+          >
+          <a
+            href="#services"
+            class="nav-link text-gray-600 hover:text-blue-500"
+            data-target="services"
+            >الخدمات</a
+          >
+          <a
+            href="#portfolio"
+            class="nav-link text-gray-600 hover:text-blue-500"
+            data-target="portfolio"
+            >أعمالي</a
+          >
+          <a
+            href="#skills"
+            class="nav-link text-gray-600 hover:text-blue-500"
+            data-target="skills"
+            >المهارات</a
+          >
+          <a
+            href="#education"
+            class="nav-link text-gray-600 hover:text-blue-500"
+            data-target="education"
+            >التعليم</a
+          >
+          <a
+            href="#certificates"
+            class="nav-link text-gray-600 hover:text-blue-500"
+            data-target="certificates"
+            >الشهادات</a
+          >
+          <a
+            href="#contact"
+            class="nav-link text-gray-600 hover:text-blue-500"
+            data-target="contact"
+            >تواصل معي</a
+          >
+        </div>
+
+        <button
+          id="mobile-menu-button"
+          class="md:hidden text-gray-600 focus:outline-none"
+        >
+          <span class="lucide">&#xe9b2;</span>
+        </button>
+      </nav>
+      <div id="mobile-menu" class="hidden md:hidden bg-white pb-4">
+        <a
+          href="#home"
+          class="block px-6 py-2 text-gray-600 hover:bg-gray-100 nav-link-mobile"
+          data-target="home"
+          >الرئيسية</a
+        >
+        <a
+          href="#about"
+          class="block px-6 py-2 text-gray-600 hover:bg-gray-100 nav-link-mobile"
+          data-target="about"
+          >من أنا</a
+        >
+        <a
+          href="#services"
+          class="block px-6 py-2 text-gray-600 hover:bg-gray-100 nav-link-mobile"
+          data-target="services"
+          >الخدمات</a
+        >
+        <a
+          href="#portfolio"
+          class="block px-6 py-2 text-gray-600 hover:bg-gray-100 nav-link-mobile"
+          data-target="portfolio"
+          >أعمالي</a
+        >
+        <a
+          href="#skills"
+          class="block px-6 py-2 text-gray-600 hover:bg-gray-100 nav-link-mobile"
+          data-target="skills"
+          >المهارات</a
+        >
+        <a
+          href="#education"
+          class="block px-6 py-2 text-gray-600 hover:bg-gray-100 nav-link-mobile"
+          data-target="education"
+          >التعليم</a
+        >
+        <a
+          href="#certificates"
+          class="block px-6 py-2 text-gray-600 hover:bg-gray-100 nav-link-mobile"
+          data-target="certificates"
+          >الشهادات</a
+        >
+        <a
+          href="#contact"
+          class="block px-6 py-2 text-gray-600 hover:bg-gray-100 nav-link-mobile"
+          data-target="contact"
+          >تواصل معي</a
+        >
+      </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+      <section
+        id="home"
+        class="page-section min-h-[80vh] flex flex-col md:flex-row items-center justify-center text-center md:text-right bg-gradient-to-br from-blue-100 via-indigo-100 to-purple-100 rounded-lg p-8 md:p-16 shadow-xl mb-16 overflow-hidden"
+      >
+        <div
+          class="md:w-1/2 mb-8 md:mb-0 md:ml-10"
+          data-aos="fade-left"
+          data-aos-delay="200"
+        >
+          <h1
+            class="text-4xl md:text-6xl font-bold text-gray-800 mb-4 leading-tight"
+          >
+            مرحبًا! أنا <span class="text-blue-600">احمد سلهب</span>
+          </h1>
+          <p class="text-lg md:text-xl text-gray-600 mb-8">
+            [مطور واجهات أمامية متخصص | مصمم تجربة مستخدم | خبير تسويق رقمي]،
+            أحول الأفكار إلى تجارب رقمية مؤثرة وفعالة.
+          </p>
+          <div class="space-x-4 space-x-reverse">
+            <a
+              href="#portfolio"
+              class="btn-primary inline-block bg-blue-600 text-white px-8 py-3 rounded-lg shadow hover:bg-blue-700 text-lg"
+              >شاهد أعمالي</a
+            >
+            <a
+              href="#contact"
+              class="btn-secondary inline-block bg-white text-gray-800 px-8 py-3 rounded-lg shadow hover:bg-gray-200 text-lg border border-gray-300"
+              >تواصل معي</a
+            >
+          </div>
+        </div>
+        <div
+          class="md:w-1/2 flex justify-center"
+          data-aos="fade-right"
+          data-aos-delay="400"
+        >
+          <img
+            src="https://placehold.co/450x450/E0E7FF/3730A3?text=صورتي+الشخصية"
+            alt="[صورة شخصية لـ احمد سلهب]"
+            class="rounded-full shadow-2xl w-72 h-72 md:w-96 md:h-96 object-cover border-8 border-white"
+          />
+        </div>
+      </section>
+
+      <section
+        id="about"
+        class="page-section bg-white p-8 md:p-12 rounded-lg shadow-lg my-16"
+        data-aos="fade-up"
+      >
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800"
+        >
+          من أنا
+        </h2>
+        <div class="flex flex-col lg:flex-row items-center">
+          <div
+            class="lg:w-1/3 mb-8 lg:mb-0 flex justify-center"
+            data-aos="zoom-in"
+          >
+            <img
+              src="https://placehold.co/350x350/F3F4F6/4B5563?text=نبذة+عني"
+              alt="[صورة رمزية أو متعلقة بالسيرة الذاتية]"
+              class="rounded-lg shadow-md w-full max-w-sm object-cover"
+            />
+          </div>
+          <div
+            class="lg:w-2/3 lg:pr-10 text-gray-700 leading-relaxed text-center lg:text-right"
+            data-aos="fade-right"
+            data-aos-delay="200"
+          >
+            <p class="mb-4 text-lg">
+              أنا [الاسم]، شغوف بـ مطور مواقع ويب وأمتلك خبرة [X] سنوات في تحويل
+              التحديات إلى حلول مبتكرة. أؤمن بقوة التصميم الجيد / الكود النظيف /
+              المحتوى الهادف في تحقيق نتائج ملموسة.
+            </p>
+            <p class="mb-4">
+              أسعى دائمًا لتعلم أحدث التقنيات وتطبيق أفضل الممارسات في عملي، مع
+              التركيز على تقديم قيمة حقيقية للعملاء والمستخدمين.
+            </p>
+            <p class="mb-6">
+              <strong>القيم الأساسية:</strong> [الابتكار، الجودة، التعاون،
+              الشفافية، الالتزام].
+            </p>
+
+            <div
+              class="mt-8 flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4 sm:space-x-reverse"
+            >
+              <button
+                onclick="window.print()"
+                class="btn-secondary inline-flex items-center justify-center bg-gray-200 text-gray-800 px-6 py-3 rounded-lg shadow hover:bg-gray-300 border border-gray-300"
+              >
+                <span class="lucide mr-2">&#xea17;</span> {/* Print icon */}
+                طباعة الـ CV
+              </button>
+              <a
+                href="cv/your-cv.pdf"
+                download="احمد سلهب-CV.pdf"
+                class="btn-primary inline-flex items-center justify-center bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700"
+              >
+                <span class="lucide mr-2">&#xe917;</span> {/* Download icon */}
+                تنزيل الـ CV
+              </a>
+            </div>
+            <p class="mt-4 text-xs text-gray-500 text-center lg:text-right">
+              (ملاحظة: تأكد من وضع ملف الـ CV الخاص بك في مجلد `cv` وتسميته
+              `your-cv.pdf` أو قم بتحديث الرابط).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="page-section my-16" data-aos="fade-up">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800"
+        >
+          الخدمات التي أقدمها
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div
+            class="service-card bg-white rounded-lg shadow-lg overflow-hidden text-center p-8 group"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <img
+              src="https://placehold.co/100x100/DBEAFE/3B82F6?text=خدمة+1"
+              alt="[أيقونة أو صورة خدمة 1]"
+              class="w-24 h-24 object-contain mx-auto mb-6 rounded-full border-4 border-blue-100 group-hover:border-blue-300 transition-all duration-300"
+            />
+            <h3 class="text-xl font-semibold mb-3 text-gray-800">
+              تطوير واجهات أمامية (Frontend)
+            </h3>
+            <p class="text-gray-600 text-sm mb-5">
+              بناء واجهات مستخدم تفاعلية وسريعة الاستجابة باستخدام أحدث التقنيات
+              مثل React و Vue.
+            </p>
+            <a
+              href="#portfolio"
+              class="text-blue-600 hover:underline text-sm font-medium inline-flex items-center"
+            >
+              شاهد أعمال ذات صلة
+              <span class="lucide mr-1 text-xs">&#xe9c3;</span> {/* Arrow right
+              icon */}
+            </a>
+          </div>
+
+          <div
+            class="service-card bg-white rounded-lg shadow-lg overflow-hidden text-center p-8 group"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <img
+              src="https://placehold.co/100x100/D1FAE5/10B981?text=خدمة+2"
+              alt="[أيقونة أو صورة خدمة 2]"
+              class="w-24 h-24 object-contain mx-auto mb-6 rounded-full border-4 border-green-100 group-hover:border-green-300 transition-all duration-300"
+            />
+            <h3 class="text-xl font-semibold mb-3 text-gray-800">
+              تصميم تجربة وواجهة المستخدم (UX/UI)
+            </h3>
+            <p class="text-gray-600 text-sm mb-5">
+              تصميم تجارب مستخدم بديهية وجذابة بصريًا تركز على تحقيق أهداف
+              العمل.
+            </p>
+            <a
+              href="#portfolio"
+              class="text-blue-600 hover:underline text-sm font-medium inline-flex items-center"
+            >
+              شاهد أعمال ذات صلة
+              <span class="lucide mr-1 text-xs">&#xe9c3;</span>
+            </a>
+          </div>
+
+          <div
+            class="service-card bg-white rounded-lg shadow-lg overflow-hidden text-center p-8 group"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <img
+              src="https://placehold.co/100x100/FEF3C7/F59E0B?text=خدمة+3"
+              alt="[أيقونة أو صورة خدمة 3]"
+              class="w-24 h-24 object-contain mx-auto mb-6 rounded-full border-4 border-amber-100 group-hover:border-amber-300 transition-all duration-300"
+            />
+            <h3 class="text-xl font-semibold mb-3 text-gray-800">
+              تطوير مواقع WordPress
+            </h3>
+            <p class="text-gray-600 text-sm mb-5">
+              إنشاء وتخصيص مواقع WordPress قوية وسهلة الإدارة للشركات والأفراد.
+            </p>
+            <a
+              href="#portfolio"
+              class="text-blue-600 hover:underline text-sm font-medium inline-flex items-center"
+            >
+              شاهد أعمال ذات صلة
+              <span class="lucide mr-1 text-xs">&#xe9c3;</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="portfolio" class="page-section my-16" data-aos="fade-up">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800"
+        >
+          أعمالي ومشاريعي
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div
+            class="project-card bg-white rounded-lg shadow-lg overflow-hidden group"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <img
+              src="https://placehold.co/600x400/D1FAE5/10B981?text=مشروع+1"
+              alt="[صورة مشروع 1]"
+              class="w-full h-56 object-cover"
+              onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">عنوان المشروع الأول</h3>
+              <p class="text-gray-600 text-sm mb-3">
+                وصف مختصر للمشروع يوضح الهدف الرئيسي منه وما يقدمه (سطرين أو
+                ثلاثة).
+              </p>
+              <p class="text-sm text-gray-500 mb-4">
+                <strong>التقنيات:</strong> HTML, CSS, JavaScript
+              </p>
+              <a
+                href="#"
+                target="_blank"
+                class="text-blue-600 hover:underline inline-flex items-center text-sm font-medium"
+              >
+                شاهد المشروع
+                <span class="lucide ml-1 text-sm">&#xe9a6;</span> {/* External
+                link icon */}
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="project-card bg-white rounded-lg shadow-lg overflow-hidden group"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <img
+              src="https://placehold.co/600x400/DBEAFE/3B82F6?text=مشروع+2"
+              alt="[صورة مشروع 2]"
+              class="w-full h-56 object-cover"
+              onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">عنوان المشروع الثاني</h3>
+              <p class="text-gray-600 text-sm mb-3">
+                وصف مختصر آخر لمشروع مختلف يبرز مهارات أخرى أو نوع عمل مختلف.
+              </p>
+              <p class="text-sm text-gray-500 mb-4">
+                <strong>التقنيات:</strong> React, Tailwind CSS, Node.js
+              </p>
+              <a
+                href="#"
+                target="_blank"
+                class="text-blue-600 hover:underline inline-flex items-center text-sm font-medium"
+              >
+                شاهد المشروع <span class="lucide ml-1 text-sm">&#xe9a6;</span>
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="project-card bg-white rounded-lg shadow-lg overflow-hidden group"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <img
+              src="https://placehold.co/600x400/FEF3C7/F59E0B?text=مشروع+3"
+              alt="[صورة مشروع 3]"
+              class="w-full h-56 object-cover"
+              onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">عنوان المشروع الثالث</h3>
+              <p class="text-gray-600 text-sm mb-3">
+                وصف لمشروع ثالث، ربما يكون تصميم جرافيك أو عمل كتابة محتوى.
+              </p>
+              <p class="text-sm text-gray-500 mb-4">
+                <strong>الأدوات:</strong> Photoshop, Illustrator
+              </p>
+              <a
+                href="#"
+                target="_blank"
+                class="text-blue-600 hover:underline inline-flex items-center text-sm font-medium"
+              >
+                شاهد على Behance
+                <span class="lucide ml-1 text-sm">&#xe9a6;</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="skills"
+        class="page-section bg-indigo-50 p-8 md:p-12 rounded-lg shadow-lg my-16"
+        data-aos="fade-up"
+      >
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800"
+        >
+          المهارات والخبرات
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="bg-white p-6 rounded-lg shadow-md"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <h3
+              class="text-xl font-semibold mb-4 text-blue-600 flex items-center"
+            >
+              <span class="lucide mr-2 text-blue-500">&#xea4a;</span> المهارات
+              التقنية
+            </h3>
+            {/* Code icon */}
+            <ul class="space-y-2 text-gray-700">
+              <li class="flex items-center">
+                <span class="lucide text-green-500 mr-2 text-sm">&#xea14;</span>
+                HTML5
+              </li>
+              {/* Check icon */}
+              <li class="flex items-center">
+                <span class="lucide text-green-500 mr-2 text-sm">&#xea14;</span>
+                CSS3 (Tailwind, Bootstrap)
+              </li>
+              <li class="flex items-center">
+                <span class="lucide text-green-500 mr-2 text-sm">&#xea14;</span>
+                JavaScript (ES6+)
+              </li>
+              <li class="flex items-center">
+                <span class="lucide text-green-500 mr-2 text-sm">&#xea14;</span>
+                React / Vue.js
+              </li>
+              <li class="flex items-center">
+                <span class="lucide text-green-500 mr-2 text-sm">&#xea14;</span>
+                Node.js / Express
+              </li>
+              <li class="flex items-center">
+                <span class="lucide text-green-500 mr-2 text-sm">&#xea14;</span>
+                Git & GitHub
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-lg shadow-md"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <h3
+              class="text-xl font-semibold mb-4 text-green-600 flex items-center"
+            >
+              <span class="lucide mr-2 text-green-500">&#xea4f;</span> أدوات
+              العمل
+            </h3>
+            {/* Wrench icon */}
+            <ul class="space-y-2 text-gray-700">
+              <li class="flex items-center">
+                <span class="lucide text-blue-500 mr-2 text-sm">&#xea14;</span>
+                VS Code
+              </li>
+              <li class="flex items-center">
+                <span class="lucide text-blue-500 mr-2 text-sm">&#xea14;</span>
+                Figma / Adobe XD
+              </li>
+              <li class="flex items-center">
+                <span class="lucide text-blue-500 mr-2 text-sm">&#xea14;</span>
+                Jira / Trello
+              </li>
+              <li class="flex items-center">
+                <span class="lucide text-blue-500 mr-2 text-sm">&#xea14;</span>
+                Docker
+              </li>
+              <li class="flex items-center">
+                <span class="lucide text-blue-500 mr-2 text-sm">&#xea14;</span>
+                Postman
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-lg shadow-md"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <h3
+              class="text-xl font-semibold mb-4 text-purple-600 flex items-center"
+            >
+              <span class="lucide mr-2 text-purple-500">&#xea57;</span> المهارات
+              الشخصية
+            </h3>
+            {/* Users icon */}
+            <ul class="space-y-2 text-gray-700">
+              <li class="flex items-center">
+                <span class="lucide text-indigo-500 mr-2 text-sm"
+                  >&#xea14;</span
+                >
+                التواصل الفعال
+              </li>
+              <li class="flex items-center">
+                <span class="lucide text-indigo-500 mr-2 text-sm"
+                  >&#xea14;</span
+                >
+                حل المشكلات
+              </li>
+              <li class="flex items-center">
+                <span class="lucide text-indigo-500 mr-2 text-sm"
+                  >&#xea14;</span
+                >
+                العمل الجماعي
+              </li>
+              <li class="flex items-center">
+                <span class="lucide text-indigo-500 mr-2 text-sm"
+                  >&#xea14;</span
+                >
+                إدارة الوقت
+              </li>
+              <li class="flex items-center">
+                <span class="lucide text-indigo-500 mr-2 text-sm"
+                  >&#xea14;</span
+                >
+                التعلم المستمر
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="education" class="page-section my-16" data-aos="fade-up">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800"
+        >
+          التعليم واللغات
+        </h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          <div class="bg-white p-8 rounded-lg shadow-lg" data-aos="fade-right">
+            <h3
+              class="text-2xl font-semibold mb-6 text-blue-700 flex items-center"
+            >
+              <span class="lucide mr-2 text-blue-600">&#xe94f;</span> التعليم
+              الأكاديمي
+            </h3>
+            {/* Graduation Cap icon */}
+            <div class="space-y-6">
+              <div class="border-r-4 border-blue-200 pr-4">
+                <p class="font-semibold text-gray-800">
+                  بكالوريوس في [اسم التخصص]
+                </p>
+                <p class="text-sm text-gray-600">[اسم الجامعة أو المعهد]</p>
+                <p class="text-xs text-gray-500">[سنة التخرج]</p>
+              </div>
+
+              <div class="border-r-4 border-blue-200 pr-4">
+                <p class="font-semibold text-gray-800">
+                  ماجستير في [اسم التخصص]
+                </p>
+                <p class="text-sm text-gray-600">[اسم الجامعة أو المعهد]</p>
+                <p class="text-xs text-gray-500">[سنة التخرج]</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-8 rounded-lg shadow-lg"
+            data-aos="fade-left"
+            data-aos-delay="100"
+          >
+            <h3
+              class="text-2xl font-semibold mb-6 text-green-700 flex items-center"
+            >
+              <span class="lucide mr-2 text-green-600">&#xea5a;</span> اللغات
+            </h3>
+            {/* Globe icon */}
+            <div class="space-y-4">
+              <div class="flex justify-between items-center">
+                <span class="text-gray-800 font-medium">العربية</span>
+                <span
+                  class="text-sm text-green-600 bg-green-100 px-3 py-1 rounded-full"
+                  >اللغة الأم</span
+                >
+              </div>
+
+              <div class="flex justify-between items-center">
+                <span class="text-gray-800 font-medium">الإنجليزية</span>
+                <span
+                  class="text-sm text-blue-600 bg-blue-100 px-3 py-1 rounded-full"
+                  >مستوى متقدم / احترافي</span
+                >
+              </div>
+
+              <div class="flex justify-between items-center">
+                <span class="text-gray-800 font-medium">[لغة أخرى]</span>
+                <span
+                  class="text-sm text-yellow-600 bg-yellow-100 px-3 py-1 rounded-full"
+                  >مستوى متوسط / مبتدئ</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="certificates" class="page-section my-16" data-aos="fade-up">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800"
+        >
+          الشهادات والدورات
+        </h2>
+        <div class="space-y-6">
+          <div
+            class="certificate-item bg-white p-6 rounded-lg shadow-md flex flex-col sm:flex-row justify-between items-start sm:items-center group"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="flex items-center mb-3 sm:mb-0">
+              <span class="lucide text-yellow-500 mr-3 text-xl">&#xea49;</span>
+              {/* Award icon */}
+              <div>
+                <h3 class="text-lg font-semibold text-blue-700">
+                  شهادة تطوير واجهات المستخدم المتقدمة
+                </h3>
+                <p class="text-gray-600 text-sm">
+                  المؤسسة: Udemy / Coursera / منصة أخرى
+                </p>
+                <p class="text-gray-500 text-xs mt-1">
+                  تاريخ الحصول عليها: مارس 2024
+                </p>
+              </div>
+            </div>
+            <a
+              href="#"
+              target="_blank"
+              class="mt-3 sm:mt-0 text-blue-600 hover:underline inline-flex items-center text-sm font-medium self-end sm:self-center"
+            >
+              عرض الشهادة <span class="lucide ml-1 text-xs">&#xe9a6;</span>
+            </a>
+          </div>
+
+          <div
+            class="certificate-item bg-white p-6 rounded-lg shadow-md flex flex-col sm:flex-row justify-between items-start sm:items-center group"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="flex items-center mb-3 sm:mb-0">
+              <span class="lucide text-yellow-500 mr-3 text-xl">&#xea49;</span>
+              {/* Award icon */}
+              <div>
+                <h3 class="text-lg font-semibold text-blue-700">
+                  دورة تصميم تجربة المستخدم (UX)
+                </h3>
+                <p class="text-gray-600 text-sm">
+                  المؤسسة: Google / Interaction Design Foundation
+                </p>
+                <p class="text-gray-500 text-xs mt-1">
+                  تاريخ الحصول عليها: يناير 2024
+                </p>
+              </div>
+            </div>
+            <a
+              href="#"
+              target="_blank"
+              class="mt-3 sm:mt-0 text-blue-600 hover:underline inline-flex items-center text-sm font-medium self-end sm:self-center"
+            >
+              عرض الشهادة <span class="lucide ml-1 text-xs">&#xe9a6;</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="page-section my-16" data-aos="fade-up">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800"
+        >
+          تواصل معي
+        </h2>
+        <div
+          class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-xl"
+        >
+          <p class="text-center text-gray-600 mb-10 text-lg">
+            هل لديك فكرة مشروع أو استفسار؟ يسعدني أن أسمع منك!
+          </p>
+          <div class="flex flex-col lg:flex-row gap-10">
+            <form id="contact-form" class="lg:w-2/3" data-aos="fade-right">
+              <div class="mb-5">
+                <label
+                  for="name"
+                  class="block mb-2 text-sm font-medium text-gray-700"
+                  >الاسم <span class="text-red-500">*</span></label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-200"
+                  placeholder="اسمك الكامل"
+                  required
+                />
+              </div>
+              <div class="mb-5">
+                <label
+                  for="email"
+                  class="block mb-2 text-sm font-medium text-gray-700"
+                  >البريد الإلكتروني <span class="text-red-500">*</span></label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-200"
+                  placeholder="your.email@example.com"
+                  required
+                />
+              </div>
+              <div class="mb-6">
+                <label
+                  for="message"
+                  class="block mb-2 text-sm font-medium text-gray-700"
+                  >رسالتك <span class="text-red-500">*</span></label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-200"
+                  placeholder="اكتب رسالتك هنا..."
+                  required
+                ></textarea>
+              </div>
+              <div class="text-center lg:text-right">
+                <button
+                  type="submit"
+                  class="btn-primary bg-blue-600 text-white px-8 py-3 rounded-lg shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+                >
+                  إرسال الرسالة
+                  <span class="lucide ml-2 text-sm">&#xea1e;</span> {/* Send
+                  icon */}
+                </button>
+              </div>
+              <div
+                id="form-message"
+                class="mt-4 text-center lg:text-right text-green-600 font-medium"
+              ></div>
+            </form>
+
+            <div
+              class="lg:w-1/3 mt-8 lg:mt-0 lg:border-r lg:border-gray-200 lg:pr-8 text-center lg:text-right"
+              data-aos="fade-left"
+              data-aos-delay="100"
+            >
+              <h3 class="text-xl font-semibold mb-4 text-gray-800">
+                معلومات التواصل
+              </h3>
+              <p
+                class="text-gray-600 mb-3 flex items-center justify-center lg:justify-end"
+              >
+                <span class="lucide text-blue-500 ml-2">&#xe98f;</span> {/* Mail
+                icon */}
+                <a
+                  href="mailto:your.email@example.com"
+                  class="hover:text-blue-600"
+                  >your.email@example.com</a
+                >
+              </p>
+              <p
+                class="text-gray-600 mb-6 flex items-center justify-center lg:justify-end"
+              >
+                <span class="lucide text-green-500 ml-2">&#xea0a;</span> {/*
+                Phone icon */}
+                <a href="tel:+1234567890" class="hover:text-blue-600"
+                  >[+1 23 456 7890 - اختياري]</a
+                >
+              </p>
+
+              <h3 class="text-xl font-semibold mb-4 text-gray-800 mt-8">
+                تابعني على
+              </h3>
+              <div
+                class="flex justify-center lg:justify-end space-x-5 space-x-reverse"
+              >
+                <a
+                  href="#"
+                  target="_blank"
+                  class="text-gray-500 hover:text-blue-700 transition duration-300 hover:scale-110"
+                  title="LinkedIn"
+                >
+                  <span class="lucide text-2xl">&#xea5c;</span>
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  class="text-gray-500 hover:text-gray-900 transition duration-300 hover:scale-110"
+                  title="GitHub"
+                >
+                  <span class="lucide text-2xl">&#xe94a;</span>
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  class="text-gray-500 hover:text-blue-500 transition duration-300 hover:scale-110"
+                  title="Behance"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-behance inline-block"
+                  >
+                    <path
+                      d="M8.56 2.75c4.12 0 7.44 3.32 7.44 7.44s-3.32 7.44-7.44 7.44H2.75V2.75h5.81zm0 11.88c2.21 0 4-1.79 4-4s-1.79-4-4-4H6.19v8h2.37z"
+                    />
+                    <path
+                      d="M21.25 10.12h-4.5v1.5h4.5c0 1.66-1.34 3-3 3s-3-1.34-3-3v-1.5c0-1.66 1.34-3 3-3s3 1.34 3 3zm-1.5 0c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v1.5h3v-1.5z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  class="text-gray-500 hover:text-blue-400 transition duration-300 hover:scale-110"
+                  title="Twitter / X"
+                >
+                  <span class="lucide text-2xl">&#xeaee;</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-gray-800 text-gray-300 py-10 mt-20">
+      <div class="container mx-auto px-6 text-center">
+        <div class="flex justify-center space-x-6 space-x-reverse mb-6">
+          <a
+            href="#"
+            target="_blank"
+            class="hover:text-white transition duration-300 hover:scale-110"
+            title="LinkedIn"
+            ><span class="lucide text-xl">&#xea5c;</span></a
+          >
+          <a
+            href="#"
+            target="_blank"
+            class="hover:text-white transition duration-300 hover:scale-110"
+            title="GitHub"
+            ><span class="lucide text-xl">&#xe94a;</span></a
+          >
+          <a
+            href="#"
+            target="_blank"
+            class="hover:text-white transition duration-300 hover:scale-110"
+            title="Behance"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-behance inline-block"
+            >
+              <path
+                d="M8.56 2.75c4.12 0 7.44 3.32 7.44 7.44s-3.32 7.44-7.44 7.44H2.75V2.75h5.81zm0 11.88c2.21 0 4-1.79 4-4s-1.79-4-4-4H6.19v8h2.37z"
+              />
+              <path
+                d="M21.25 10.12h-4.5v1.5h4.5c0 1.66-1.34 3-3 3s-3-1.34-3-3v-1.5c0-1.66 1.34-3 3-3s3 1.34 3 3zm-1.5 0c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v1.5h3v-1.5z"
+              />
+            </svg>
+          </a>
+          <a
+            href="#"
+            target="_blank"
+            class="hover:text-white transition duration-300 hover:scale-110"
+            title="Twitter / X"
+            ><span class="lucide text-xl">&#xeaee;</span></a
+          >
+        </div>
+        <div class="text-sm mb-6 space-x-3 space-x-reverse">
+          <a href="#home" class="hover:text-white">الرئيسية</a> |
+          <a href="#about" class="hover:text-white">من أنا</a> |
+          <a href="#services" class="hover:text-white">الخدمات</a> |
+          <a href="#portfolio" class="hover:text-white">أعمالي</a> |
+          <a href="#skills" class="hover:text-white">المهارات</a> |
+          <a href="#education" class="hover:text-white">التعليم</a> |
+          <a href="#contact" class="hover:text-white">تواصل</a>
+        </div>
+        <p class="text-xs">
+          &copy; <span id="current-year"></span> [اسمك الكامل]. جميع الحقوق
+          محفوظة.
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      // --- Initialize AOS ---
+      AOS.init({
+        duration: 800, // values from 0 to 3000, with step 50ms
+        once: false, // whether animation should happen only once - while scrolling down
+      });
+
+      // --- Navigation Active State and Mobile Menu ---
+      const navLinks = document.querySelectorAll(".nav-link");
+      const mobileNavLinks = document.querySelectorAll(".nav-link-mobile");
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const sections = document.querySelectorAll(".page-section"); // Get all sections
+
+      // Function to set the active link style
+      function setActiveLink(targetId) {
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("data-target") === targetId) {
+            link.classList.add("active");
+          }
+        });
+      }
+
+      // Add click listeners to desktop links
+      navLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          const targetId = link.getAttribute("data-target");
+          setActiveLink(targetId);
+        });
+      });
+
+      // Add click listeners to mobile links
+      mobileNavLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          const targetId = link.getAttribute("data-target");
+          setActiveLink(targetId);
+          mobileMenu.classList.add("hidden"); // Close mobile menu
+        });
+      });
+
+      // Mobile menu toggle
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // --- Active link highlighting on scroll ---
+      const observerOptions = {
+        root: null, // relative to document viewport
+        rootMargin: "0px",
+        threshold: 0.4, // 40% of section visible
+      };
+
+      const observerCallback = (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const targetId = entry.target.id;
+            // Check if there's a nav link corresponding to this section
+            const correspondingLink = document.querySelector(
+              `.nav-link[data-target="${targetId}"]`
+            );
+            if (correspondingLink) {
+              setActiveLink(targetId);
+            }
+          }
+        });
+      };
+
+      const observer = new IntersectionObserver(
+        observerCallback,
+        observerOptions
+      );
+
+      sections.forEach((section) => {
+        observer.observe(section);
+      });
+
+      // Set active link on initial page load based on hash (if any)
+      function handlePageLoad() {
+        const hash = window.location.hash.substring(1);
+        if (hash) {
+          const targetSection = document.getElementById(hash);
+          const correspondingLink = document.querySelector(
+            `.nav-link[data-target="${hash}"]`
+          );
+          if (targetSection && correspondingLink) {
+            setActiveLink(hash);
+            // Optional: smooth scroll to section on load if needed,
+            // but html scroll-behavior should handle direct hash links.
+            // setTimeout(() => { // Timeout ensures smooth scroll works after initial render
+            //     targetSection.scrollIntoView({ behavior: 'smooth' });
+            // }, 100);
+          } else {
+            setActiveLink("home"); // Default to home if hash is invalid
+            history.replaceState(null, null, " "); // Remove invalid hash
+          }
+        } else {
+          setActiveLink("home"); // Default to home if no hash
+        }
+      }
+
+      window.addEventListener("DOMContentLoaded", handlePageLoad);
+
+      // --- Footer Year ---
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+
+      // --- Contact Form Handling (Basic) ---
+      const contactForm = document.getElementById("contact-form");
+      const formMessage = document.getElementById("form-message");
+
+      contactForm.addEventListener("submit", (e) => {
+        e.preventDefault(); // Prevent actual form submission for demo
+
+        formMessage.textContent = "جاري الإرسال...";
+        formMessage.classList.remove("text-red-600", "text-green-600");
+        formMessage.classList.add("text-blue-600");
+
+        // Simulate sending message
+        setTimeout(() => {
+          formMessage.textContent = "شكراً لك! تم استلام رسالتك بنجاح.";
+          formMessage.classList.remove("text-red-600", "text-blue-600");
+          formMessage.classList.add("text-green-600");
+          contactForm.reset(); // Clear form on success
+
+          // Hide message after a few seconds
+          setTimeout(() => {
+            formMessage.textContent = "";
+          }, 4000);
+        }, 1500); // Simulate network delay
+      });
+
+      // --- Refresh AOS on window resize (optional, good practice) ---
+      window.addEventListener("resize", () => {
+        AOS.refresh();
+      });
+    </script>
+  </body>
+</html>
