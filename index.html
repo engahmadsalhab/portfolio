@@ -1,52 +1,62 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="بورتفوليو احمد سلهب - عرض المشاريع والمهارات والخبرات في مجال إدخال البيانات وتفريغها بالإضافة إلى جلب البيانات تلقائياً والقيام بتصميم المواقع الالكترونية وتصميم الصور ومقاطع الفيديو م خلال كانفا."
+      content="Ahmad Salhab's Portfolio - Showcasing projects, skills, and experience in data entry and extraction, automated data retrieval, web design, and graphic/video design using Canva."
     />
     <meta
       name="keywords"
-      content="بورتفوليو, احمد سلهب, مطور مواقع ويب, مشاريع, مهارات, خبرات, تواصل, خدمات, تعليم"
+      content="Portfolio, Ahmad Salhab, Web Developer, Projects, Skills, Experience, Contact, Services, Education"
     />
-    <title>بورتفوليو احمد سلهب</title>
+    <title>Ahmad Salhab's Portfolio</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for social icons and other icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Google Fonts for 'Inter' (headings) and 'Roboto' (body/paragraphs) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Cairo:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+    <!-- AOS for scroll animations -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <style>
-      @font-face {
-        font-family: "LucideIcons";
-        src: url(https://cdn.jsdelivr.net/npm/lucide-static@latest/font/lucide.ttf)
-          format("truetype");
-      }
-      .lucide {
-        font-family: "LucideIcons";
-        font-size: 1.25rem;
-        line-height: 1;
-        display: inline-block;
-        vertical-align: middle;
-      }
+      /* Updated Font Family for the entire page */
       body {
-        font-family: "Cairo", "Inter", sans-serif;
+        font-family: "Roboto", sans-serif; /* Roboto for general text */
         overflow-x: hidden;
+        color: #333333; /* Darker grey for better readability */
       }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: "Inter", sans-serif; /* Inter for headings */
+      }
+      /* New Color Palette */
+      /* Primary: #4CAF50 (Green) */
+      /* Secondary: #2196F3 (Blue) */
+      /* Background: #E8F5E9 (Light Green) */
+      /* Text: #333333 (Dark Grey) */
+
       /* Style for active navigation link */
       .nav-link.active {
         font-weight: bold;
-        color: #623cea; /* Primary light purple */
-        border-bottom: 2px solid #623cea;
+        color: #4CAF50; /* Primary Green */
+        border-bottom: 2px solid #4CAF50;
       }
       /* Smooth scrolling behavior & Header offset */
       html {
         scroll-behavior: smooth;
-        scroll-padding-top: 80px;
+        scroll-padding-top: 80px; /* Offset for sticky header */
       }
       /* Ensure sections are always visible and offset for anchor links */
       .page-section {
@@ -64,12 +74,13 @@
       .project-card,
       .service-card,
       .certificate-item,
-      .blog-card {
+      .blog-card,
+      .social-icon {
         transition: all 0.3s ease-in-out;
       }
       .btn-primary:hover {
         transform: translateY(-2px);
-        box-shadow: 0 4px 10px rgba(98, 60, 234, 0.3); /* Primary light purple shadow */
+        box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3); /* Primary Green shadow */
       }
       .btn-secondary:hover {
         transform: translateY(-2px);
@@ -82,122 +93,125 @@
         transform: translateY(-5px) scale(1.02);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
       }
+      /* Sticky Navbar */
+      .sticky-header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 50;
+      }
     </style>
   </head>
-  <body class="bg-[#e9f1f7] text-[#54426b]">
+  <body class="bg-[#E8F5E9] text-[#333333]">
     <header class="bg-white shadow-md sticky top-0 z-50" data-aos="fade-down">
       <nav
         class="container mx-auto px-6 py-4 flex justify-between items-center"
       >
-        <div class="text-2xl font-bold text-[#623cea]">احمد سلهب</div>
+        <div class="text-2xl font-bold text-[#4CAF50]">Ahmad Salhab</div>
         <div
-          class="hidden md:flex space-x-4 lg:space-x-6 space-x-reverse items-center text-sm lg:text-base"
+          class="hidden md:flex space-x-4 lg:space-x-6 items-center text-sm lg:text-base"
         >
           <a
-            href="#home"
-            class="nav-link text-[#54426b] hover:text-[#623cea] active"
-            data-target="home"
-          >الرئيسية</a
-          >
-          <a
             href="#about"
-            class="nav-link text-[#54426b] hover:text-[#623cea]"
+            class="nav-link text-[#333333] hover:text-[#4CAF50]"
             data-target="about"
-            >من أنا</a
+            >About Me</a
           >
           <a
             href="#services"
-            class="nav-link text-[#54426b] hover:text-[#623cea]"
+            class="nav-link text-[#333333] hover:text-[#4CAF50]"
             data-target="services"
-            >الخدمات</a
+            >Services</a
           >
           <a
             href="#portfolio"
-            class="nav-link text-[#54426b] hover:text-[#623cea]"
+            class="nav-link text-[#333333] hover:text-[#4CAF50]"
             data-target="portfolio"
-            >أعمالي</a
+            >Portfolio</a
           >
           <a
             href="#skills"
-            class="nav-link text-[#54426b] hover:text-[#623cea]"
+            class="nav-link text-[#333333] hover:text-[#4CAF50]"
             data-target="skills"
-            >المهارات</a
+            >Skills</a
           >
           <a
             href="#education"
-            class="nav-link text-[#54426b] hover:text-[#623cea]"
+            class="nav-link text-[#333333] hover:text-[#4CAF50]"
             data-target="education"
-            >التعليم</a
+            >Education</a
           >
           <a
             href="#certificates"
-            class="nav-link text-[#54426b] hover:text-[#623cea]"
+            class="nav-link text-[#333333] hover:text-[#4CAF50]"
             data-target="certificates"
-            >الشهادات</a
+            >Certificates</a
           >
           <a
             href="#contact"
-            class="nav-link text-[#54426b] hover:text-[#623cea]"
+            class="nav-link text-[#333333] hover:text-[#4CAF50]"
             data-target="contact"
-            >تواصل معي</a
+            >Contact Me</a
           >
         </div>
 
         <button
           id="mobile-menu-button"
-          class="md:hidden text-[#54426b] focus:outline-none"
+          class="md:hidden text-[#333333] focus:outline-none"
         >
-          <span class="lucide">&#xe9b2;</span>
+          <i class="fa-solid fa-bars text-xl"></i>
         </button>
       </nav>
       <div id="mobile-menu" class="hidden md:hidden bg-white pb-4">
         <a
           href="#home"
-          class="block px-6 py-2 text-[#54426b] hover:bg-[#e9f1f7] nav-link-mobile"
+          class="block px-6 py-2 text-[#333333] hover:bg-[#E8F5E9] nav-link-mobile"
           data-target="home"
-          >الرئيسية</a
+          >Home</a
         >
         <a
           href="#about"
-          class="block px-6 py-2 text-[#54426b] hover:bg-[#e9f1f7] nav-link-mobile"
+          class="block px-6 py-2 text-[#333333] hover:bg-[#E8F5E9] nav-link-mobile"
           data-target="about"
-          >من أنا</a
+          >About Me</a
         >
         <a
           href="#services"
-          class="block px-6 py-2 text-[#54426b] hover:bg-[#e9f1f7] nav-link-mobile"
+          class="block px-6 py-2 text-[#333333] hover:bg-[#E8F5E9] nav-link-mobile"
           data-target="services"
-          >الخدمات</a
+          >Services</a
         >
         <a
           href="#portfolio"
-          class="block px-6 py-2 text-[#54426b] hover:bg-[#e9f1f7] nav-link-mobile"
+          class="block px-6 py-2 text-[#333333] hover:bg-[#E8F5E9] nav-link-mobile"
           data-target="portfolio"
-          >أعمالي</a
+          >Portfolio</a
         >
         <a
           href="#skills"
-          class="block px-6 py-2 text-[#54426b] hover:bg-[#e9f1f7] nav-link-mobile"
+          class="block px-6 py-2 text-[#333333] hover:bg-[#E8F5E9] nav-link-mobile"
           data-target="skills"
-          >المهارات</a
+          >Skills</a
         >
         <a
           href="#education"
-          class="block px-6 py-2 text-[#54426b] hover:bg-[#e9f1f7] nav-link-mobile"
+          class="block px-6 py-2 text-[#333333] hover:bg-[#E8F5E9] nav-link-mobile"
           data-target="education"
-          >التعليم</a
+          >Education</a
         >
         <a
           href="#certificates"
-          class="block px-6 py-2 text-[#54426b] hover:bg-[#e9f1f7] nav-link-mobile"
+          class="block px-6 py-2 text-[#333333] hover:bg-[#E8F5E9] nav-link-mobile"
           data-target="certificates"
-          >الشهادات</a
+          >Certificates</a
         >
         <a
           href="#contact"
-          class="block px-6 py-2 text-[#54426b] hover:bg-[#e9f1f7] nav-link-mobile"
+          class="block px-6 py-2 text-[#333333] hover:bg-[#E8F5E9] nav-link-mobile"
           data-target="contact"
-          >تواصل معي</a
+          >Contact Me</a
         >
       </div>
     </header>
@@ -205,44 +219,82 @@
     <main class="container mx-auto px-6 py-12">
       <section
         id="home"
-        class="page-section min-h-[80vh] flex flex-col md:flex-row items-center justify-center text-center md:text-right bg-gradient-to-br from-[#e9f1f7] via-[#e7dfc6] to-[#dbd5b2] rounded-lg p-8 md:p-16 shadow-xl mb-16 overflow-hidden"
+        class="page-section min-h-[80vh] flex flex-col md:flex-row items-center justify-center text-center md:text-left bg-gradient-to-br from-[#E8F5E9] via-[#DCEDC8] to-[#C8E6C9] rounded-lg p-8 md:p-16 shadow-xl mb-16 overflow-hidden"
       >
         <div
-          class="md:w-1/2 mb-8 md:mb-0 md:ml-10"
-          data-aos="fade-left"
+          class="md:w-1/2 mb-8 md:mb-0 md:mr-10"
+          data-aos="fade-right"
           data-aos-delay="200"
         >
           <h1
-            class="text-4xl md:text-6xl font-bold text-[#54426b] mb-4 leading-tight"
+            class="text-4xl md:text-6xl font-bold text-[#333333] mb-4 leading-tight"
           >
-            مرحبًا! أنا <span class="text-[#623cea]">احمد سلهب</span>
+            <span class="text-[#4CAF50]">Ahmad Salhab</span>
           </h1>
-          <p class="text-lg md:text-xl text-gray-600 mb-8">
-            [مطور واجهات أمامية متخصص | مصمم تجربة مستخدم | خبير تسويق رقمي]،
-            أحول الأفكار إلى تجارب رقمية مؤثرة وفعالة.
+          <p class="text-lg md:text-xl text-gray-700 mb-4">
+            Specialized Frontend Developer | Python Developer | Data Entry
+            Specialist
           </p>
-          <div class="space-x-4 space-x-reverse">
+          <!-- Social Media Icons at the top of the page -->
+          <div class="flex justify-center md:justify-start space-x-4 mb-8">
+            <a
+              href="https://linkedin.com/in/yourprofile"
+              target="_blank"
+              class="social-icon text-[#333333] hover:text-[#2196F3] transition duration-300 hover:scale-110"
+              title="LinkedIn"
+            >
+              <i class="fab fa-linkedin text-3xl"></i>
+            </a>
+            <a
+              href="https://github.com/yourprofile"
+              target="_blank"
+              class="social-icon text-[#333333] hover:text-[#607D8B] transition duration-300 hover:scale-110"
+              title="GitHub"
+            >
+              <i class="fab fa-github text-3xl"></i>
+            </a>
+            <a
+              href="https://behance.net/yourprofile"
+              target="_blank"
+              class="social-icon text-[#333333] hover:text-[#1769FF] transition duration-300 hover:scale-110"
+              title="Behance"
+            >
+              <i class="fab fa-behance-square text-3xl"></i>
+            </a>
+            <a
+              href="https://twitter.com/yourprofile"
+              target="_blank"
+              class="social-icon text-[#333333] hover:text-[#1DA1F2] transition duration-300 hover:scale-110"
+              title="Twitter / X"
+            >
+              <i class="fab fa-twitter text-3xl"></i>
+            </a>
+            <!-- Add more social media icons as needed -->
+          </div>
+          <div class="space-x-4">
             <a
               href="#portfolio"
-              class="btn-primary inline-block bg-[#623cea] text-white px-8 py-3 rounded-lg shadow hover:bg-opacity-90 text-lg"
-              >شاهد أعمالي</a
+              class="btn-primary inline-block bg-[#4CAF50] text-white px-8 py-3 rounded-lg shadow hover:bg-opacity-90 text-lg"
+              >View My Work</a
             >
             <a
               href="#contact"
-              class="btn-secondary inline-block bg-white text-[#54426b] px-8 py-3 rounded-lg shadow hover:bg-gray-100 text-lg border border-gray-300"
-              >تواصل معي</a
+              class="btn-secondary inline-block bg-white text-[#333333] px-8 py-3 rounded-lg shadow hover:bg-gray-100 text-lg border border-gray-300"
+              >Contact Me</a
             >
           </div>
         </div>
         <div
           class="md:w-1/2 flex justify-center"
-          data-aos="fade-right"
+          data-aos="fade-left"
           data-aos-delay="400"
         >
           <img
-            src="https://images.unsplash.com/photo-1549692520-fd5c1387d552?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="صورة شخصية لـ احمد سلهب"
-            class="rounded-full shadow-2xl w-72 h-72 md:w-96 md:h-96 object-cover border-8 border-white"
+            src="https://images.unsplash.com/photo-1649877508777-1554357604eb?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Ahmad Salhab's personal photo"
+            class="rounded-full shadow-2xl w-72 h-72 md:w-96 md:h-96 object-cover border-8 border-white lazyload"
+            loading="lazy"
+            onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';"
           />
         </div>
       </section>
@@ -253,9 +305,9 @@
         data-aos="fade-up"
       >
         <h2
-          class="text-3xl md:text-4xl font-bold text-center mb-10 text-[#54426b]"
+          class="text-3xl md:text-4xl font-bold text-center mb-10 text-[#333333]"
         >
-          من أنا
+          About Me
         </h2>
         <div class="flex flex-col lg:flex-row items-center">
           <div
@@ -264,51 +316,55 @@
           >
             <img
               src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="صورة رمزية أو متعلقة بالسيرة الذاتية"
-              class="rounded-lg shadow-md w-full max-w-sm object-cover"
+              alt="Avatar or resume-related image"
+              class="rounded-lg shadow-md w-full max-w-sm object-cover lazyload"
+              loading="lazy"
+              onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';"
             />
           </div>
           <div
-            class="lg:w-2/3 lg:pr-10 text-gray-700 leading-relaxed text-center lg:text-right"
-            data-aos="fade-right"
+            class="lg:w-2/3 lg:pl-10 text-gray-700 leading-relaxed text-center lg:text-left"
+            data-aos="fade-left"
             data-aos-delay="200"
           >
             <p class="mb-4 text-lg">
-              أنا [الاسم]، شغوف بـ مطور مواقع ويب وأمتلك خبرة [X] سنوات في تحويل
-              التحديات إلى حلول مبتكرة. أؤمن بقوة التصميم الجيد / الكود النظيف /
-              المحتوى الهادف في تحقيق نتائج ملموسة.
+              I'm Ahmad Salhab, a passionate Web Developer with [X] years of
+              experience in transforming challenges into innovative solutions. I
+              believe in the power of good design, clean code, and meaningful
+              content to achieve tangible results.
             </p>
             <p class="mb-4">
-              أسعى دائمًا لتعلم أحدث التقنيات وتطبيق أفضل الممارسات في عملي، مع
-              التركيز على تقديم قيمة حقيقية للعملاء والمستخدمين.
+              I always strive to learn the latest technologies and apply best
+              practices in my work, focusing on delivering real value to clients
+              and users.
             </p>
             <p class="mb-6">
-              <strong>القيم الأساسية:</strong> [الابتكار، الجودة، التعاون،
-              الشفافية، الالتزام].
+              <strong>Core Values:</strong> Innovation, Quality, Collaboration,
+              Transparency, Commitment.
             </p>
 
             <div
-              class="mt-8 flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4 sm:space-x-reverse"
+              class="mt-8 flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4"
             >
               <button
                 onclick="window.print()"
-                class="btn-secondary inline-flex items-center justify-center bg-gray-200 text-[#54426b] px-6 py-3 rounded-lg shadow hover:bg-gray-300 border border-gray-300"
+                class="btn-secondary inline-flex items-center justify-center bg-gray-200 text-[#333333] px-6 py-3 rounded-lg shadow hover:bg-gray-300 border border-gray-300"
               >
-                <span class="lucide mr-2">&#xea17;</span>
-                طباعة الـ CV
+                <i class="fa-solid fa-print mr-2"></i>
+                Print CV
               </button>
               <a
                 href="cv/your-cv.pdf"
-                download="احمد سلهب-CV.pdf"
-                class="btn-primary inline-flex items-center justify-center bg-[#623cea] text-white px-6 py-3 rounded-lg shadow hover:bg-opacity-90"
+                download="Ahmad-Salhab-CV.pdf"
+                class="btn-primary inline-flex items-center justify-center bg-[#4CAF50] text-white px-6 py-3 rounded-lg shadow hover:bg-opacity-90"
               >
-                <span class="lucide mr-2">&#xe917;</span>
-                تنزيل الـ CV
+                <i class="fa-solid fa-download mr-2"></i>
+                Download CV
               </a>
             </div>
-            <p class="mt-4 text-xs text-gray-500 text-center lg:text-right">
-              (ملاحظة: تأكد من وضع ملف الـ CV الخاص بك في مجلد `cv` وتسميته
-              `your-cv.pdf` أو قم بتحديث الرابط).
+            <p class="mt-4 text-xs text-gray-500 text-center lg:text-left">
+              (Note: Make sure to place your CV file in the `cv` folder and
+              name it `your-cv.pdf` or update the link).
             </p>
           </div>
         </div>
@@ -316,9 +372,9 @@
 
       <section id="services" class="page-section my-16" data-aos="fade-up">
         <h2
-          class="text-3xl md:text-4xl font-bold text-center mb-12 text-[#54426b]"
+          class="text-3xl md:text-4xl font-bold text-center mb-12 text-[#333333]"
         >
-          الخدمات التي أقدمها
+          Services I Offer
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           <div
@@ -327,23 +383,25 @@
             data-aos-delay="100"
           >
             <img
-              src="https://images.unsplash.com/photo-1517694711087-abc753066499?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="أيقونة أو صورة خدمة 1"
-              class="w-24 h-24 object-contain mx-auto mb-6 rounded-full border-4 border-[#e9f1f7] group-hover:border-[#623cea] transition-all duration-300"
+              src="https://images.unsplash.com/photo-1623282033815-40b05d96c903?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Service 1 Icon or Image"
+              class="w-24 h-24 object-contain mx-auto mb-6 rounded-full border-4 border-[#E8F5E9] group-hover:border-[#4CAF50] transition-all duration-300 lazyload"
+              loading="lazy"
+              onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';"
             />
-            <h3 class="text-xl font-semibold mb-3 text-[#54426b]">
-              تطوير واجهات أمامية (Frontend)
+            <h3 class="text-xl font-semibold mb-3 text-[#333333]">
+              Frontend Development
             </h3>
-            <p class="text-gray-600 text-sm mb-5">
-              بناء واجهات مستخدم تفاعلية وسريعة الاستجابة باستخدام أحدث التقنيات
-              مثل React و Vue.
+            <p class="text-gray-700 text-sm mb-5">
+              Building interactive and responsive user interfaces using the
+              latest technologies like React and Vue.
             </p>
             <a
               href="#portfolio"
-              class="text-[#623cea] hover:underline text-sm font-medium inline-flex items-center"
+              class="text-[#4CAF50] hover:underline text-sm font-medium inline-flex items-center"
             >
-              شاهد أعمال ذات صلة
-              <span class="lucide mr-1 text-xs">&#xe9c3;</span>
+              View Related Work
+              <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
             </a>
           </div>
 
@@ -354,22 +412,24 @@
           >
             <img
               src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="أيقونة أو صورة خدمة 2"
-              class="w-24 h-24 object-contain mx-auto mb-6 rounded-full border-4 border-[#e7dfc6] group-hover:border-[#623cea] transition-all duration-300"
+              alt="Service 2 Icon or Image"
+              class="w-24 h-24 object-contain mx-auto mb-6 rounded-full border-4 border-[#DCEDC8] group-hover:border-[#4CAF50] transition-all duration-300 lazyload"
+              loading="lazy"
+              onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';"
             />
-            <h3 class="text-xl font-semibold mb-3 text-[#54426b]">
-              تصميم تجربة وواجهة المستخدم (UX/UI)
+            <h3 class="text-xl font-semibold mb-3 text-[#333333]">
+              UX/UI Design
             </h3>
-            <p class="text-gray-600 text-sm mb-5">
-              تصميم تجارب مستخدم بديهية وجذابة بصريًا تركز على تحقيق أهداف
-              العمل.
+            <p class="text-gray-700 text-sm mb-5">
+              Designing intuitive and visually appealing user experiences that
+              focus on achieving business goals.
             </p>
             <a
               href="#portfolio"
-              class="text-[#623cea] hover:underline text-sm font-medium inline-flex items-center"
+              class="text-[#4CAF50] hover:underline text-sm font-medium inline-flex items-center"
             >
-              شاهد أعمال ذات صلة
-              <span class="lucide mr-1 text-xs">&#xe9c3;</span>
+              View Related Work
+              <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
             </a>
           </div>
 
@@ -379,22 +439,25 @@
             data-aos-delay="300"
           >
             <img
-              src="https://images.unsplash.com/photo-1547394765-185e1e680c61?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="أيقونة أو صورة خدمة 3"
-              class="w-24 h-24 object-contain mx-auto mb-6 rounded-full border-4 border-[#dbd5b2] group-hover:border-[#623cea] transition-all duration-300"
+              src="https://images.unsplash.com/photo-1568716353609-12ddc5c67f04?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Service 3 Icon or Image"
+              class="w-24 h-24 object-contain mx-auto mb-6 rounded-full border-4 border-[#C8E6C9] group-hover:border-[#4CAF50] transition-all duration-300 lazyload"
+              loading="lazy"
+              onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';"
             />
-            <h3 class="text-xl font-semibold mb-3 text-[#54426b]">
-              تطوير مواقع WordPress
+            <h3 class="text-xl font-semibold mb-3 text-[#333333]">
+              WordPress Development
             </h3>
-            <p class="text-gray-600 text-sm mb-5">
-              إنشاء وتخصيص مواقع WordPress قوية وسهلة الإدارة للشركات والأفراد.
+            <p class="text-gray-700 text-sm mb-5">
+              Creating and customizing powerful and easy-to-manage WordPress
+              sites for businesses and individuals.
             </p>
             <a
               href="#portfolio"
-              class="text-[#623cea] hover:underline text-sm font-medium inline-flex items-center"
+              class="text-[#4CAF50] hover:underline text-sm font-medium inline-flex items-center"
             >
-              شاهد أعمال ذات صلة
-              <span class="lucide mr-1 text-xs">&#xe9c3;</span>
+              View Related Work
+              <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
             </a>
           </div>
         </div>
@@ -402,9 +465,9 @@
 
       <section id="portfolio" class="page-section my-16" data-aos="fade-up">
         <h2
-          class="text-3xl md:text-4xl font-bold text-center mb-12 text-[#54426b]"
+          class="text-3xl md:text-4xl font-bold text-center mb-12 text-[#333333]"
         >
-          أعمالي ومشاريعي
+          My Work & Projects
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           <div
@@ -414,26 +477,29 @@
           >
             <img
               src="https://images.unsplash.com/photo-1605379399642-870262d3d051?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="صورة مشروع 1"
-              class="w-full h-56 object-cover"
+              alt="Project 1 Image"
+              class="w-full h-56 object-cover lazyload"
+              loading="lazy"
               onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';"
             />
             <div class="p-6">
-              <h3 class="text-xl font-semibold mb-2 text-[#54426b]">عنوان المشروع الأول</h3>
-              <p class="text-gray-600 text-sm mb-3">
-                وصف مختصر للمشروع يوضح الهدف الرئيسي منه وما يقدمه (سطرين أو
-                ثلاثة).
+              <h3 class="text-xl font-semibold mb-2 text-[#333333]">
+                Project One Title
+              </h3>
+              <p class="text-gray-700 text-sm mb-3">
+                A brief description of the project, explaining its main goal and
+                what it offers (two or three lines).
               </p>
-              <p class="text-sm text-gray-500 mb-4">
-                <strong>التقنيات:</strong> HTML, CSS, JavaScript
+              <p class="text-sm text-gray-600 mb-4">
+                <strong>Technologies:</strong> HTML, CSS, JavaScript
               </p>
               <a
                 href="#"
                 target="_blank"
-                class="text-[#623cea] hover:underline inline-flex items-center text-sm font-medium"
+                class="text-[#4CAF50] hover:underline inline-flex items-center text-sm font-medium"
               >
-                شاهد المشروع
-                <span class="lucide ml-1 text-sm">&#xe9a6;</span>
+                View Project
+                <i class="fa-solid fa-up-right-from-square ml-1 text-sm"></i>
               </a>
             </div>
           </div>
@@ -444,25 +510,30 @@
             data-aos-delay="200"
           >
             <img
-              src="https://images.unsplash.com/photo-1587620962725-abab7fe65553?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="صورة مشروع 2"
-              class="w-full h-56 object-cover"
+              src="https://images.unsplash.com/photo-1559028012-481c04fa702d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTJ8fHdlYnNpdGV8ZW58MHx8MHx8fDA%3D"
+              alt="Project 2 Image"
+              class="w-full h-56 object-cover lazyload"
+              loading="lazy"
               onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';"
             />
             <div class="p-6">
-              <h3 class="text-xl font-semibold mb-2 text-[#54426b]">عنوان المشروع الثاني</h3>
-              <p class="text-gray-600 text-sm mb-3">
-                وصف مختصر آخر لمشروع مختلف يبرز مهارات أخرى أو نوع عمل مختلف.
+              <h3 class="text-xl font-semibold mb-2 text-[#333333]">
+                Project Two Title
+              </h3>
+              <p class="text-gray-700 text-sm mb-3">
+                Another brief description of a different project highlighting
+                other skills or a different type of work.
               </p>
-              <p class="text-sm text-gray-500 mb-4">
-                <strong>التقنيات:</strong> React, Tailwind CSS, Node.js
+              <p class="text-sm text-gray-600 mb-4">
+                <strong>Technologies:</strong> React, Tailwind CSS, Node.js
               </p>
               <a
                 href="#"
                 target="_blank"
-                class="text-[#623cea] hover:underline inline-flex items-center text-sm font-medium"
+                class="text-[#4CAF50] hover:underline inline-flex items-center text-sm font-medium"
               >
-                شاهد المشروع <span class="lucide ml-1 text-sm">&#xe9a6;</span>
+                View Project
+                <i class="fa-solid fa-up-right-from-square ml-1 text-sm"></i>
               </a>
             </div>
           </div>
@@ -473,26 +544,30 @@
             data-aos-delay="300"
           >
             <img
-              src="https://images.unsplash.com/photo-1549497042-4b2a9f4d3c3e?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="صورة مشروع 3"
-              class="w-full h-56 object-cover"
+              src="https://plus.unsplash.com/premium_photo-1720503225766-21dff692f754?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Project 3 Image"
+              class="w-full h-56 object-cover lazyload"
+              loading="lazy"
               onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';"
             />
             <div class="p-6">
-              <h3 class="text-xl font-semibold mb-2 text-[#54426b]">عنوان المشروع الثالث</h3>
-              <p class="text-gray-600 text-sm mb-3">
-                وصف لمشروع ثالث، ربما يكون تصميم جرافيك أو عمل كتابة محتوى.
+              <h3 class="text-xl font-semibold mb-2 text-[#333333]">
+                Project Three Title
+              </h3>
+              <p class="text-gray-700 text-sm mb-3">
+                Description for a third project, perhaps graphic design or
+                content writing work.
               </p>
-              <p class="text-sm text-gray-500 mb-4">
-                <strong>الأدوات:</strong> Photoshop, Illustrator
+              <p class="text-sm text-gray-600 mb-4">
+                <strong>Tools:</strong> Photoshop, Illustrator
               </p>
               <a
                 href="#"
                 target="_blank"
-                class="text-[#623cea] hover:underline inline-flex items-center text-sm font-medium"
+                class="text-[#4CAF50] hover:underline inline-flex items-center text-sm font-medium"
               >
-                شاهد على Behance
-                <span class="lucide ml-1 text-sm">&#xe9a6;</span>
+                View on Behance
+                <i class="fa-solid fa-up-right-from-square ml-1 text-sm"></i>
               </a>
             </div>
           </div>
@@ -501,13 +576,13 @@
 
       <section
         id="skills"
-        class="page-section bg-[#e7dfc6] p-8 md:p-12 rounded-lg shadow-lg my-16"
+        class="page-section bg-[#DCEDC8] p-8 md:p-12 rounded-lg shadow-lg my-16"
         data-aos="fade-up"
       >
         <h2
-          class="text-3xl md:text-4xl font-bold text-center mb-12 text-[#54426b]"
+          class="text-3xl md:text-4xl font-bold text-center mb-12 text-[#333333]"
         >
-          المهارات والخبرات
+          Skills & Expertise
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div
@@ -516,34 +591,34 @@
             data-aos-delay="100"
           >
             <h3
-              class="text-xl font-semibold mb-4 text-[#623cea] flex items-center"
+              class="text-xl font-semibold mb-4 text-[#4CAF50] flex items-center"
             >
-              <span class="lucide mr-2 text-[#623cea]">&#xea4a;</span> المهارات
-              التقنية
+              <i class="fa-solid fa-code mr-2 text-[#4CAF50]"></i> Technical
+              Skills
             </h3>
             <ul class="space-y-2 text-gray-700">
               <li class="flex items-center">
-                <span class="lucide text-[#623cea] mr-2 text-sm">&#xea14;</span>
+                <i class="fa-solid fa-check text-[#4CAF50] mr-2 text-sm"></i>
                 HTML5
               </li>
               <li class="flex items-center">
-                <span class="lucide text-[#623cea] mr-2 text-sm">&#xea14;</span>
+                <i class="fa-solid fa-check text-[#4CAF50] mr-2 text-sm"></i>
                 CSS3 (Tailwind, Bootstrap)
               </li>
               <li class="flex items-center">
-                <span class="lucide text-[#623cea] mr-2 text-sm">&#xea14;</span>
+                <i class="fa-solid fa-check text-[#4CAF50] mr-2 text-sm"></i>
                 JavaScript (ES6+)
               </li>
               <li class="flex items-center">
-                <span class="lucide text-[#623cea] mr-2 text-sm">&#xea14;</span>
+                <i class="fa-solid fa-check text-[#4CAF50] mr-2 text-sm"></i>
                 React / Vue.js
               </li>
               <li class="flex items-center">
-                <span class="lucide text-[#623cea] mr-2 text-sm">&#xea14;</span>
+                <i class="fa-solid fa-check text-[#4CAF50] mr-2 text-sm"></i>
                 Node.js / Express
               </li>
               <li class="flex items-center">
-                <span class="lucide text-[#623cea] mr-2 text-sm">&#xea14;</span>
+                <i class="fa-solid fa-check text-[#4CAF50] mr-2 text-sm"></i>
                 Git & GitHub
               </li>
             </ul>
@@ -555,30 +630,30 @@
             data-aos-delay="200"
           >
             <h3
-              class="text-xl font-semibold mb-4 text-[#623cea] flex items-center"
+              class="text-xl font-semibold mb-4 text-[#4CAF50] flex items-center"
             >
-              <span class="lucide mr-2 text-[#623cea]">&#xea4f;</span> أدوات
-              العمل
+              <i class="fa-solid fa-screwdriver-wrench mr-2 text-[#4CAF50]"></i>
+              Tools
             </h3>
             <ul class="space-y-2 text-gray-700">
               <li class="flex items-center">
-                <span class="lucide text-[#623cea] mr-2 text-sm">&#xea14;</span>
+                <i class="fa-solid fa-check text-[#4CAF50] mr-2 text-sm"></i>
                 VS Code
               </li>
               <li class="flex items-center">
-                <span class="lucide text-[#623cea] mr-2 text-sm">&#xea14;</span>
+                <i class="fa-solid fa-check text-[#4CAF50] mr-2 text-sm"></i>
                 Figma / Adobe XD
               </li>
               <li class="flex items-center">
-                <span class="lucide text-[#623cea] mr-2 text-sm">&#xea14;</span>
+                <i class="fa-solid fa-check text-[#4CAF50] mr-2 text-sm"></i>
                 Jira / Trello
               </li>
               <li class="flex items-center">
-                <span class="lucide text-[#623cea] mr-2 text-sm">&#xea14;</span>
+                <i class="fa-solid fa-check text-[#4CAF50] mr-2 text-sm"></i>
                 Docker
               </li>
               <li class="flex items-center">
-                <span class="lucide text-[#623cea] mr-2 text-sm">&#xea14;</span>
+                <i class="fa-solid fa-check text-[#4CAF50] mr-2 text-sm"></i>
                 Postman
               </li>
             </ul>
@@ -590,41 +665,31 @@
             data-aos-delay="300"
           >
             <h3
-              class="text-xl font-semibold mb-4 text-[#623cea] flex items-center"
+              class="text-xl font-semibold mb-4 text-[#4CAF50] flex items-center"
             >
-              <span class="lucide mr-2 text-[#623cea]">&#xea57;</span> المهارات
-              الشخصية
+              <i class="fa-solid fa-user-gear mr-2 text-[#4CAF50]"></i> Personal
+              Skills
             </h3>
             <ul class="space-y-2 text-gray-700">
               <li class="flex items-center">
-                <span class="lucide text-[#623cea] mr-2 text-sm"
-                  >&#xea14;</span
-                >
-                التواصل الفعال
+                <i class="fa-solid fa-check text-[#4CAF50] mr-2 text-sm"></i>
+                Effective Communication
               </li>
               <li class="flex items-center">
-                <span class="lucide text-[#623cea] mr-2 text-sm"
-                  >&#xea14;</span
-                >
-                حل المشكلات
+                <i class="fa-solid fa-check text-[#4CAF50] mr-2 text-sm"></i>
+                Problem Solving
               </li>
               <li class="flex items-center">
-                <span class="lucide text-[#623cea] mr-2 text-sm"
-                  >&#xea14;</span
-                >
-                العمل الجماعي
+                <i class="fa-solid fa-check text-[#4CAF50] mr-2 text-sm"></i>
+                Teamwork
               </li>
               <li class="flex items-center">
-                <span class="lucide text-[#623cea] mr-2 text-sm"
-                  >&#xea14;</span
-                >
-                إدارة الوقت
+                <i class="fa-solid fa-check text-[#4CAF50] mr-2 text-sm"></i>
+                Time Management
               </li>
               <li class="flex items-center">
-                <span class="lucide text-[#623cea] mr-2 text-sm"
-                  >&#xea14;</span
-                >
-                التعلم المستمر
+                <i class="fa-solid fa-check text-[#4CAF50] mr-2 text-sm"></i>
+                Continuous Learning
               </li>
             </ul>
           </div>
@@ -633,33 +698,37 @@
 
       <section id="education" class="page-section my-16" data-aos="fade-up">
         <h2
-          class="text-3xl md:text-4xl font-bold text-center mb-12 text-[#54426b]"
+          class="text-3xl md:text-4xl font-bold text-center mb-12 text-[#333333]"
         >
-          التعليم واللغات
+          Education & Languages
         </h2>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
           <div class="bg-white p-8 rounded-lg shadow-lg" data-aos="fade-right">
             <h3
-              class="text-2xl font-semibold mb-6 text-[#623cea] flex items-center"
+              class="text-2xl font-semibold mb-6 text-[#4CAF50] flex items-center"
             >
-              <span class="lucide mr-2 text-[#623cea]">&#xe94f;</span> التعليم
-              الأكاديمي
+              <i class="fa-solid fa-graduation-cap mr-2 text-[#4CAF50]"></i>
+              Academic Education
             </h3>
             <div class="space-y-6">
-              <div class="border-r-4 border-[#e9f1f7] pr-4">
-                <p class="font-semibold text-[#54426b]">
-                  بكالوريوس في [اسم التخصص]
+              <div class="border-l-4 border-[#E8F5E9] pl-4">
+                <p class="font-semibold text-[#333333]">
+                  Bachelor's Degree in [Major Name]
                 </p>
-                <p class="text-sm text-gray-600">[اسم الجامعة أو المعهد]</p>
-                <p class="text-xs text-gray-500">[سنة التخرج]</p>
+                <p class="text-sm text-gray-700">
+                  [University or Institute Name]
+                </p>
+                <p class="text-xs text-gray-600">[Graduation Year]</p>
               </div>
 
-              <div class="border-r-4 border-[#e9f1f7] pr-4">
-                <p class="font-semibold text-[#54426b]">
-                  ماجستير في [اسم التخصص]
+              <div class="border-l-4 border-[#E8F5E9] pl-4">
+                <p class="font-semibold text-[#333333]">
+                  Master's Degree in [Major Name]
                 </p>
-                <p class="text-sm text-gray-600">[اسم الجامعة أو المعهد]</p>
-                <p class="text-xs text-gray-500">[سنة التخرج]</p>
+                <p class="text-sm text-gray-700">
+                  [University or Institute Name]
+                </p>
+                <p class="text-xs text-gray-600">[Graduation Year]</p>
               </div>
             </div>
           </div>
@@ -670,32 +739,34 @@
             data-aos-delay="100"
           >
             <h3
-              class="text-2xl font-semibold mb-6 text-[#623cea] flex items-center"
+              class="text-2xl font-semibold mb-6 text-[#4CAF50] flex items-center"
             >
-              <span class="lucide mr-2 text-[#623cea]">&#xea5a;</span> اللغات
+              <i class="fa-solid fa-language mr-2 text-[#4CAF50]"></i> Languages
             </h3>
             <div class="space-y-4">
               <div class="flex justify-between items-center">
-                <span class="text-[#54426b] font-medium">العربية</span>
+                <span class="text-[#333333] font-medium">Arabic</span>
                 <span
-                  class="text-sm text-[#623cea] bg-[#e9f1f7] px-3 py-1 rounded-full"
-                  >اللغة الأم</span
+                  class="text-sm text-[#4CAF50] bg-[#E8F5E9] px-3 py-1 rounded-full"
+                  >Native Speaker</span
                 >
               </div>
 
               <div class="flex justify-between items-center">
-                <span class="text-[#54426b] font-medium">الإنجليزية</span>
+                <span class="text-[#333333] font-medium">English</span>
                 <span
-                  class="text-sm text-[#623cea] bg-[#e9f1f7] px-3 py-1 rounded-full"
-                  >مستوى متقدم / احترافي</span
+                  class="text-sm text-[#4CAF50] bg-[#E8F5E9] px-3 py-1 rounded-full"
+                  >Advanced / Professional</span
                 >
               </div>
 
               <div class="flex justify-between items-center">
-                <span class="text-[#54426b] font-medium">[لغة أخرى]</span>
+                <span class="text-[#333333] font-medium"
+                  >[Other Language]</span
+                >
                 <span
-                  class="text-sm text-[#623cea] bg-[#e9f1f7] px-3 py-1 rounded-full"
-                  >مستوى متوسط / مبتدئ</span
+                  class="text-sm text-[#4CAF50] bg-[#E8F5E9] px-3 py-1 rounded-full"
+                  >Intermediate / Beginner</span
                 >
               </div>
             </div>
@@ -705,9 +776,9 @@
 
       <section id="certificates" class="page-section my-16" data-aos="fade-up">
         <h2
-          class="text-3xl md:text-4xl font-bold text-center mb-12 text-[#54426b]"
+          class="text-3xl md:text-4xl font-bold text-center mb-12 text-[#333333]"
         >
-          الشهادات والدورات
+          Certificates & Courses
         </h2>
         <div class="space-y-6">
           <div
@@ -716,25 +787,26 @@
             data-aos-delay="100"
           >
             <div class="flex items-center mb-3 sm:mb-0">
-              <span class="lucide text-[#623cea] mr-3 text-xl">&#xea49;</span>
+              <i class="fa-solid fa-certificate text-[#4CAF50] mr-3 text-xl"></i>
               <div>
-                <h3 class="text-lg font-semibold text-[#54426b]">
-                  شهادة تطوير واجهات المستخدم المتقدمة
+                <h3 class="text-lg font-semibold text-[#333333]">
+                  Advanced User Interface Development Certificate
                 </h3>
-                <p class="text-gray-600 text-sm">
-                  المؤسسة: Udemy / Coursera / منصة أخرى
+                <p class="text-gray-700 text-sm">
+                  Institution: Udemy / Coursera / Other Platform
                 </p>
-                <p class="text-gray-500 text-xs mt-1">
-                  تاريخ الحصول عليها: مارس 2024
+                <p class="text-gray-600 text-xs mt-1">
+                  Date Obtained: March 2024
                 </p>
               </div>
             </div>
             <a
               href="#"
               target="_blank"
-              class="mt-3 sm:mt-0 text-[#623cea] hover:underline inline-flex items-center text-sm font-medium self-end sm:self-center"
+              class="mt-3 sm:mt-0 text-[#4CAF50] hover:underline inline-flex items-center text-sm font-medium self-end sm:self-center"
             >
-              عرض الشهادة <span class="lucide ml-1 text-xs">&#xe9a6;</span>
+              View Certificate
+              <i class="fa-solid fa-up-right-from-square ml-1 text-xs"></i>
             </a>
           </div>
 
@@ -744,25 +816,26 @@
             data-aos-delay="200"
           >
             <div class="flex items-center mb-3 sm:mb-0">
-              <span class="lucide text-[#623cea] mr-3 text-xl">&#xea49;</span>
+              <i class="fa-solid fa-certificate text-[#4CAF50] mr-3 text-xl"></i>
               <div>
-                <h3 class="text-lg font-semibold text-[#54426b]">
-                  دورة تصميم تجربة المستخدم (UX)
+                <h3 class="text-lg font-semibold text-[#333333]">
+                  User Experience (UX) Design Course
                 </h3>
-                <p class="text-gray-600 text-sm">
-                  المؤسسة: Google / Interaction Design Foundation
+                <p class="text-gray-700 text-sm">
+                  Institution: Google / Interaction Design Foundation
                 </p>
-                <p class="text-gray-500 text-xs mt-1">
-                  تاريخ الحصول عليها: يناير 2024
+                <p class="text-gray-600 text-xs mt-1">
+                  Date Obtained: January 2024
                 </p>
               </div>
             </div>
             <a
               href="#"
               target="_blank"
-              class="mt-3 sm:mt-0 text-[#623cea] hover:underline inline-flex items-center text-sm font-medium self-end sm:self-center"
+              class="mt-3 sm:mt-0 text-[#4CAF50] hover:underline inline-flex items-center text-sm font-medium self-end sm:self-center"
             >
-              عرض الشهادة <span class="lucide ml-1 text-xs">&#xe9a6;</span>
+              View Certificate
+              <i class="fa-solid fa-up-right-from-square ml-1 text-xs"></i>
             </a>
           </div>
         </div>
@@ -770,15 +843,15 @@
 
       <section id="contact" class="page-section my-16" data-aos="fade-up">
         <h2
-          class="text-3xl md:text-4xl font-bold text-center mb-10 text-[#54426b]"
+          class="text-3xl md:text-4xl font-bold text-center mb-10 text-[#333333]"
         >
-          تواصل معي
+          Contact Me
         </h2>
         <div
           class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-xl"
         >
-          <p class="text-center text-gray-600 mb-10 text-lg">
-            هل لديك فكرة مشروع أو استفسار؟ يسعدني أن أسمع منك!
+          <p class="text-center text-gray-700 mb-10 text-lg">
+            Do you have a project idea or an inquiry? I'd love to hear from you!
           </p>
           <div class="flex flex-col lg:flex-row gap-10">
             <form id="contact-form" class="lg:w-2/3" data-aos="fade-right">
@@ -786,14 +859,14 @@
                 <label
                   for="name"
                   class="block mb-2 text-sm font-medium text-gray-700"
-                  >الاسم <span class="text-red-500">*</span></label
+                  >Name <span class="text-red-500">*</span></label
                 >
                 <input
                   type="text"
                   id="name"
                   name="name"
-                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-[#623cea] focus:border-[#623cea] transition duration-200"
-                  placeholder="اسمك الكامل"
+                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-[#4CAF50] focus:border-[#4CAF50] transition duration-200"
+                  placeholder="Your Full Name"
                   required
                 />
               </div>
@@ -801,13 +874,13 @@
                 <label
                   for="email"
                   class="block mb-2 text-sm font-medium text-gray-700"
-                  >البريد الإلكتروني <span class="text-red-500">*</span></label
+                  >Email <span class="text-red-500">*</span></label
                 >
                 <input
                   type="email"
                   id="email"
                   name="email"
-                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-[#623cea] focus:border-[#623cea] transition duration-200"
+                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-[#4CAF50] focus:border-[#4CAF50] transition duration-200"
                   placeholder="your.email@example.com"
                   required
                 />
@@ -816,114 +889,94 @@
                 <label
                   for="message"
                   class="block mb-2 text-sm font-medium text-gray-700"
-                  >رسالتك <span class="text-red-500">*</span></label
+                  >Your Message <span class="text-red-500">*</span></label
                 >
                 <textarea
                   id="message"
                   name="message"
                   rows="5"
-                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-[#623cea] focus:border-[#623cea] transition duration-200"
-                  placeholder="اكتب رسالتك هنا..."
+                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-[#4CAF50] focus:border-[#4CAF50] transition duration-200"
+                  placeholder="Write your message here..."
                   required
                 ></textarea>
               </div>
-              <div class="text-center lg:text-right">
+              <div class="text-center lg:text-left">
                 <button
                   type="submit"
-                  class="btn-primary bg-[#623cea] text-white px-8 py-3 rounded-lg shadow hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-[#623cea] focus:ring-opacity-50"
+                  class="btn-primary bg-[#4CAF50] text-white px-8 py-3 rounded-lg shadow hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-[#4CAF50] focus:ring-opacity-50"
                 >
-                  إرسال الرسالة
-                  <span class="lucide ml-2 text-sm">&#xea1e;</span>
+                  Send Message
+                  <i class="fa-solid fa-paper-plane ml-2 text-sm"></i>
                 </button>
               </div>
               <div
                 id="form-message"
-                class="mt-4 text-center lg:text-right text-[#623cea] font-medium"
+                class="mt-4 text-center lg:text-left text-[#4CAF50] font-medium"
               ></div>
             </form>
 
             <div
-              class="lg:w-1/3 mt-8 lg:mt-0 lg:border-r lg:border-gray-200 lg:pr-8 text-center lg:text-right"
+              class="lg:w-1/3 mt-8 lg:mt-0 lg:border-l lg:border-gray-200 lg:pl-8 text-center lg:text-left"
               data-aos="fade-left"
               data-aos-delay="100"
             >
-              <h3 class="text-xl font-semibold mb-4 text-[#54426b]">
-                معلومات التواصل
+              <h3 class="text-xl font-semibold mb-4 text-[#333333]">
+                Contact Information
               </h3>
               <p
-                class="text-gray-600 mb-3 flex items-center justify-center lg:justify-end"
+                class="text-gray-700 mb-3 flex items-center justify-center lg:justify-start"
               >
-                <span class="lucide text-[#623cea] ml-2">&#xe98f;</span>
+                <i class="fa-solid fa-envelope text-[#4CAF50] mr-2"></i>
                 <a
-                  href="mailto:your.email@example.com"
-                  class="hover:text-[#623cea]"
-                  >your.email@example.com</a
+                  href="mailto:a7mdsalhab9@gmail.com"
+                  class="hover:text-[#4CAF50]"
+                  >a7mdsalhab9@gmail.com</a
                 >
               </p>
               <p
-                class="text-gray-600 mb-6 flex items-center justify-center lg:justify-end"
+                class="text-gray-700 mb-6 flex items-center justify-center lg:justify-start"
               >
-                <span class="lucide text-[#623cea] ml-2">&#xea0a;</span>
-                <a href="tel:+1234567890" class="hover:text-[#623cea]"
-                  >[+1 23 456 7890 - اختياري]</a
+                <i class="fa-solid fa-phone text-[#4CAF50] mr-2"></i>
+                <a href="tel:+1234567890" class="hover:text-[#4CAF50]"
+                  >+963 940-630-928</a
                 >
               </p>
 
-              <h3 class="text-xl font-semibold mb-4 text-[#54426b] mt-8">
-                تابعني على
+              <h3 class="text-xl font-semibold mb-4 text-[#333333] mt-8">
+                Follow Me
               </h3>
-              <div
-                class="flex justify-center lg:justify-end space-x-5 space-x-reverse"
-              >
+              <div class="flex justify-center lg:justify-start space-x-5">
                 <a
                   href="#"
                   target="_blank"
-                  class="text-gray-500 hover:text-[#623cea] transition duration-300 hover:scale-110"
+                  class="social-icon text-gray-500 hover:text-[#2196F3] transition duration-300 hover:scale-110"
                   title="LinkedIn"
                 >
-                  <span class="lucide text-2xl">&#xea5c;</span>
+                  <i class="fab fa-linkedin text-2xl"></i>
                 </a>
                 <a
                   href="#"
                   target="_blank"
-                  class="text-gray-500 hover:text-[#54426b] transition duration-300 hover:scale-110"
+                  class="social-icon text-gray-500 hover:text-[#607D8B] transition duration-300 hover:scale-110"
                   title="GitHub"
                 >
-                  <span class="lucide text-2xl">&#xe94a;</span>
+                  <i class="fab fa-github text-2xl"></i>
                 </a>
                 <a
                   href="#"
                   target="_blank"
-                  class="text-gray-500 hover:text-[#623cea] transition duration-300 hover:scale-110"
+                  class="social-icon text-gray-500 hover:text-[#1769FF] transition duration-300 hover:scale-110"
                   title="Behance"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="feather feather-behance inline-block"
-                  >
-                    <path
-                      d="M8.56 2.75c4.12 0 7.44 3.32 7.44 7.44s-3.32 7.44-7.44 7.44H2.75V2.75h5.81zm0 11.88c2.21 0 4-1.79 4-4s-1.79-4-4-4H6.19v8h2.37z"
-                    />
-                    <path
-                      d="M21.25 10.12h-4.5v1.5h4.5c0 1.66-1.34 3-3 3s-3-1.34-3-3v-1.5c0-1.66 1.34-3 3-3s3 1.34 3 3zm-1.5 0c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v1.5h3v-1.5z"
-                    />
-                  </svg>
+                  <i class="fab fa-behance-square text-2xl"></i>
                 </a>
                 <a
                   href="#"
                   target="_blank"
-                  class="text-gray-500 hover:text-[#623cea] transition duration-300 hover:scale-110"
+                  class="social-icon text-gray-500 hover:text-[#1DA1F2] transition duration-300 hover:scale-110"
                   title="Twitter / X"
                 >
-                  <span class="lucide text-2xl">&#xeaee;</span>
+                  <i class="fab fa-twitter text-2xl"></i>
                 </a>
               </div>
             </div>
@@ -932,69 +985,50 @@
       </section>
     </main>
 
-    <footer class="bg-[#54426b] text-[#dbd5b2] py-10 mt-20">
+    <footer class="bg-[#263238] text-[#B0BEC5] py-10 mt-20">
       <div class="container mx-auto px-6 text-center">
-        <div class="flex justify-center space-x-6 space-x-reverse mb-6">
+        <div class="flex justify-center space-x-6 mb-6">
           <a
             href="#"
             target="_blank"
             class="hover:text-white transition duration-300 hover:scale-110"
             title="LinkedIn"
-            ><span class="lucide text-xl">&#xea5c;</span></a
-          >
+            ><i class="fab fa-linkedin text-xl"></i
+          ></a>
           <a
             href="#"
             target="_blank"
             class="hover:text-white transition duration-300 hover:scale-110"
             title="GitHub"
-            ><span class="lucide text-xl">&#xe94a;</span></a
-          >
+            ><i class="fab fa-github text-xl"></i
+          ></a>
           <a
             href="#"
             target="_blank"
             class="hover:text-white transition duration-300 hover:scale-110"
             title="Behance"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="feather feather-behance inline-block"
-            >
-              <path
-                d="M8.56 2.75c4.12 0 7.44 3.32 7.44 7.44s-3.32 7.44-7.44 7.44H2.75V2.75h5.81zm0 11.88c2.21 0 4-1.79 4-4s-1.79-4-4-4H6.19v8h2.37z"
-              />
-              <path
-                d="M21.25 10.12h-4.5v1.5h4.5c0 1.66-1.34 3-3 3s-3-1.34-3-3v-1.5c0-1.66 1.34-3 3-3s3 1.34 3 3zm-1.5 0c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v1.5h3v-1.5z"
-              />
-            </svg>
-          </a>
+            ><i class="fab fa-behance-square text-xl"></i
+          ></a>
           <a
             href="#"
             target="_blank"
             class="hover:text-white transition duration-300 hover:scale-110"
             title="Twitter / X"
-            ><span class="lucide text-xl">&#xeaee;</span></a
-          >
+            ><i class="fab fa-twitter text-xl"></i
+          ></a>
         </div>
-        <div class="text-sm mb-6 space-x-3 space-x-reverse">
-          <a href="#home" class="hover:text-white">الرئيسية</a> |
-          <a href="#about" class="hover:text-white">من أنا</a> |
-          <a href="#services" class="hover:text-white">الخدمات</a> |
-          <a href="#portfolio" class="hover:text-white">أعمالي</a> |
-          <a href="#skills" class="hover:text-white">المهارات</a> |
-          <a href="#education" class="hover:text-white">التعليم</a> |
-          <a href="#contact" class="hover:text-white">تواصل</a>
+        <div class="text-sm mb-6 space-x-3">
+          <a href="#home" class="hover:text-white">Home</a> |
+          <a href="#about" class="hover:text-white">About Me</a> |
+          <a href="#services" class="hover:text-white">Services</a> |
+          <a href="#portfolio" class="hover:text-white">Portfolio</a> |
+          <a href="#skills" class="hover:text-white">Skills</a> |
+          <a href="#education" class="hover:text-white">Education</a> |
+          <a href="#contact" class="hover:text-white">Contact</a>
         </div>
         <p class="text-xs">
-          &copy; <span id="current-year"></span> [اسمك الكامل]. جميع الحقوق
-          محفوظة.
+          &copy; <span id="current-year"></span> Ahmad Salhab. All Rights
+          Reserved.
         </p>
       </div>
     </footer>
@@ -1109,14 +1143,15 @@
       contactForm.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        formMessage.textContent = "جاري الإرسال...";
+        formMessage.textContent = "Sending...";
         formMessage.classList.remove("text-red-600", "text-green-600");
-        formMessage.classList.add("text-[#623cea]");
+        formMessage.classList.add("text-[#4CAF50]"); // Use new primary color
 
         setTimeout(() => {
-          formMessage.textContent = "شكراً لك! تم استلام رسالتك بنجاح.";
-          formMessage.classList.remove("text-red-600", "text-[#623cea]");
-          formMessage.classList.add("text-[#623cea]");
+          formMessage.textContent =
+            "Thank you! Your message has been received successfully.";
+          formMessage.classList.remove("text-red-600", "text-[#4CAF50]");
+          formMessage.classList.add("text-[#4CAF50]"); // Use new primary color
           contactForm.reset();
 
           setTimeout(() => {
