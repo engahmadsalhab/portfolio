@@ -28,31 +28,31 @@
       }
       .lucide {
         font-family: "LucideIcons";
-        font-size: 1.25rem; /* Adjust size as needed */
+        font-size: 1.25rem;
         line-height: 1;
         display: inline-block;
         vertical-align: middle;
       }
       body {
         font-family: "Cairo", "Inter", sans-serif;
-        overflow-x: hidden; /* Prevent horizontal scrollbar caused by AOS */
+        overflow-x: hidden;
       }
       /* Style for active navigation link */
       .nav-link.active {
         font-weight: bold;
-        color: #3b82f6; /* blue-500 */
-        border-bottom: 2px solid #3b82f6;
+        color: #623cea; /* Primary light purple */
+        border-bottom: 2px solid #623cea;
       }
       /* Smooth scrolling behavior & Header offset */
       html {
         scroll-behavior: smooth;
-        scroll-padding-top: 80px; /* Adjust based on sticky header's height */
+        scroll-padding-top: 80px;
       }
       /* Ensure sections are always visible and offset for anchor links */
       .page-section {
         display: block;
-        padding-top: 5rem; /* Increased padding for anchor offset + spacing */
-        margin-top: -4rem; /* Adjust negative margin if needed */
+        padding-top: 5rem;
+        margin-top: -4rem;
       }
       #home {
         padding-top: 0;
@@ -69,11 +69,11 @@
       }
       .btn-primary:hover {
         transform: translateY(-2px);
-        box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3); /* blue-500 shadow */
+        box-shadow: 0 4px 10px rgba(98, 60, 234, 0.3); /* Primary light purple shadow */
       }
       .btn-secondary:hover {
         transform: translateY(-2px);
-        box-shadow: 0 4px 10px rgba(107, 114, 128, 0.2); /* gray-500 shadow */
+        box-shadow: 0 4px 10px rgba(107, 114, 128, 0.2);
       }
       .project-card:hover,
       .service-card:hover,
@@ -84,59 +84,60 @@
       }
     </style>
   </head>
-  <body class="bg-gray-100 text-gray-800">
+  <body class="bg-[#e9f1f7] text-[#54426b]">
     <header class="bg-white shadow-md sticky top-0 z-50" data-aos="fade-down">
       <nav
         class="container mx-auto px-6 py-4 flex justify-between items-center"
       >
-        <div class="text-2xl font-bold text-blue-600">احمد سلهب</div>
+        <div class="text-2xl font-bold text-[#623cea]">احمد سلهب</div>
         <div
           class="hidden md:flex space-x-4 lg:space-x-6 space-x-reverse items-center text-sm lg:text-base"
         >
           <a
             href="#home"
-            class="nav-link text-gray-600 hover:text-blue-500 active"
+            class="nav-link text-[#54426b] hover:text-[#623cea] active"
             data-target="home"
-          ></a>
+          >الرئيسية</a
+          >
           <a
             href="#about"
-            class="nav-link text-gray-600 hover:text-blue-500"
+            class="nav-link text-[#54426b] hover:text-[#623cea]"
             data-target="about"
             >من أنا</a
           >
           <a
             href="#services"
-            class="nav-link text-gray-600 hover:text-blue-500"
+            class="nav-link text-[#54426b] hover:text-[#623cea]"
             data-target="services"
             >الخدمات</a
           >
           <a
             href="#portfolio"
-            class="nav-link text-gray-600 hover:text-blue-500"
+            class="nav-link text-[#54426b] hover:text-[#623cea]"
             data-target="portfolio"
             >أعمالي</a
           >
           <a
             href="#skills"
-            class="nav-link text-gray-600 hover:text-blue-500"
+            class="nav-link text-[#54426b] hover:text-[#623cea]"
             data-target="skills"
             >المهارات</a
           >
           <a
             href="#education"
-            class="nav-link text-gray-600 hover:text-blue-500"
+            class="nav-link text-[#54426b] hover:text-[#623cea]"
             data-target="education"
             >التعليم</a
           >
           <a
             href="#certificates"
-            class="nav-link text-gray-600 hover:text-blue-500"
+            class="nav-link text-[#54426b] hover:text-[#623cea]"
             data-target="certificates"
             >الشهادات</a
           >
           <a
             href="#contact"
-            class="nav-link text-gray-600 hover:text-blue-500"
+            class="nav-link text-[#54426b] hover:text-[#623cea]"
             data-target="contact"
             >تواصل معي</a
           >
@@ -144,7 +145,7 @@
 
         <button
           id="mobile-menu-button"
-          class="md:hidden text-gray-600 focus:outline-none"
+          class="md:hidden text-[#54426b] focus:outline-none"
         >
           <span class="lucide">&#xe9b2;</span>
         </button>
@@ -152,49 +153,49 @@
       <div id="mobile-menu" class="hidden md:hidden bg-white pb-4">
         <a
           href="#home"
-          class="block px-6 py-2 text-gray-600 hover:bg-gray-100 nav-link-mobile"
+          class="block px-6 py-2 text-[#54426b] hover:bg-[#e9f1f7] nav-link-mobile"
           data-target="home"
           >الرئيسية</a
         >
         <a
           href="#about"
-          class="block px-6 py-2 text-gray-600 hover:bg-gray-100 nav-link-mobile"
+          class="block px-6 py-2 text-[#54426b] hover:bg-[#e9f1f7] nav-link-mobile"
           data-target="about"
           >من أنا</a
         >
         <a
           href="#services"
-          class="block px-6 py-2 text-gray-600 hover:bg-gray-100 nav-link-mobile"
+          class="block px-6 py-2 text-[#54426b] hover:bg-[#e9f1f7] nav-link-mobile"
           data-target="services"
           >الخدمات</a
         >
         <a
           href="#portfolio"
-          class="block px-6 py-2 text-gray-600 hover:bg-gray-100 nav-link-mobile"
+          class="block px-6 py-2 text-[#54426b] hover:bg-[#e9f1f7] nav-link-mobile"
           data-target="portfolio"
           >أعمالي</a
         >
         <a
           href="#skills"
-          class="block px-6 py-2 text-gray-600 hover:bg-gray-100 nav-link-mobile"
+          class="block px-6 py-2 text-[#54426b] hover:bg-[#e9f1f7] nav-link-mobile"
           data-target="skills"
           >المهارات</a
         >
         <a
           href="#education"
-          class="block px-6 py-2 text-gray-600 hover:bg-gray-100 nav-link-mobile"
+          class="block px-6 py-2 text-[#54426b] hover:bg-[#e9f1f7] nav-link-mobile"
           data-target="education"
           >التعليم</a
         >
         <a
           href="#certificates"
-          class="block px-6 py-2 text-gray-600 hover:bg-gray-100 nav-link-mobile"
+          class="block px-6 py-2 text-[#54426b] hover:bg-[#e9f1f7] nav-link-mobile"
           data-target="certificates"
           >الشهادات</a
         >
         <a
           href="#contact"
-          class="block px-6 py-2 text-gray-600 hover:bg-gray-100 nav-link-mobile"
+          class="block px-6 py-2 text-[#54426b] hover:bg-[#e9f1f7] nav-link-mobile"
           data-target="contact"
           >تواصل معي</a
         >
@@ -204,7 +205,7 @@
     <main class="container mx-auto px-6 py-12">
       <section
         id="home"
-        class="page-section min-h-[80vh] flex flex-col md:flex-row items-center justify-center text-center md:text-right bg-gradient-to-br from-blue-100 via-indigo-100 to-purple-100 rounded-lg p-8 md:p-16 shadow-xl mb-16 overflow-hidden"
+        class="page-section min-h-[80vh] flex flex-col md:flex-row items-center justify-center text-center md:text-right bg-gradient-to-br from-[#e9f1f7] via-[#e7dfc6] to-[#dbd5b2] rounded-lg p-8 md:p-16 shadow-xl mb-16 overflow-hidden"
       >
         <div
           class="md:w-1/2 mb-8 md:mb-0 md:ml-10"
@@ -212,9 +213,9 @@
           data-aos-delay="200"
         >
           <h1
-            class="text-4xl md:text-6xl font-bold text-gray-800 mb-4 leading-tight"
+            class="text-4xl md:text-6xl font-bold text-[#54426b] mb-4 leading-tight"
           >
-            مرحبًا! أنا <span class="text-blue-600">احمد سلهب</span>
+            مرحبًا! أنا <span class="text-[#623cea]">احمد سلهب</span>
           </h1>
           <p class="text-lg md:text-xl text-gray-600 mb-8">
             [مطور واجهات أمامية متخصص | مصمم تجربة مستخدم | خبير تسويق رقمي]،
@@ -223,12 +224,12 @@
           <div class="space-x-4 space-x-reverse">
             <a
               href="#portfolio"
-              class="btn-primary inline-block bg-blue-600 text-white px-8 py-3 rounded-lg shadow hover:bg-blue-700 text-lg"
+              class="btn-primary inline-block bg-[#623cea] text-white px-8 py-3 rounded-lg shadow hover:bg-opacity-90 text-lg"
               >شاهد أعمالي</a
             >
             <a
               href="#contact"
-              class="btn-secondary inline-block bg-white text-gray-800 px-8 py-3 rounded-lg shadow hover:bg-gray-200 text-lg border border-gray-300"
+              class="btn-secondary inline-block bg-white text-[#54426b] px-8 py-3 rounded-lg shadow hover:bg-gray-100 text-lg border border-gray-300"
               >تواصل معي</a
             >
           </div>
@@ -239,8 +240,8 @@
           data-aos-delay="400"
         >
           <img
-            src="https://placehold.co/450x450/E0E7FF/3730A3?text=صورتي+الشخصية"
-            alt="[صورة شخصية لـ احمد سلهب]"
+            src="https://images.unsplash.com/photo-1549692520-fd5c1387d552?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="صورة شخصية لـ احمد سلهب"
             class="rounded-full shadow-2xl w-72 h-72 md:w-96 md:h-96 object-cover border-8 border-white"
           />
         </div>
@@ -252,7 +253,7 @@
         data-aos="fade-up"
       >
         <h2
-          class="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800"
+          class="text-3xl md:text-4xl font-bold text-center mb-10 text-[#54426b]"
         >
           من أنا
         </h2>
@@ -262,8 +263,8 @@
             data-aos="zoom-in"
           >
             <img
-              src="https://placehold.co/350x350/F3F4F6/4B5563?text=نبذة+عني"
-              alt="[صورة رمزية أو متعلقة بالسيرة الذاتية]"
+              src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="صورة رمزية أو متعلقة بالسيرة الذاتية"
               class="rounded-lg shadow-md w-full max-w-sm object-cover"
             />
           </div>
@@ -291,17 +292,17 @@
             >
               <button
                 onclick="window.print()"
-                class="btn-secondary inline-flex items-center justify-center bg-gray-200 text-gray-800 px-6 py-3 rounded-lg shadow hover:bg-gray-300 border border-gray-300"
+                class="btn-secondary inline-flex items-center justify-center bg-gray-200 text-[#54426b] px-6 py-3 rounded-lg shadow hover:bg-gray-300 border border-gray-300"
               >
-                <span class="lucide mr-2">&#xea17;</span> {/* Print icon */}
+                <span class="lucide mr-2">&#xea17;</span>
                 طباعة الـ CV
               </button>
               <a
                 href="cv/your-cv.pdf"
                 download="احمد سلهب-CV.pdf"
-                class="btn-primary inline-flex items-center justify-center bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700"
+                class="btn-primary inline-flex items-center justify-center bg-[#623cea] text-white px-6 py-3 rounded-lg shadow hover:bg-opacity-90"
               >
-                <span class="lucide mr-2">&#xe917;</span> {/* Download icon */}
+                <span class="lucide mr-2">&#xe917;</span>
                 تنزيل الـ CV
               </a>
             </div>
@@ -315,7 +316,7 @@
 
       <section id="services" class="page-section my-16" data-aos="fade-up">
         <h2
-          class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800"
+          class="text-3xl md:text-4xl font-bold text-center mb-12 text-[#54426b]"
         >
           الخدمات التي أقدمها
         </h2>
@@ -326,11 +327,11 @@
             data-aos-delay="100"
           >
             <img
-              src="https://placehold.co/100x100/DBEAFE/3B82F6?text=خدمة+1"
-              alt="[أيقونة أو صورة خدمة 1]"
-              class="w-24 h-24 object-contain mx-auto mb-6 rounded-full border-4 border-blue-100 group-hover:border-blue-300 transition-all duration-300"
+              src="https://images.unsplash.com/photo-1517694711087-abc753066499?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="أيقونة أو صورة خدمة 1"
+              class="w-24 h-24 object-contain mx-auto mb-6 rounded-full border-4 border-[#e9f1f7] group-hover:border-[#623cea] transition-all duration-300"
             />
-            <h3 class="text-xl font-semibold mb-3 text-gray-800">
+            <h3 class="text-xl font-semibold mb-3 text-[#54426b]">
               تطوير واجهات أمامية (Frontend)
             </h3>
             <p class="text-gray-600 text-sm mb-5">
@@ -339,11 +340,10 @@
             </p>
             <a
               href="#portfolio"
-              class="text-blue-600 hover:underline text-sm font-medium inline-flex items-center"
+              class="text-[#623cea] hover:underline text-sm font-medium inline-flex items-center"
             >
               شاهد أعمال ذات صلة
-              <span class="lucide mr-1 text-xs">&#xe9c3;</span> {/* Arrow right
-              icon */}
+              <span class="lucide mr-1 text-xs">&#xe9c3;</span>
             </a>
           </div>
 
@@ -353,11 +353,11 @@
             data-aos-delay="200"
           >
             <img
-              src="https://placehold.co/100x100/D1FAE5/10B981?text=خدمة+2"
-              alt="[أيقونة أو صورة خدمة 2]"
-              class="w-24 h-24 object-contain mx-auto mb-6 rounded-full border-4 border-green-100 group-hover:border-green-300 transition-all duration-300"
+              src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="أيقونة أو صورة خدمة 2"
+              class="w-24 h-24 object-contain mx-auto mb-6 rounded-full border-4 border-[#e7dfc6] group-hover:border-[#623cea] transition-all duration-300"
             />
-            <h3 class="text-xl font-semibold mb-3 text-gray-800">
+            <h3 class="text-xl font-semibold mb-3 text-[#54426b]">
               تصميم تجربة وواجهة المستخدم (UX/UI)
             </h3>
             <p class="text-gray-600 text-sm mb-5">
@@ -366,7 +366,7 @@
             </p>
             <a
               href="#portfolio"
-              class="text-blue-600 hover:underline text-sm font-medium inline-flex items-center"
+              class="text-[#623cea] hover:underline text-sm font-medium inline-flex items-center"
             >
               شاهد أعمال ذات صلة
               <span class="lucide mr-1 text-xs">&#xe9c3;</span>
@@ -379,11 +379,11 @@
             data-aos-delay="300"
           >
             <img
-              src="https://placehold.co/100x100/FEF3C7/F59E0B?text=خدمة+3"
-              alt="[أيقونة أو صورة خدمة 3]"
-              class="w-24 h-24 object-contain mx-auto mb-6 rounded-full border-4 border-amber-100 group-hover:border-amber-300 transition-all duration-300"
+              src="https://images.unsplash.com/photo-1547394765-185e1e680c61?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="أيقونة أو صورة خدمة 3"
+              class="w-24 h-24 object-contain mx-auto mb-6 rounded-full border-4 border-[#dbd5b2] group-hover:border-[#623cea] transition-all duration-300"
             />
-            <h3 class="text-xl font-semibold mb-3 text-gray-800">
+            <h3 class="text-xl font-semibold mb-3 text-[#54426b]">
               تطوير مواقع WordPress
             </h3>
             <p class="text-gray-600 text-sm mb-5">
@@ -391,7 +391,7 @@
             </p>
             <a
               href="#portfolio"
-              class="text-blue-600 hover:underline text-sm font-medium inline-flex items-center"
+              class="text-[#623cea] hover:underline text-sm font-medium inline-flex items-center"
             >
               شاهد أعمال ذات صلة
               <span class="lucide mr-1 text-xs">&#xe9c3;</span>
@@ -402,7 +402,7 @@
 
       <section id="portfolio" class="page-section my-16" data-aos="fade-up">
         <h2
-          class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800"
+          class="text-3xl md:text-4xl font-bold text-center mb-12 text-[#54426b]"
         >
           أعمالي ومشاريعي
         </h2>
@@ -413,13 +413,13 @@
             data-aos-delay="100"
           >
             <img
-              src="https://placehold.co/600x400/D1FAE5/10B981?text=مشروع+1"
-              alt="[صورة مشروع 1]"
+              src="https://images.unsplash.com/photo-1605379399642-870262d3d051?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="صورة مشروع 1"
               class="w-full h-56 object-cover"
               onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';"
             />
             <div class="p-6">
-              <h3 class="text-xl font-semibold mb-2">عنوان المشروع الأول</h3>
+              <h3 class="text-xl font-semibold mb-2 text-[#54426b]">عنوان المشروع الأول</h3>
               <p class="text-gray-600 text-sm mb-3">
                 وصف مختصر للمشروع يوضح الهدف الرئيسي منه وما يقدمه (سطرين أو
                 ثلاثة).
@@ -430,11 +430,10 @@
               <a
                 href="#"
                 target="_blank"
-                class="text-blue-600 hover:underline inline-flex items-center text-sm font-medium"
+                class="text-[#623cea] hover:underline inline-flex items-center text-sm font-medium"
               >
                 شاهد المشروع
-                <span class="lucide ml-1 text-sm">&#xe9a6;</span> {/* External
-                link icon */}
+                <span class="lucide ml-1 text-sm">&#xe9a6;</span>
               </a>
             </div>
           </div>
@@ -445,13 +444,13 @@
             data-aos-delay="200"
           >
             <img
-              src="https://placehold.co/600x400/DBEAFE/3B82F6?text=مشروع+2"
-              alt="[صورة مشروع 2]"
+              src="https://images.unsplash.com/photo-1587620962725-abab7fe65553?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="صورة مشروع 2"
               class="w-full h-56 object-cover"
               onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';"
             />
             <div class="p-6">
-              <h3 class="text-xl font-semibold mb-2">عنوان المشروع الثاني</h3>
+              <h3 class="text-xl font-semibold mb-2 text-[#54426b]">عنوان المشروع الثاني</h3>
               <p class="text-gray-600 text-sm mb-3">
                 وصف مختصر آخر لمشروع مختلف يبرز مهارات أخرى أو نوع عمل مختلف.
               </p>
@@ -461,7 +460,7 @@
               <a
                 href="#"
                 target="_blank"
-                class="text-blue-600 hover:underline inline-flex items-center text-sm font-medium"
+                class="text-[#623cea] hover:underline inline-flex items-center text-sm font-medium"
               >
                 شاهد المشروع <span class="lucide ml-1 text-sm">&#xe9a6;</span>
               </a>
@@ -474,13 +473,13 @@
             data-aos-delay="300"
           >
             <img
-              src="https://placehold.co/600x400/FEF3C7/F59E0B?text=مشروع+3"
-              alt="[صورة مشروع 3]"
+              src="https://images.unsplash.com/photo-1549497042-4b2a9f4d3c3e?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="صورة مشروع 3"
               class="w-full h-56 object-cover"
               onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';"
             />
             <div class="p-6">
-              <h3 class="text-xl font-semibold mb-2">عنوان المشروع الثالث</h3>
+              <h3 class="text-xl font-semibold mb-2 text-[#54426b]">عنوان المشروع الثالث</h3>
               <p class="text-gray-600 text-sm mb-3">
                 وصف لمشروع ثالث، ربما يكون تصميم جرافيك أو عمل كتابة محتوى.
               </p>
@@ -490,7 +489,7 @@
               <a
                 href="#"
                 target="_blank"
-                class="text-blue-600 hover:underline inline-flex items-center text-sm font-medium"
+                class="text-[#623cea] hover:underline inline-flex items-center text-sm font-medium"
               >
                 شاهد على Behance
                 <span class="lucide ml-1 text-sm">&#xe9a6;</span>
@@ -502,11 +501,11 @@
 
       <section
         id="skills"
-        class="page-section bg-indigo-50 p-8 md:p-12 rounded-lg shadow-lg my-16"
+        class="page-section bg-[#e7dfc6] p-8 md:p-12 rounded-lg shadow-lg my-16"
         data-aos="fade-up"
       >
         <h2
-          class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800"
+          class="text-3xl md:text-4xl font-bold text-center mb-12 text-[#54426b]"
         >
           المهارات والخبرات
         </h2>
@@ -517,36 +516,34 @@
             data-aos-delay="100"
           >
             <h3
-              class="text-xl font-semibold mb-4 text-blue-600 flex items-center"
+              class="text-xl font-semibold mb-4 text-[#623cea] flex items-center"
             >
-              <span class="lucide mr-2 text-blue-500">&#xea4a;</span> المهارات
+              <span class="lucide mr-2 text-[#623cea]">&#xea4a;</span> المهارات
               التقنية
             </h3>
-            {/* Code icon */}
             <ul class="space-y-2 text-gray-700">
               <li class="flex items-center">
-                <span class="lucide text-green-500 mr-2 text-sm">&#xea14;</span>
+                <span class="lucide text-[#623cea] mr-2 text-sm">&#xea14;</span>
                 HTML5
               </li>
-              {/* Check icon */}
               <li class="flex items-center">
-                <span class="lucide text-green-500 mr-2 text-sm">&#xea14;</span>
+                <span class="lucide text-[#623cea] mr-2 text-sm">&#xea14;</span>
                 CSS3 (Tailwind, Bootstrap)
               </li>
               <li class="flex items-center">
-                <span class="lucide text-green-500 mr-2 text-sm">&#xea14;</span>
+                <span class="lucide text-[#623cea] mr-2 text-sm">&#xea14;</span>
                 JavaScript (ES6+)
               </li>
               <li class="flex items-center">
-                <span class="lucide text-green-500 mr-2 text-sm">&#xea14;</span>
+                <span class="lucide text-[#623cea] mr-2 text-sm">&#xea14;</span>
                 React / Vue.js
               </li>
               <li class="flex items-center">
-                <span class="lucide text-green-500 mr-2 text-sm">&#xea14;</span>
+                <span class="lucide text-[#623cea] mr-2 text-sm">&#xea14;</span>
                 Node.js / Express
               </li>
               <li class="flex items-center">
-                <span class="lucide text-green-500 mr-2 text-sm">&#xea14;</span>
+                <span class="lucide text-[#623cea] mr-2 text-sm">&#xea14;</span>
                 Git & GitHub
               </li>
             </ul>
@@ -558,31 +555,30 @@
             data-aos-delay="200"
           >
             <h3
-              class="text-xl font-semibold mb-4 text-green-600 flex items-center"
+              class="text-xl font-semibold mb-4 text-[#623cea] flex items-center"
             >
-              <span class="lucide mr-2 text-green-500">&#xea4f;</span> أدوات
+              <span class="lucide mr-2 text-[#623cea]">&#xea4f;</span> أدوات
               العمل
             </h3>
-            {/* Wrench icon */}
             <ul class="space-y-2 text-gray-700">
               <li class="flex items-center">
-                <span class="lucide text-blue-500 mr-2 text-sm">&#xea14;</span>
+                <span class="lucide text-[#623cea] mr-2 text-sm">&#xea14;</span>
                 VS Code
               </li>
               <li class="flex items-center">
-                <span class="lucide text-blue-500 mr-2 text-sm">&#xea14;</span>
+                <span class="lucide text-[#623cea] mr-2 text-sm">&#xea14;</span>
                 Figma / Adobe XD
               </li>
               <li class="flex items-center">
-                <span class="lucide text-blue-500 mr-2 text-sm">&#xea14;</span>
+                <span class="lucide text-[#623cea] mr-2 text-sm">&#xea14;</span>
                 Jira / Trello
               </li>
               <li class="flex items-center">
-                <span class="lucide text-blue-500 mr-2 text-sm">&#xea14;</span>
+                <span class="lucide text-[#623cea] mr-2 text-sm">&#xea14;</span>
                 Docker
               </li>
               <li class="flex items-center">
-                <span class="lucide text-blue-500 mr-2 text-sm">&#xea14;</span>
+                <span class="lucide text-[#623cea] mr-2 text-sm">&#xea14;</span>
                 Postman
               </li>
             </ul>
@@ -594,39 +590,38 @@
             data-aos-delay="300"
           >
             <h3
-              class="text-xl font-semibold mb-4 text-purple-600 flex items-center"
+              class="text-xl font-semibold mb-4 text-[#623cea] flex items-center"
             >
-              <span class="lucide mr-2 text-purple-500">&#xea57;</span> المهارات
+              <span class="lucide mr-2 text-[#623cea]">&#xea57;</span> المهارات
               الشخصية
             </h3>
-            {/* Users icon */}
             <ul class="space-y-2 text-gray-700">
               <li class="flex items-center">
-                <span class="lucide text-indigo-500 mr-2 text-sm"
+                <span class="lucide text-[#623cea] mr-2 text-sm"
                   >&#xea14;</span
                 >
                 التواصل الفعال
               </li>
               <li class="flex items-center">
-                <span class="lucide text-indigo-500 mr-2 text-sm"
+                <span class="lucide text-[#623cea] mr-2 text-sm"
                   >&#xea14;</span
                 >
                 حل المشكلات
               </li>
               <li class="flex items-center">
-                <span class="lucide text-indigo-500 mr-2 text-sm"
+                <span class="lucide text-[#623cea] mr-2 text-sm"
                   >&#xea14;</span
                 >
                 العمل الجماعي
               </li>
               <li class="flex items-center">
-                <span class="lucide text-indigo-500 mr-2 text-sm"
+                <span class="lucide text-[#623cea] mr-2 text-sm"
                   >&#xea14;</span
                 >
                 إدارة الوقت
               </li>
               <li class="flex items-center">
-                <span class="lucide text-indigo-500 mr-2 text-sm"
+                <span class="lucide text-[#623cea] mr-2 text-sm"
                   >&#xea14;</span
                 >
                 التعلم المستمر
@@ -638,30 +633,29 @@
 
       <section id="education" class="page-section my-16" data-aos="fade-up">
         <h2
-          class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800"
+          class="text-3xl md:text-4xl font-bold text-center mb-12 text-[#54426b]"
         >
           التعليم واللغات
         </h2>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
           <div class="bg-white p-8 rounded-lg shadow-lg" data-aos="fade-right">
             <h3
-              class="text-2xl font-semibold mb-6 text-blue-700 flex items-center"
+              class="text-2xl font-semibold mb-6 text-[#623cea] flex items-center"
             >
-              <span class="lucide mr-2 text-blue-600">&#xe94f;</span> التعليم
+              <span class="lucide mr-2 text-[#623cea]">&#xe94f;</span> التعليم
               الأكاديمي
             </h3>
-            {/* Graduation Cap icon */}
             <div class="space-y-6">
-              <div class="border-r-4 border-blue-200 pr-4">
-                <p class="font-semibold text-gray-800">
+              <div class="border-r-4 border-[#e9f1f7] pr-4">
+                <p class="font-semibold text-[#54426b]">
                   بكالوريوس في [اسم التخصص]
                 </p>
                 <p class="text-sm text-gray-600">[اسم الجامعة أو المعهد]</p>
                 <p class="text-xs text-gray-500">[سنة التخرج]</p>
               </div>
 
-              <div class="border-r-4 border-blue-200 pr-4">
-                <p class="font-semibold text-gray-800">
+              <div class="border-r-4 border-[#e9f1f7] pr-4">
+                <p class="font-semibold text-[#54426b]">
                   ماجستير في [اسم التخصص]
                 </p>
                 <p class="text-sm text-gray-600">[اسم الجامعة أو المعهد]</p>
@@ -676,32 +670,31 @@
             data-aos-delay="100"
           >
             <h3
-              class="text-2xl font-semibold mb-6 text-green-700 flex items-center"
+              class="text-2xl font-semibold mb-6 text-[#623cea] flex items-center"
             >
-              <span class="lucide mr-2 text-green-600">&#xea5a;</span> اللغات
+              <span class="lucide mr-2 text-[#623cea]">&#xea5a;</span> اللغات
             </h3>
-            {/* Globe icon */}
             <div class="space-y-4">
               <div class="flex justify-between items-center">
-                <span class="text-gray-800 font-medium">العربية</span>
+                <span class="text-[#54426b] font-medium">العربية</span>
                 <span
-                  class="text-sm text-green-600 bg-green-100 px-3 py-1 rounded-full"
+                  class="text-sm text-[#623cea] bg-[#e9f1f7] px-3 py-1 rounded-full"
                   >اللغة الأم</span
                 >
               </div>
 
               <div class="flex justify-between items-center">
-                <span class="text-gray-800 font-medium">الإنجليزية</span>
+                <span class="text-[#54426b] font-medium">الإنجليزية</span>
                 <span
-                  class="text-sm text-blue-600 bg-blue-100 px-3 py-1 rounded-full"
+                  class="text-sm text-[#623cea] bg-[#e9f1f7] px-3 py-1 rounded-full"
                   >مستوى متقدم / احترافي</span
                 >
               </div>
 
               <div class="flex justify-between items-center">
-                <span class="text-gray-800 font-medium">[لغة أخرى]</span>
+                <span class="text-[#54426b] font-medium">[لغة أخرى]</span>
                 <span
-                  class="text-sm text-yellow-600 bg-yellow-100 px-3 py-1 rounded-full"
+                  class="text-sm text-[#623cea] bg-[#e9f1f7] px-3 py-1 rounded-full"
                   >مستوى متوسط / مبتدئ</span
                 >
               </div>
@@ -712,7 +705,7 @@
 
       <section id="certificates" class="page-section my-16" data-aos="fade-up">
         <h2
-          class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800"
+          class="text-3xl md:text-4xl font-bold text-center mb-12 text-[#54426b]"
         >
           الشهادات والدورات
         </h2>
@@ -723,10 +716,9 @@
             data-aos-delay="100"
           >
             <div class="flex items-center mb-3 sm:mb-0">
-              <span class="lucide text-yellow-500 mr-3 text-xl">&#xea49;</span>
-              {/* Award icon */}
+              <span class="lucide text-[#623cea] mr-3 text-xl">&#xea49;</span>
               <div>
-                <h3 class="text-lg font-semibold text-blue-700">
+                <h3 class="text-lg font-semibold text-[#54426b]">
                   شهادة تطوير واجهات المستخدم المتقدمة
                 </h3>
                 <p class="text-gray-600 text-sm">
@@ -740,7 +732,7 @@
             <a
               href="#"
               target="_blank"
-              class="mt-3 sm:mt-0 text-blue-600 hover:underline inline-flex items-center text-sm font-medium self-end sm:self-center"
+              class="mt-3 sm:mt-0 text-[#623cea] hover:underline inline-flex items-center text-sm font-medium self-end sm:self-center"
             >
               عرض الشهادة <span class="lucide ml-1 text-xs">&#xe9a6;</span>
             </a>
@@ -752,10 +744,9 @@
             data-aos-delay="200"
           >
             <div class="flex items-center mb-3 sm:mb-0">
-              <span class="lucide text-yellow-500 mr-3 text-xl">&#xea49;</span>
-              {/* Award icon */}
+              <span class="lucide text-[#623cea] mr-3 text-xl">&#xea49;</span>
               <div>
-                <h3 class="text-lg font-semibold text-blue-700">
+                <h3 class="text-lg font-semibold text-[#54426b]">
                   دورة تصميم تجربة المستخدم (UX)
                 </h3>
                 <p class="text-gray-600 text-sm">
@@ -769,7 +760,7 @@
             <a
               href="#"
               target="_blank"
-              class="mt-3 sm:mt-0 text-blue-600 hover:underline inline-flex items-center text-sm font-medium self-end sm:self-center"
+              class="mt-3 sm:mt-0 text-[#623cea] hover:underline inline-flex items-center text-sm font-medium self-end sm:self-center"
             >
               عرض الشهادة <span class="lucide ml-1 text-xs">&#xe9a6;</span>
             </a>
@@ -779,7 +770,7 @@
 
       <section id="contact" class="page-section my-16" data-aos="fade-up">
         <h2
-          class="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800"
+          class="text-3xl md:text-4xl font-bold text-center mb-10 text-[#54426b]"
         >
           تواصل معي
         </h2>
@@ -801,7 +792,7 @@
                   type="text"
                   id="name"
                   name="name"
-                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-200"
+                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-[#623cea] focus:border-[#623cea] transition duration-200"
                   placeholder="اسمك الكامل"
                   required
                 />
@@ -816,7 +807,7 @@
                   type="email"
                   id="email"
                   name="email"
-                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-200"
+                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-[#623cea] focus:border-[#623cea] transition duration-200"
                   placeholder="your.email@example.com"
                   required
                 />
@@ -831,7 +822,7 @@
                   id="message"
                   name="message"
                   rows="5"
-                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-200"
+                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-[#623cea] focus:border-[#623cea] transition duration-200"
                   placeholder="اكتب رسالتك هنا..."
                   required
                 ></textarea>
@@ -839,16 +830,15 @@
               <div class="text-center lg:text-right">
                 <button
                   type="submit"
-                  class="btn-primary bg-blue-600 text-white px-8 py-3 rounded-lg shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+                  class="btn-primary bg-[#623cea] text-white px-8 py-3 rounded-lg shadow hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-[#623cea] focus:ring-opacity-50"
                 >
                   إرسال الرسالة
-                  <span class="lucide ml-2 text-sm">&#xea1e;</span> {/* Send
-                  icon */}
+                  <span class="lucide ml-2 text-sm">&#xea1e;</span>
                 </button>
               </div>
               <div
                 id="form-message"
-                class="mt-4 text-center lg:text-right text-green-600 font-medium"
+                class="mt-4 text-center lg:text-right text-[#623cea] font-medium"
               ></div>
             </form>
 
@@ -857,31 +847,29 @@
               data-aos="fade-left"
               data-aos-delay="100"
             >
-              <h3 class="text-xl font-semibold mb-4 text-gray-800">
+              <h3 class="text-xl font-semibold mb-4 text-[#54426b]">
                 معلومات التواصل
               </h3>
               <p
                 class="text-gray-600 mb-3 flex items-center justify-center lg:justify-end"
               >
-                <span class="lucide text-blue-500 ml-2">&#xe98f;</span> {/* Mail
-                icon */}
+                <span class="lucide text-[#623cea] ml-2">&#xe98f;</span>
                 <a
                   href="mailto:your.email@example.com"
-                  class="hover:text-blue-600"
+                  class="hover:text-[#623cea]"
                   >your.email@example.com</a
                 >
               </p>
               <p
                 class="text-gray-600 mb-6 flex items-center justify-center lg:justify-end"
               >
-                <span class="lucide text-green-500 ml-2">&#xea0a;</span> {/*
-                Phone icon */}
-                <a href="tel:+1234567890" class="hover:text-blue-600"
+                <span class="lucide text-[#623cea] ml-2">&#xea0a;</span>
+                <a href="tel:+1234567890" class="hover:text-[#623cea]"
                   >[+1 23 456 7890 - اختياري]</a
                 >
               </p>
 
-              <h3 class="text-xl font-semibold mb-4 text-gray-800 mt-8">
+              <h3 class="text-xl font-semibold mb-4 text-[#54426b] mt-8">
                 تابعني على
               </h3>
               <div
@@ -890,7 +878,7 @@
                 <a
                   href="#"
                   target="_blank"
-                  class="text-gray-500 hover:text-blue-700 transition duration-300 hover:scale-110"
+                  class="text-gray-500 hover:text-[#623cea] transition duration-300 hover:scale-110"
                   title="LinkedIn"
                 >
                   <span class="lucide text-2xl">&#xea5c;</span>
@@ -898,7 +886,7 @@
                 <a
                   href="#"
                   target="_blank"
-                  class="text-gray-500 hover:text-gray-900 transition duration-300 hover:scale-110"
+                  class="text-gray-500 hover:text-[#54426b] transition duration-300 hover:scale-110"
                   title="GitHub"
                 >
                   <span class="lucide text-2xl">&#xe94a;</span>
@@ -906,7 +894,7 @@
                 <a
                   href="#"
                   target="_blank"
-                  class="text-gray-500 hover:text-blue-500 transition duration-300 hover:scale-110"
+                  class="text-gray-500 hover:text-[#623cea] transition duration-300 hover:scale-110"
                   title="Behance"
                 >
                   <svg
@@ -932,7 +920,7 @@
                 <a
                   href="#"
                   target="_blank"
-                  class="text-gray-500 hover:text-blue-400 transition duration-300 hover:scale-110"
+                  class="text-gray-500 hover:text-[#623cea] transition duration-300 hover:scale-110"
                   title="Twitter / X"
                 >
                   <span class="lucide text-2xl">&#xeaee;</span>
@@ -944,7 +932,7 @@
       </section>
     </main>
 
-    <footer class="bg-gray-800 text-gray-300 py-10 mt-20">
+    <footer class="bg-[#54426b] text-[#dbd5b2] py-10 mt-20">
       <div class="container mx-auto px-6 text-center">
         <div class="flex justify-center space-x-6 space-x-reverse mb-6">
           <a
@@ -1016,8 +1004,8 @@
     <script>
       // --- Initialize AOS ---
       AOS.init({
-        duration: 800, // values from 0 to 3000, with step 50ms
-        once: false, // whether animation should happen only once - while scrolling down
+        duration: 800,
+        once: false,
       });
 
       // --- Navigation Active State and Mobile Menu ---
@@ -1025,7 +1013,7 @@
       const mobileNavLinks = document.querySelectorAll(".nav-link-mobile");
       const mobileMenuButton = document.getElementById("mobile-menu-button");
       const mobileMenu = document.getElementById("mobile-menu");
-      const sections = document.querySelectorAll(".page-section"); // Get all sections
+      const sections = document.querySelectorAll(".page-section");
 
       // Function to set the active link style
       function setActiveLink(targetId) {
@@ -1050,7 +1038,7 @@
         link.addEventListener("click", (e) => {
           const targetId = link.getAttribute("data-target");
           setActiveLink(targetId);
-          mobileMenu.classList.add("hidden"); // Close mobile menu
+          mobileMenu.classList.add("hidden");
         });
       });
 
@@ -1061,16 +1049,15 @@
 
       // --- Active link highlighting on scroll ---
       const observerOptions = {
-        root: null, // relative to document viewport
+        root: null,
         rootMargin: "0px",
-        threshold: 0.4, // 40% of section visible
+        threshold: 0.4,
       };
 
       const observerCallback = (entries, observer) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const targetId = entry.target.id;
-            // Check if there's a nav link corresponding to this section
             const correspondingLink = document.querySelector(
               `.nav-link[data-target="${targetId}"]`
             );
@@ -1100,17 +1087,12 @@
           );
           if (targetSection && correspondingLink) {
             setActiveLink(hash);
-            // Optional: smooth scroll to section on load if needed,
-            // but html scroll-behavior should handle direct hash links.
-            // setTimeout(() => { // Timeout ensures smooth scroll works after initial render
-            //     targetSection.scrollIntoView({ behavior: 'smooth' });
-            // }, 100);
           } else {
-            setActiveLink("home"); // Default to home if hash is invalid
-            history.replaceState(null, null, " "); // Remove invalid hash
+            setActiveLink("home");
+            history.replaceState(null, null, " ");
           }
         } else {
-          setActiveLink("home"); // Default to home if no hash
+          setActiveLink("home");
         }
       }
 
@@ -1125,24 +1107,22 @@
       const formMessage = document.getElementById("form-message");
 
       contactForm.addEventListener("submit", (e) => {
-        e.preventDefault(); // Prevent actual form submission for demo
+        e.preventDefault();
 
         formMessage.textContent = "جاري الإرسال...";
         formMessage.classList.remove("text-red-600", "text-green-600");
-        formMessage.classList.add("text-blue-600");
+        formMessage.classList.add("text-[#623cea]");
 
-        // Simulate sending message
         setTimeout(() => {
           formMessage.textContent = "شكراً لك! تم استلام رسالتك بنجاح.";
-          formMessage.classList.remove("text-red-600", "text-blue-600");
-          formMessage.classList.add("text-green-600");
-          contactForm.reset(); // Clear form on success
+          formMessage.classList.remove("text-red-600", "text-[#623cea]");
+          formMessage.classList.add("text-[#623cea]");
+          contactForm.reset();
 
-          // Hide message after a few seconds
           setTimeout(() => {
             formMessage.textContent = "";
           }, 4000);
-        }, 1500); // Simulate network delay
+        }, 1500);
       });
 
       // --- Refresh AOS on window resize (optional, good practice) ---
