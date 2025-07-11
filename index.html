@@ -11,6 +11,15 @@
       name="keywords"
       content="Portfolio, Ahmad Salhab, Web Developer, Projects, Skills, Experience, Contact, Services, Education"
     />
+    <meta name="description" content="بورتفوليو أحمد الصالح - مطور واجهات أمامية محترف">
+<meta name="keywords" content="بورتفوليو, مطور ويب, واجهات أمامية, HTML, CSS, JavaScript">
+<meta name="author" content="أحمد سلهب">
+<meta property="og:title" content="بورتفوليو أحمد الصالح">
+<meta property="og:description" content="بورتفوليو مطور واجهات أمامية محترف">
+<meta property="og:image" content="https://engahmadsalhab.github.io/portfolio/img/og-image.jpg">
+<meta property="og:url" content="https://engahmadsalhab.github.io/portfolio/">
+<meta property="og:type" content="website">
+
     <title>Ahmad Salhab's Portfolio</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -27,26 +36,117 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@400,248;1,248&family=Oswald:wght@400..700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,248;1,248&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <!-- AOS for scroll animations -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <style>
-      /* Updated Font Family for the entire page */
-      body {
-        font-family: "Lora", sans-serif; /* Roboto for general text */
-        overflow-x: hidden;
-        color: #333333; /* Darker grey for better readability */
-      }
-      h1, h2, h3, h4, h5, h6 {
-        font-family: "Montserrat", sans-serif; /* Inter for headings */
-      }
-      /* New Color Palette */
-      /* Primary: #4CAF50 (Green) */
-      /* Secondary: #2196F3 (Blue) */
-      /* Background: #E8F5E9 (Light Green) */
-      /* Text: #333333 (Dark Grey) */
+:root {
+  --primary-color: #4e54c8;
+  --secondary-color: #8f94fb;
+  --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  --text-color: #333;
+  --light-bg: #f9f9ff;
+}
 
-      /* Style for active navigation link */
+.header {
+  background: var(--gradient);
+}
+
+.btn-primary {
+  background: var(--gradient);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+      .portfolio-item {
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.portfolio-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.portfolio-item img {
+  transition: transform 0.5s ease;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.05);
+}  
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+      .progress-container {
+  width: 100%;
+  height: 5px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: transparent;
+}
+
+.progress-bar {
+  height: 100%;
+  background: var(--gradient);
+  width: 0%;
+  transition: width 0.1s ease;
+}
+      .whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  left: 40px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  background-color: #128C7E;
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+
+      .dark-mode {
+  --text-color: #f0f0f0;
+  --light-bg: #1a1a2e;
+  background-color: #16213e;
+  color: var(--text-color);
+}
+
+.dark-mode .header {
+  background: #0f3460;
+}
+
+
+            /* Style for active navigation link */
       .nav-link.active {
         font-weight: bold;
         color: #4CAF50; /* Primary Green */
@@ -101,9 +201,18 @@
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         z-index: 50;
       }
+      .parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
     </style>
   </head>
   <body class="bg-[#E8F5E9] text-[#333333]">
+    <div class="progress-container">
+  <div class="progress-bar" id="progressBar"></div>
+</div>
     <header class="bg-white shadow-md sticky top-0 z-50" data-aos="fade-down">
       <nav
         class="container mx-auto px-6 py-4 flex justify-between items-center"
@@ -162,6 +271,10 @@
         >
           <i class="fa-solid fa-bars text-xl"></i>
         </button>
+        <label class="theme-switch">
+  <input type="checkbox" id="theme-toggle">
+  <span class="slider round"></span>
+</label>
       </nav>
       <div id="mobile-menu" class="hidden md:hidden bg-white pb-4">
         <a
@@ -967,6 +1080,10 @@
       </section>
     </main>
 
+    <a href="https://wa.me/966123456789" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+    
     <footer class="bg-[#263238] text-[#B0BEC5] py-10 mt-20">
       <div class="container mx-auto px-6 text-center">
         <div class="flex justify-center space-x-6 mb-6">
@@ -1016,8 +1133,56 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <script>
+      // في ملف JavaScript الرئيسي
+gsap.registerPlugin(ScrollTrigger);
+
+// تأثيرات للعناصر الرئيسية
+gsap.utils.toArray('.section').forEach(section => {
+  gsap.from(section, {
+    scrollTrigger: {
+      trigger: section,
+      start: "top 80%",
+      toggleActions: "play none none none"
+    },
+    opacity: 0,
+    y: 50,
+    duration: 1
+  });
+});
+
+// تأثيرات للمشاريع
+gsap.utils.toArray('.portfolio-item').forEach(item => {
+  gsap.from(item, {
+    scrollTrigger: {
+      trigger: item,
+      start: "top 85%",
+      toggleActions: "play none none none"
+    },
+    opacity: 0,
+    scale: 0.9,
+    duration: 0.8
+  });
+});
+
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+
+      window.onscroll = function() {
+  const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = (winScroll / height) * 100;
+  document.getElementById("progressBar").style.width = scrolled + "%";
+};
       // --- Initialize AOS ---
       AOS.init({
         duration: 800,
@@ -1146,6 +1311,26 @@
       window.addEventListener("resize", () => {
         AOS.refresh();
       });
+
+      const themeToggle = document.getElementById('theme-toggle');
+const currentTheme = localStorage.getItem('theme');
+
+if (currentTheme) {
+  document.body.classList.add(currentTheme);
+  if (currentTheme === 'dark-mode') {
+    themeToggle.checked = true;
+  }
+}
+
+themeToggle.addEventListener('change', function() {
+  if (this.checked) {
+    document.body.classList.add('dark-mode');
+    localStorage.setItem('theme', 'dark-mode');
+  } else {
+    document.body.classList.remove('dark-mode');
+    localStorage.setItem('theme', 'light-mode');
+  }
+});
     </script>
   </body>
 </html>
