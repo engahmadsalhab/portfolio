@@ -1,1307 +1,549 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Ahmad Salhab's Portfolio - Showcasing projects, skills, and experience in data entry and extraction, automated data retrieval, web design, and graphic/video design using Canva."
-    />
-    <meta
-      name="keywords"
-      content="Portfolio, Ahmad Salhab, Web Developer, Projects, Skills, Experience, Contact, Services, Education"
-    />
-    <meta name="description" content="بورتفوليو أحمد الصالح - مطور واجهات أمامية محترف">
-<meta name="keywords" content="بورتفوليو, مطور ويب, واجهات أمامية, HTML, CSS, JavaScript">
-<meta name="author" content="أحمد سلهب">
-<meta property="og:title" content="بورتفوليو أحمد الصالح">
-<meta property="og:description" content="بورتفوليو مطور واجهات أمامية محترف">
-<meta property="og:image" content="https://engahmadsalhab.github.io/portfolio/img/og-image.jpg">
-<meta property="og:url" content="https://engahmadsalhab.github.io/portfolio/">
-<meta property="og:type" content="website">
-
-    <title>Ahmad Salhab's Portfolio</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome for social icons and other icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <!-- Google Fonts for 'Inter' (headings) and 'Roboto' (body/paragraphs) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@400,248;1,248&family=Oswald:wght@400..700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,248;1,248&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-    <!-- AOS for scroll animations -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <style>
-.portfolio-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-}
-
-.portfolio-item img {
-  transition: transform 0.5s ease;
-}
-
-.portfolio-item:hover img {
-  transform: scale(1.05);
-}  
-body {
-  font-family: 'Poppins', sans-serif;
-  line-height: 1.7;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  line-height: 1.2;
-}
-      .progress-container {
-  width: 100%;
-  height: 5px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  background: transparent;
-}
-
-.progress-bar {
-  height: 100%;
-  background: var(--gradient);
-  width: 0%;
-  transition: width 0.1s ease;
-}
-      .whatsapp-float {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  bottom: 40px;
-  left: 40px;
-  background-color: #25d366;
-  color: #FFF;
-  border-radius: 50px;
-  text-align: center;
-  font-size: 30px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-}
-
-.whatsapp-float:hover {
-  background-color: #128C7E;
-  transform: scale(1.1);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-}
-
-
-      .dark-mode {
-  --text-color: #f0f0f0;
-  --light-bg: #1a1a2e;
-  background-color: #16213e;
-  color: var(--text-color);
-}
-
-.dark-mode .header {
-  background: #0f3460;
-}
-
-
-            /* Style for active navigation link */
-      .nav-link.active {
-        font-weight: bold;
-        color: #4CAF50; /* Primary Green */
-        border-bottom: 2px solid #4CAF50;
-      }
-      /* Smooth scrolling behavior & Header offset */
-      html {
-        scroll-behavior: smooth;
-        scroll-padding-top: 80px; /* Offset for sticky header */
-      }
-      /* Ensure sections are always visible and offset for anchor links */
-      .page-section {
-        display: block;
-        padding-top: 5rem;
-        margin-top: -4rem;
-      }
-      #home {
-        padding-top: 0;
-        margin-top: 0;
-      }
-      /* Simple transition for interactive elements */
-      .btn-primary,
-      .btn-secondary,
-      .project-card,
-      .service-card,
-      .certificate-item,
-      .blog-card,
-      .social-icon {
-        transition: all 0.3s ease-in-out;
-      }
-      .btn-primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3); /* Primary Green shadow */
-      }
-      .btn-secondary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 10px rgba(107, 114, 128, 0.2);
-      }
-      .project-card:hover,
-      .service-card:hover,
-      .certificate-item:hover,
-      .blog-card:hover {
-        transform: translateY(-5px) scale(1.02);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      }
-      /* Sticky Navbar */
-      .sticky-header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background-color: white;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        z-index: 50;
-      }
-      .parallax {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-    </style>
-  </head>
-  <body class="bg-[#E8F5E9] text-[#333333]">
-    <div class="progress-container">
-  <div class="progress-bar" id="progressBar"></div>
-</div>
-    <header class="bg-white shadow-md sticky top-0 z-50" data-aos="fade-down">
-      <nav
-        class="container mx-auto px-6 py-4 flex justify-between items-center"
-      >
-        <div class="text-2xl font-bold text-[#4CAF50]">Ahmad Salhab</div>
-        <div
-          class="hidden md:flex space-x-4 lg:space-x-6 items-center text-sm lg:text-base"
-        >
-          <a
-            href="#about"
-            class="nav-link text-[#333333] hover:text-[#4CAF50]"
-            data-target="about"
-            >About Me</a
-          >
-          <a
-            href="#services"
-            class="nav-link text-[#333333] hover:text-[#4CAF50]"
-            data-target="services"
-            >Services</a
-          >
-          <a
-            href="#portfolio"
-            class="nav-link text-[#333333] hover:text-[#4CAF50]"
-            data-target="portfolio"
-            >Portfolio</a
-          >
-          <a
-            href="#skills"
-            class="nav-link text-[#333333] hover:text-[#4CAF50]"
-            data-target="skills"
-            >Skills</a
-          >
-          <a
-            href="#education"
-            class="nav-link text-[#333333] hover:text-[#4CAF50]"
-            data-target="education"
-            >Education</a
-          >
-          <a
-            href="#certificates"
-            class="nav-link text-[#333333] hover:text-[#4CAF50]"
-            data-target="certificates"
-            >Certificates</a
-          >
-          <a
-            href="#contact"
-            class="nav-link text-[#333333] hover:text-[#4CAF50]"
-            data-target="contact"
-            >Contact Me</a
-          >
-        </div>
-
-        <button
-          id="mobile-menu-button"
-          class="md:hidden text-[#333333] focus:outline-none"
-        >
-          <i class="fa-solid fa-bars text-xl"></i>
-        </button>
-        <label class="theme-switch">
-  <input type="checkbox" id="theme-toggle">
-  <span class="slider round"></span>
-</label>
-      </nav>
-      <div id="mobile-menu" class="hidden md:hidden bg-white pb-4">
-        <a
-          href="#home"
-          class="block px-6 py-2 text-[#333333] hover:bg-[#E8F5E9] nav-link-mobile"
-          data-target="home"
-          >Home</a
-        >
-        <a
-          href="#about"
-          class="block px-6 py-2 text-[#333333] hover:bg-[#E8F5E9] nav-link-mobile"
-          data-target="about"
-          >About Me</a
-        >
-        <a
-          href="#services"
-          class="block px-6 py-2 text-[#333333] hover:bg-[#E8F5E9] nav-link-mobile"
-          data-target="services"
-          >Services</a
-        >
-        <a
-          href="#portfolio"
-          class="block px-6 py-2 text-[#333333] hover:bg-[#E8F5E9] nav-link-mobile"
-          data-target="portfolio"
-          >Portfolio</a
-        >
-        <a
-          href="#skills"
-          class="block px-6 py-2 text-[#333333] hover:bg-[#E8F5E9] nav-link-mobile"
-          data-target="skills"
-          >Skills</a
-        >
-        <a
-          href="#education"
-          class="block px-6 py-2 text-[#333333] hover:bg-[#E8F5E9] nav-link-mobile"
-          data-target="education"
-          >Education</a
-        >
-        <a
-          href="#certificates"
-          class="block px-6 py-2 text-[#333333] hover:bg-[#E8F5E9] nav-link-mobile"
-          data-target="certificates"
-          >Certificates</a
-        >
-        <a
-          href="#contact"
-          class="block px-6 py-2 text-[#333333] hover:bg-[#E8F5E9] nav-link-mobile"
-          data-target="contact"
-          >Contact Me</a
-        >
-      </div>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="أحمد صلحاب - مطور ويب ومختص دعم تقني">
+    <meta name="keywords" content="مطور ويب, Python, دعم تقني, تصميم">
+    <title>أحمد صلحاب - مطور ويب ومختص دعم تقني</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="assets/css/style.css" as="style">
+    <link rel="preload" href="assets/js/main.js" as="script">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2>أحمد صلحاب</h2>
+                </div>
+                
+                <!-- Visitor Counter -->
+                <div class="visitor-counter">
+                    <i class="fas fa-eye"></i>
+                    <span id="visitor-count">0</span>
+                    <span>زائر</span>
+                </div>
+                
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#home" class="nav-link">الرئيسية</a></li>
+                    <li><a href="#about" class="nav-link">نبذة عني</a></li>
+                    <li><a href="#services" class="nav-link">خدماتي</a></li>
+                    <li><a href="#portfolio" class="nav-link">أعمالي</a></li>
+                    <li><a href="#skills" class="nav-link">مهاراتي</a></li>
+                    <li><a href="#education" class="nav-link">التعليم</a></li>
+                    <li><a href="#languages" class="nav-link">اللغات</a></li>
+                    <li><a href="#certificates" class="nav-link">الشهادات</a></li>
+                    <li><a href="#contact" class="nav-link">تواصل معي</a></li>
+                </ul>
+                
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <main class="container mx-auto px-6 py-12">
-      <section
-        id="home"
-        class="page-section min-h-[80vh] flex flex-col md:flex-row items-center justify-center text-center md:text-left bg-gradient-to-br from-[#E8F5E9] via-[#DCEDC8] to-[#C8E6C9] rounded-lg p-8 md:p-16 shadow-xl mb-16 overflow-hidden"
-      >
-        <div
-          class="md:w-1/2 mb-8 md:mb-0 md:mr-10"
-          data-aos="fade-right"
-          data-aos-delay="200"
-        >
-          <h1
-            class="text-4xl md:text-6xl font-bold text-[#333333] mb-4 leading-tight"
-          >
-            <span class="text-[#4CAF50]">Ahmad Salhab</span>
-          </h1>
-          <p class="text-lg md:text-xl text-gray-700 mb-4">
-            IT Support Specialist @ Albaath university | Python Developer | Canva Creative
-          </p>
-          <!-- Social Media Icons at the top of the page -->
-          <div class="flex justify-center md:justify-start space-x-4 mb-8">
-            <a
-              href="https://www.linkedin.com/in/ahmad-salhab-bf/"
-              target="_blank"
-              class="social-icon text-[#333333] hover:text-[#2196F3] transition duration-300 hover:scale-110"
-              title="LinkedIn"
-            >
-              <i class="fab fa-linkedin text-3xl"></i>
-            </a>
-            <a
-              href="http://github.com/engahmadsalhab/"
-              target="_blank"
-              class="social-icon text-[#333333] hover:text-[#607D8B] transition duration-300 hover:scale-110"
-              title="GitHub"
-            >
-              <i class="fab fa-github text-3xl"></i>
-            </a>
-            <a
-              href="https://www.facebook.com/Brian1F"
-              target="_blank"
-              class="social-icon text-[#333333] hover:text-[#1DA1F2] transition duration-300 hover:scale-110"
-              title="Facebook"
-            >
-              <i class="fab fa-facebook text-3xl"></i>
-            </a>
-            <!-- Add more social media icons as needed -->
-          </div>
-          <div class="space-x-4">
-            <a
-              href="#portfolio"
-              class="btn-primary inline-block bg-[#4CAF50] text-white px-8 py-3 rounded-lg shadow hover:bg-opacity-90 text-lg"
-              >View My Work</a
-            >
-            <a
-              href="#contact"
-              class="btn-secondary inline-block bg-white text-[#333333] px-8 py-3 rounded-lg shadow hover:bg-gray-100 text-lg border border-gray-300"
-              >Contact Me</a
-            >
-          </div>
-        </div>
-        <div
-          class="md:w-1/2 flex justify-center"
-          data-aos="fade-left"
-          data-aos-delay="400"
-        >
-          <img
-            src="https://images.unsplash.com/photo-1649877508777-1554357604eb?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Ahmad Salhab's personal photo"
-            class="rounded-full shadow-2xl w-72 h-72 md:w-96 md:h-96 object-cover border-8 border-white lazyload"
-            loading="lazy"
-            onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';"
-          />
-        </div>
-      </section>
-
-      <section
-        id="about"
-        class="page-section bg-white p-8 md:p-12 rounded-lg shadow-lg my-16"
-        data-aos="fade-up"
-      >
-        <h2
-          class="text-3xl md:text-4xl font-bold text-center mb-10 text-[#333333]"
-        >
-          About Me
-        </h2>
-        <div class="flex flex-col lg:flex-row items-center">
-          <div
-            class="lg:w-1/3 mb-8 lg:mb-0 flex justify-center"
-            data-aos="zoom-in"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Avatar or resume-related image"
-              class="rounded-lg shadow-md w-full max-w-sm object-cover lazyload"
-              loading="lazy"
-              onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';"
-            />
-          </div>
-          <div
-            class="lg:w-2/3 lg:pl-10 text-gray-700 leading-relaxed text-center lg:text-left"
-            data-aos="fade-left"
-            data-aos-delay="200"
-          >
-            <p class="mb-4 text-lg">
-              I'm Ahmad Salhab, a passionate Web Developer with [X] years of
-              experience in transforming challenges into innovative solutions. I
-              believe in the power of good design, clean code, and meaningful
-              content to achieve tangible results.
-            </p>
-            <p class="mb-4">
-              I always strive to learn the latest technologies and apply best
-              practices in my work, focusing on delivering real value to clients
-              and users.
-            </p>
-            <p class="mb-6">
-              <strong>Core Values:</strong> Innovation, Quality, Collaboration,
-              Transparency, Commitment.
-            </p>
-
-            <div
-              class="mt-8 flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4"
-            >
-              <button
-                onclick="window.print()"
-                class="btn-secondary inline-flex items-center justify-center bg-gray-200 text-[#333333] px-6 py-3 rounded-lg shadow hover:bg-gray-300 border border-gray-300"
-              >
-                <i class="fa-solid fa-print mr-2"></i>
-                Print CV
-              </button>
-              <a
-                href="cv/your-cv.pdf"
-                download="Ahmad-Salhab-CV.pdf"
-                class="btn-primary inline-flex items-center justify-center bg-[#4CAF50] text-white px-6 py-3 rounded-lg shadow hover:bg-opacity-90"
-              >
-                <i class="fa-solid fa-download mr-2"></i>
-                Download CV
-              </a>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">أحمد صلحاب</h1>
+                <p class="hero-subtitle">مختص دعم تقني @ جامعة البعث | مطور Python | مبدع Canva</p>
+                
+                <div class="hero-social">
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="https://www.facebook.com/tech.hand.as" class="social-link"><i class="fab fa-facebook"></i></a>
+                </div>
+                
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="btn btn-primary">شاهد أعمالي</a>
+                    <a href="#contact" class="btn btn-secondary">تواصل معي</a>
+                </div>
             </div>
-            <p class="mt-4 text-xs text-gray-500 text-center lg:text-left">
-              (Note: Make sure to place your CV file in the `cv` folder and
-              name it `your-cv.pdf` or update the link).
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="services" class="page-section my-16" data-aos="fade-up">
-        <h2
-          class="text-3xl md:text-4xl font-bold text-center mb-12 text-[#333333]"
-        >
-          Services I Offer
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          <div
-            class="service-card bg-white rounded-lg shadow-lg overflow-hidden text-center p-8 group"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1623282033815-40b05d96c903?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Service 1 Icon or Image"
-              class="w-24 h-24 object-contain mx-auto mb-6 rounded-full border-4 border-[#E8F5E9] group-hover:border-[#4CAF50] transition-all duration-300 lazyload"
-              loading="lazy"
-              onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';"
-            />
-            <h3 class="text-xl font-semibold mb-3 text-[#333333]">
-              Frontend Development
-            </h3>
-            <p class="text-gray-700 text-sm mb-5">
-              Building interactive and responsive user interfaces using the
-              latest technologies like React and Vue.
-            </p>
-            <a
-              href="#portfolio"
-              class="text-[#4CAF50] hover:underline text-sm font-medium inline-flex items-center"
-            >
-              View Related Work
-              <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
-            </a>
-          </div>
-
-          <div
-            class="service-card bg-white rounded-lg shadow-lg overflow-hidden text-center p-8 group"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Service 2 Icon or Image"
-              class="w-24 h-24 object-contain mx-auto mb-6 rounded-full border-4 border-[#DCEDC8] group-hover:border-[#4CAF50] transition-all duration-300 lazyload"
-              loading="lazy"
-              onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';"
-            />
-            <h3 class="text-xl font-semibold mb-3 text-[#333333]">
-              UX/UI Design
-            </h3>
-            <p class="text-gray-700 text-sm mb-5">
-              Designing intuitive and visually appealing user experiences that
-              focus on achieving business goals.
-            </p>
-            <a
-              href="#portfolio"
-              class="text-[#4CAF50] hover:underline text-sm font-medium inline-flex items-center"
-            >
-              View Related Work
-              <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
-            </a>
-          </div>
-
-          <div
-            class="service-card bg-white rounded-lg shadow-lg overflow-hidden text-center p-8 group"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1568716353609-12ddc5c67f04?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Service 3 Icon or Image"
-              class="w-24 h-24 object-contain mx-auto mb-6 rounded-full border-4 border-[#C8E6C9] group-hover:border-[#4CAF50] transition-all duration-300 lazyload"
-              loading="lazy"
-              onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';"
-            />
-            <h3 class="text-xl font-semibold mb-3 text-[#333333]">
-              WordPress Development
-            </h3>
-            <p class="text-gray-700 text-sm mb-5">
-              Creating and customizing powerful and easy-to-manage WordPress
-              sites for businesses and individuals.
-            </p>
-            <a
-              href="#portfolio"
-              class="text-[#4CAF50] hover:underline text-sm font-medium inline-flex items-center"
-            >
-              View Related Work
-              <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section id="portfolio" class="page-section my-16" data-aos="fade-up">
-        <h2
-          class="text-3xl md:text-4xl font-bold text-center mb-12 text-[#333333]"
-        >
-          My Work & Projects
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          <div
-            class="project-card bg-white rounded-lg shadow-lg overflow-hidden group"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1605379399642-870262d3d051?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Project 1 Image"
-              class="w-full h-56 object-cover lazyload"
-              loading="lazy"
-              onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';"
-            />
-            <div class="p-6">
-              <h3 class="text-xl font-semibold mb-2 text-[#333333]">
-                Project One Title
-              </h3>
-              <p class="text-gray-700 text-sm mb-3">
-                A brief description of the project, explaining its main goal and
-                what it offers (two or three lines).
-              </p>
-              <p class="text-sm text-gray-600 mb-4">
-                <strong>Technologies:</strong> HTML, CSS, JavaScript
-              </p>
-              <a
-                href="#"
-                target="_blank"
-                class="text-[#4CAF50] hover:underline inline-flex items-center text-sm font-medium"
-              >
-                View Project
-                <i class="fa-solid fa-up-right-from-square ml-1 text-sm"></i>
-              </a>
+            
+            <div class="hero-image">
+                <div class="image-placeholder">
+                    <i class="fas fa-user-circle"></i>
+                </div>
             </div>
-          </div>
-
-          <div
-            class="project-card bg-white rounded-lg shadow-lg overflow-hidden group"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1559028012-481c04fa702d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTJ8fHdlYnNpdGV8ZW58MHx8MHx8fDA%3D"
-              alt="Project 2 Image"
-              class="w-full h-56 object-cover lazyload"
-              loading="lazy"
-              onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';"
-            />
-            <div class="p-6">
-              <h3 class="text-xl font-semibold mb-2 text-[#333333]">
-                Project Two Title
-              </h3>
-              <p class="text-gray-700 text-sm mb-3">
-                Another brief description of a different project highlighting
-                other skills or a different type of work.
-              </p>
-              <p class="text-sm text-gray-600 mb-4">
-                <strong>Technologies:</strong> React, Tailwind CSS, Node.js
-              </p>
-              <a
-                href="#"
-                target="_blank"
-                class="text-[#4CAF50] hover:underline inline-flex items-center text-sm font-medium"
-              >
-                View Project
-                <i class="fa-solid fa-up-right-from-square ml-1 text-sm"></i>
-              </a>
-            </div>
-          </div>
-
-          <div
-            class="project-card bg-white rounded-lg shadow-lg overflow-hidden group"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            <img
-              src="https://plus.unsplash.com/premium_photo-1720503225766-21dff692f754?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Project 3 Image"
-              class="w-full h-56 object-cover lazyload"
-              loading="lazy"
-              onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';"
-            />
-            <div class="p-6">
-              <h3 class="text-xl font-semibold mb-2 text-[#333333]">
-                Project Three Title
-              </h3>
-              <p class="text-gray-700 text-sm mb-3">
-                Description for a third project, perhaps graphic design or
-                content writing work.
-              </p>
-              <p class="text-sm text-gray-600 mb-4">
-                <strong>Tools:</strong> Photoshop, Illustrator
-              </p>
-              <a
-                href="#"
-                target="_blank"
-                class="text-[#4CAF50] hover:underline inline-flex items-center text-sm font-medium"
-              >
-                View on Behance
-                <i class="fa-solid fa-up-right-from-square ml-1 text-sm"></i>
-              </a>
-            </div>
-          </div>
         </div>
-      </section>
+    </section>
 
-      <section
-        id="skills"
-        class="page-section bg-[#DCEDC8] p-8 md:p-12 rounded-lg shadow-lg my-16"
-        data-aos="fade-up"
-      >
-        <h2
-          class="text-3xl md:text-4xl font-bold text-center mb-12 text-[#333333]"
-        >
-          Skills & Expertise
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div
-            class="bg-white p-6 rounded-lg shadow-md"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <h3
-              class="text-xl font-semibold mb-4 text-[#4CAF50] flex items-center"
-            >
-              <i class="fa-solid fa-code mr-2 text-[#4CAF50]"></i> Technical
-              Skills
-            </h3>
-            <ul class="space-y-2 text-gray-700">
-              <li class="flex items-center">
-                <i class="fa-solid fa-check text-[#4CAF50] mr-2 text-sm"></i>
-                HTML5
-              </li>
-              <li class="flex items-center">
-                <i class="fa-solid fa-check text-[#4CAF50] mr-2 text-sm"></i>
-                CSS3 (Tailwind, Bootstrap)
-              </li>
-              <li class="flex items-center">
-                <i class="fa-solid fa-check text-[#4CAF50] mr-2 text-sm"></i>
-                JavaScript (ES6+)
-              </li>
-              <li class="flex items-center">
-                <i class="fa-solid fa-check text-[#4CAF50] mr-2 text-sm"></i>
-                React / Vue.js
-              </li>
-              <li class="flex items-center">
-                <i class="fa-solid fa-check text-[#4CAF50] mr-2 text-sm"></i>
-                Node.js / Express
-              </li>
-              <li class="flex items-center">
-                <i class="fa-solid fa-check text-[#4CAF50] mr-2 text-sm"></i>
-                Git & GitHub
-              </li>
-            </ul>
-          </div>
-
-          <div
-            class="bg-white p-6 rounded-lg shadow-md"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <h3
-              class="text-xl font-semibold mb-4 text-[#4CAF50] flex items-center"
-            >
-              <i class="fa-solid fa-screwdriver-wrench mr-2 text-[#4CAF50]"></i>
-              Tools
-            </h3>
-            <ul class="space-y-2 text-gray-700">
-              <li class="flex items-center">
-                <i class="fa-solid fa-check text-[#4CAF50] mr-2 text-sm"></i>
-                VS Code
-              </li>
-              <li class="flex items-center">
-                <i class="fa-solid fa-check text-[#4CAF50] mr-2 text-sm"></i>
-                Figma / Adobe XD
-              </li>
-              <li class="flex items-center">
-                <i class="fa-solid fa-check text-[#4CAF50] mr-2 text-sm"></i>
-                Jira / Trello
-              </li>
-              <li class="flex items-center">
-                <i class="fa-solid fa-check text-[#4CAF50] mr-2 text-sm"></i>
-                Docker
-              </li>
-              <li class="flex items-center">
-                <i class="fa-solid fa-check text-[#4CAF50] mr-2 text-sm"></i>
-                Postman
-              </li>
-            </ul>
-          </div>
-
-          <div
-            class="bg-white p-6 rounded-lg shadow-md"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            <h3
-              class="text-xl font-semibold mb-4 text-[#4CAF50] flex items-center"
-            >
-              <i class="fa-solid fa-user-gear mr-2 text-[#4CAF50]"></i> Personal
-              Skills
-            </h3>
-            <ul class="space-y-2 text-gray-700">
-              <li class="flex items-center">
-                <i class="fa-solid fa-check text-[#4CAF50] mr-2 text-sm"></i>
-                Effective Communication
-              </li>
-              <li class="flex items-center">
-                <i class="fa-solid fa-check text-[#4CAF50] mr-2 text-sm"></i>
-                Problem Solving
-              </li>
-              <li class="flex items-center">
-                <i class="fa-solid fa-check text-[#4CAF50] mr-2 text-sm"></i>
-                Teamwork
-              </li>
-              <li class="flex items-center">
-                <i class="fa-solid fa-check text-[#4CAF50] mr-2 text-sm"></i>
-                Time Management
-              </li>
-              <li class="flex items-center">
-                <i class="fa-solid fa-check text-[#4CAF50] mr-2 text-sm"></i>
-                Continuous Learning
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="education" class="page-section my-16" data-aos="fade-up">
-        <h2
-          class="text-3xl md:text-4xl font-bold text-center mb-12 text-[#333333]"
-        >
-          Education & Languages
-        </h2>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          <div class="bg-white p-8 rounded-lg shadow-lg" data-aos="fade-right">
-            <h3
-              class="text-2xl font-semibold mb-6 text-[#4CAF50] flex items-center"
-            >
-              <i class="fa-solid fa-graduation-cap mr-2 text-[#4CAF50]"></i>
-              Academic Education
-            </h3>
-            <div class="space-y-6">
-              <div class="border-l-4 border-[#E8F5E9] pl-4">
-                <p class="font-semibold text-[#333333]">
-                  Bachelor's Degree in [Major Name]
-                </p>
-                <p class="text-sm text-gray-700">
-                  [University or Institute Name]
-                </p>
-                <p class="text-xs text-gray-600">[Graduation Year]</p>
-              </div>
-
-              <div class="border-l-4 border-[#E8F5E9] pl-4">
-                <p class="font-semibold text-[#333333]">
-                  Master's Degree in [Major Name]
-                </p>
-                <p class="text-sm text-gray-700">
-                  [University or Institute Name]
-                </p>
-                <p class="text-xs text-gray-600">[Graduation Year]</p>
-              </div>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">نبذة عني</h2>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>أنا أحمد صلحاب، مطور ويب شغوف بخبرة واسعة في تحويل التحديات إلى حلول مبتكرة. أؤمن بقوة التصميم الجيد والكود النظيف والمحتوى الهادف لتحقيق نتائج ملموسة.</p>
+                    
+                    <p>أسعى دائماً لتعلم أحدث التقنيات وتطبيق أفضل الممارسات في عملي، مع التركيز على تقديم قيمة حقيقية للعملاء والمستخدمين.</p>
+                    
+                    <div class="core-values">
+                        <h3>القيم الأساسية:</h3>
+                        <ul>
+                            <li><i class="fas fa-lightbulb"></i> الابتكار</li>
+                            <li><i class="fas fa-star"></i> الجودة</li>
+                            <li><i class="fas fa-handshake"></i> التعاون</li>
+                            <li><i class="fas fa-eye"></i> الشفافية</li>
+                            <li><i class="fas fa-heart"></i> الالتزام</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="cv-buttons">
+                        <button class="btn btn-outline" onclick="window.print()">
+                            <i class="fas fa-print"></i> طباعة السيرة الذاتية
+                        </button>
+                        <a href="cv/ahmad-salhab-cv.pdf" class="btn btn-primary" download>
+                            <i class="fas fa-download"></i> تحميل السيرة الذاتية
+                        </a>
+                    </div>
+                </div>
             </div>
-          </div>
+        </div>
+    </section>
 
-          <div
-            class="bg-white p-8 rounded-lg shadow-lg"
-            data-aos="fade-left"
-            data-aos-delay="100"
-          >
-            <h3
-              class="text-2xl font-semibold mb-6 text-[#4CAF50] flex items-center"
-            >
-              <i class="fa-solid fa-language mr-2 text-[#4CAF50]"></i> Languages
-            </h3>
-            <div class="space-y-4">
-              <div class="flex justify-between items-center">
-                <span class="text-[#333333] font-medium">Arabic</span>
-                <span
-                  class="text-sm text-[#4CAF50] bg-[#E8F5E9] px-3 py-1 rounded-full"
-                  >Native Speaker</span
-                >
-              </div>
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">خدماتي</h2>
+            
+            <div class="services-grid">
+                <!-- Frontend Development -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>تطوير الواجهات الأمامية</h3>
+                    <p>بناء واجهات مستخدم تفاعلية ومتجاوبة باستخدام أحدث التقنيات مثل React و Vue.</p>
+                    <div class="service-price">ابتداءً من \$50</div>
+                    <a href="https://khamsat.com/user/zakria_naser/services" class="btn btn-sm">عرض الخدمة</a>
+                </div>
 
-              <div class="flex justify-between items-center">
-                <span class="text-[#333333] font-medium">English</span>
-                <span
-                  class="text-sm text-[#4CAF50] bg-[#E8F5E9] px-3 py-1 rounded-full"
-                  >Advanced / Professional</span
-                >
-              </div>
+                <!-- UX/UI Design -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>تصميم UX/UI</h3>
+                    <p>تصميم تجارب مستخدم بديهية وجذابة بصرياً تركز على تحقيق الأهداف التجارية.</p>
+                    <div class="service-price">ابتداءً من \$75</div>
+                    <a href="https://mostaql.com/u/Zakria_Naser" class="btn btn-sm">عرض الخدمة</a>
+                </div>
 
-              <div class="flex justify-between items-center">
-                <span class="text-[#333333] font-medium"
-                  >[Other Language]</span
-                >
-                <span
-                  class="text-sm text-[#4CAF50] bg-[#E8F5E9] px-3 py-1 rounded-full"
-                  >Intermediate / Beginner</span
-                >
-              </div>
+                <!-- WordPress Development -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fab fa-wordpress"></i>
+                    </div>
+                    <h3>تطوير WordPress</h3>
+                    <p>إنشاء وتخصيص مواقع WordPress قوية وسهلة الإدارة للشركات والأفراد.</p>
+                    <div class="service-price">ابتداءً من \$100</div>
+                    <a href="https://www.facebook.com/tech.hand.as" class="btn btn-sm">عرض الخدمة</a>
+                </div>
+
+                <!-- Python Development -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>تطوير Python</h3>
+                    <p>تطوير تطبيقات وسكريبتات Python لأتمتة المهام وتحليل البيانات.</p>
+                    <div class="service-price">ابتداءً من \$60</div>
+                    <a href="https://khamsat.com/user/zakria_naser/services" class="btn btn-sm">عرض الخدمة</a>
+                </div>
+
+                <!-- Technical Support -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>الدعم التقني</h3>
+                    <p>تقديم الدعم التقني المتخصص وحل المشاكل التقنية للأنظمة والتطبيقات.</p>
+                    <div class="service-price">ابتداءً من \$25</div>
+                    <a href="https://mostaql.com/u/Zakria_Naser" class="btn btn-sm">عرض الخدمة</a>
+                </div>
+
+                <!-- Canva Design -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>تصميم Canva</h3>
+                    <p>إنشاء تصاميم إبداعية ومهنية للوسائل الاجتماعية والمواد التسويقية.</p>
+                    <div class="service-price">ابتداءً من \$15</div>
+                    <a href="https://www.facebook.com/tech.hand.as" class="btn btn-sm">عرض الخدمة</a>
+                </div>
             </div>
-          </div>
         </div>
-      </section>
+    </section>
 
-      <section id="certificates" class="page-section my-16" data-aos="fade-up">
-        <h2
-          class="text-3xl md:text-4xl font-bold text-center mb-12 text-[#333333]"
-        >
-          Certificates & Courses
-        </h2>
-        <div class="space-y-6">
-          <div
-            class="certificate-item bg-white p-6 rounded-lg shadow-md flex flex-col sm:flex-row justify-between items-start sm:items-center group"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div class="flex items-center mb-3 sm:mb-0">
-              <i class="fa-solid fa-certificate text-[#4CAF50] mr-3 text-xl"></i>
-              <div>
-                <h3 class="text-lg font-semibold text-[#333333]">
-                  Advanced User Interface Development Certificate
-                </h3>
-                <p class="text-gray-700 text-sm">
-                  Institution: Udemy / Coursera / Other Platform
-                </p>
-                <p class="text-gray-600 text-xs mt-1">
-                  Date Obtained: March 2024
-                </p>
-              </div>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">أعمالي السابقة</h2>
+            
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">الكل</button>
+                <button class="filter-btn" data-filter="web">تطوير ويب</button>
+                <button class="filter-btn" data-filter="design">تصميم</button>
+                <button class="filter-btn" data-filter="python">Python</button>
             </div>
-            <a
-              href="#"
-              target="_blank"
-              class="mt-3 sm:mt-0 text-[#4CAF50] hover:underline inline-flex items-center text-sm font-medium self-end sm:self-center"
-            >
-              View Certificate
-              <i class="fa-solid fa-up-right-from-square ml-1 text-xs"></i>
-            </a>
-          </div>
-
-          <div
-            class="certificate-item bg-white p-6 rounded-lg shadow-md flex flex-col sm:flex-row justify-between items-start sm:items-center group"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <div class="flex items-center mb-3 sm:mb-0">
-              <i class="fa-solid fa-certificate text-[#4CAF50] mr-3 text-xl"></i>
-              <div>
-                <h3 class="text-lg font-semibold text-[#333333]">
-                  User Experience (UX) Design Course
-                </h3>
-                <p class="text-gray-700 text-sm">
-                  Institution: Google / Interaction Design Foundation
-                </p>
-                <p class="text-gray-600 text-xs mt-1">
-                  Date Obtained: January 2024
-                </p>
-              </div>
+            
+            <div class="portfolio-grid" id="portfolio-grid">
+                <!-- Portfolio items will be loaded dynamically -->
             </div>
-            <a
-              href="#"
-              target="_blank"
-              class="mt-3 sm:mt-0 text-[#4CAF50] hover:underline inline-flex items-center text-sm font-medium self-end sm:self-center"
-            >
-              View Certificate
-              <i class="fa-solid fa-up-right-from-square ml-1 text-xs"></i>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="page-section my-16" data-aos="fade-up">
-        <h2
-          class="text-3xl md:text-4xl font-bold text-center mb-10 text-[#333333]"
-        >
-          Contact Me
-        </h2>
-        <div
-          class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-xl"
-        >
-          <p class="text-center text-gray-700 mb-10 text-lg">
-            Do you have a project idea or an inquiry? I'd love to hear from you!
-          </p>
-          <div class="flex flex-col lg:flex-row gap-10">
-            <form id="contact-form" class="lg:w-2/3" data-aos="fade-right">
-              <div class="mb-5">
-                <label
-                  for="name"
-                  class="block mb-2 text-sm font-medium text-gray-700"
-                  >Name <span class="text-red-500">*</span></label
-                >
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-[#4CAF50] focus:border-[#4CAF50] transition duration-200"
-                  placeholder="Your Full Name"
-                  required
-                />
-              </div>
-              <div class="mb-5">
-                <label
-                  for="email"
-                  class="block mb-2 text-sm font-medium text-gray-700"
-                  >Email <span class="text-red-500">*</span></label
-                >
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-[#4CAF50] focus:border-[#4CAF50] transition duration-200"
-                  placeholder="your.email@example.com"
-                  required
-                />
-              </div>
-              <div class="mb-6">
-                <label
-                  for="message"
-                  class="block mb-2 text-sm font-medium text-gray-700"
-                  >Your Message <span class="text-red-500">*</span></label
-                >
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="5"
-                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-[#4CAF50] focus:border-[#4CAF50] transition duration-200"
-                  placeholder="Write your message here..."
-                  required
-                ></textarea>
-              </div>
-              <div class="text-center lg:text-left">
-                <button
-                  type="submit"
-                  class="btn-primary bg-[#4CAF50] text-white px-8 py-3 rounded-lg shadow hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-[#4CAF50] focus:ring-opacity-50"
-                >
-                  Send Message
-                  <i class="fa-solid fa-paper-plane ml-2 text-sm"></i>
-                </button>
-              </div>
-              <div
-                id="form-message"
-                class="mt-4 text-center lg:text-left text-[#4CAF50] font-medium"
-              ></div>
-            </form>
-
-            <div
-              class="lg:w-1/3 mt-8 lg:mt-0 lg:border-l lg:border-gray-200 lg:pl-8 text-center lg:text-left"
-              data-aos="fade-left"
-              data-aos-delay="100"
-            >
-              <h3 class="text-xl font-semibold mb-4 text-[#333333]">
-                Contact Information
-              </h3>
-              <p
-                class="text-gray-700 mb-3 flex items-center justify-center lg:justify-start"
-              >
-                <i class="fa-solid fa-envelope text-[#4CAF50] mr-2"></i>
-                <a
-                  href="mailto:a7mdsalhab9@gmail.com"
-                  class="hover:text-[#4CAF50]"
-                  >a7mdsalhab9@gmail.com</a
-                >
-              </p>
-              <p
-                class="text-gray-700 mb-6 flex items-center justify-center lg:justify-start"
-              >
-                <i class="fa-solid fa-phone text-[#4CAF50] mr-2"></i>
-                <a href="tel:+1234567890" class="hover:text-[#4CAF50]"
-                  >+963 940-630-928</a
-                >
-              </p>
-
-              <h3 class="text-xl font-semibold mb-4 text-[#333333] mt-8">
-                Follow Me
-              </h3>
-              <div class="flex justify-center lg:justify-start space-x-5">
-            <a
-              href="https://www.linkedin.com/in/ahmad-salhab-bf/"
-              target="_blank"
-              class="social-icon text-[#333333] hover:text-[#2196F3] transition duration-300 hover:scale-110"
-              title="LinkedIn"
-            >
-              <i class="fab fa-linkedin text-3xl"></i>
-            </a>
-            <a
-              href="http://github.com/engahmadsalhab/"
-              target="_blank"
-              class="social-icon text-[#333333] hover:text-[#607D8B] transition duration-300 hover:scale-110"
-              title="GitHub"
-            >
-              <i class="fab fa-github text-3xl"></i>
-            </a>
-            <a
-              href="https://www.facebook.com/Brian1F"
-              target="_blank"
-              class="social-icon text-[#333333] hover:text-[#1DA1F2] transition duration-300 hover:scale-110"
-              title="Facebook"
-            >
-              <i class="fab fa-facebook text-3xl"></i>
-            </a>
-              </div>
+            
+            <div class="portfolio-load-more">
+                <button class="btn btn-primary" id="load-more">عرض المزيد</button>
             </div>
-          </div>
         </div>
-      </section>
-    </main>
+    </section>
 
-    <a href="https://wa.me/+963940630928" class="whatsapp-float" target="_blank">
-  <i class="fab fa-whatsapp"></i>
-</a>
-    
-    <footer class="bg-[#263238] text-[#B0BEC5] py-10 mt-20">
-      <div class="container mx-auto px-6 text-center">
-        <div class="flex justify-center space-x-6 mb-6">
-          <a
-            href="#"
-            target="_blank"
-            class="hover:text-white transition duration-300 hover:scale-110"
-            title="LinkedIn"
-            ><i class="fab fa-linkedin text-xl"></i
-          ></a>
-          <a
-            href="#"
-            target="_blank"
-            class="hover:text-white transition duration-300 hover:scale-110"
-            title="GitHub"
-            ><i class="fab fa-github text-xl"></i
-          ></a>
-          <a
-            href="#"
-            target="_blank"
-            class="hover:text-white transition duration-300 hover:scale-110"
-            title="Behance"
-            ><i class="fab fa-behance-square text-xl"></i
-          ></a>
-          <a
-            href="#"
-            target="_blank"
-            class="hover:text-white transition duration-300 hover:scale-110"
-            title="Twitter / X"
-            ><i class="fab fa-twitter text-xl"></i
-          ></a>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">مهاراتي وخبراتي</h2>
+            
+            <div class="skills-grid">
+                <!-- Technical Skills -->
+                <div class="skills-category">
+                    <h3><i class="fas fa-code"></i> المهارات التقنية</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <span>HTML5</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>CSS3 (Tailwind, Bootstrap)</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>JavaScript (ES6+)</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>React / Vue.js</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Python</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Node.js / Express</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="skills-category">
+                    <h3><i class="fas fa-tools"></i> الأدوات</h3>
+                    <div class="tools-grid">
+                        <div class="tool-item">
+                            <i class="fas fa-code"></i>
+                            <span>VS Code</span>
+                        </div>
+                        <div class="tool-item">
+                            <i class="fab fa-figma"></i>
+                            <span>Figma</span>
+                        </div>
+                        <div class="tool-item">
+                            <i class="fab fa-git-alt"></i>
+                            <span>Git & GitHub</span>
+                        </div>
+                        <div class="tool-item">
+                            <i class="fab fa-docker"></i>
+                            <span>Docker</span>
+                        </div>
+                        <div class="tool-item">
+                            <i class="fas fa-database"></i>
+                            <span>Postman</span>
+                        </div>
+                        <div class="tool-item">
+                            <i class="fas fa-tasks"></i>
+                            <span>Jira / Trello</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Personal Skills -->
+                <div class="skills-category">
+                    <h3><i class="fas fa-user"></i> المهارات الشخصية</h3>
+                    <div class="personal-skills">
+                        <div class="personal-skill">
+                            <i class="fas fa-comments"></i>
+                            <span>التواصل الفعال</span>
+                        </div>
+                        <div class="personal-skill">
+                            <i class="fas fa-puzzle-piece"></i>
+                            <span>حل المشكلات</span>
+                        </div>
+                        <div class="personal-skill">
+                            <i class="fas fa-users"></i>
+                            <span>العمل الجماعي</span>
+                        </div>
+                        <div class="personal-skill">
+                            <i class="fas fa-clock"></i>
+                            <span>إدارة الوقت</span>
+                        </div>
+                        <div class="personal-skill">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>التعلم المستمر</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="text-sm mb-6 space-x-3">
-          <a href="#home" class="hover:text-white">Home</a> |
-          <a href="#about" class="hover:text-white">About Me</a> |
-          <a href="#services" class="hover:text-white">Services</a> |
-          <a href="#portfolio" class="hover:text-white">Portfolio</a> |
-          <a href="#skills" class="hover:text-white">Skills</a> |
-          <a href="#education" class="hover:text-white">Education</a> |
-          <a href="#contact" class="hover:text-white">Contact</a>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <h2 class="section-title">التعليم</h2>
+            
+            <div class="education-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>بكالوريوس في علوم الحاسوب</h3>
+                        <h4>جامعة البعث</h4>
+                        <span class="timeline-date">2020 - 2024</span>
+                        <p>تخصص في تطوير البرمجيات وأنظمة المعلومات مع التركيز على تقنيات الويب الحديثة.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>دبلوم في الدعم التقني</h3>
+                        <h4>معهد التقنيات المتقدمة</h4>
+                        <span class="timeline-date">2019 - 2020</span>
+                        <p>دراسة متخصصة في صيانة الأنظمة والشبكات وحل المشاكل التقنية.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <p class="text-xs">
-          &copy; <span id="current-year"></span> Ahmad Salhab. All Rights
-          Reserved.
-        </p>
-      </div>
+    </section>
+
+    <!-- Languages Section -->
+    <section id="languages" class="languages">
+        <div class="container">
+            <h2 class="section-title">اللغات</h2>
+            
+            <div class="languages-grid">
+                <div class="language-card">
+                    <div class="language-flag">🇸🇾</div>
+                    <h3>العربية</h3>
+                    <p>اللغة الأم</p>
+                    <div class="language-level">
+                        <div class="level-bar">
+                            <div class="level-progress" style="width: 100%"></div>
+                        </div>
+                        <span>متحدث أصلي</span>
+                    </div>
+                </div>
+                
+                <div class="language-card">
+                    <div class="language-flag">🇺🇸</div>
+                    <h3>الإنجليزية</h3>
+                    <p>لغة ثانية</p>
+                    <div class="language-level">
+                        <div class="level-bar">
+                            <div class="level-progress" style="width: 85%"></div>
+                        </div>
+                        <span>متقدم / مهني</span>
+                    </div>
+                </div>
+                
+                <div class="language-card">
+                    <div class="language-flag">🇫🇷</div>
+                    <h3>الفرنسية</h3>
+                    <p>لغة إضافية</p>
+                    <div class="language-level">
+                        <div class="level-bar">
+                            <div class="level-progress" style="width: 45%"></div>
+                        </div>
+                        <span>متوسط</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="certificates">
+        <div class="container">
+            <h2 class="section-title">الشهادات والدورات</h2>
+            
+            <div class="certificates-grid">
+                <div class="certificate-card">
+                    <div class="certificate-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>شهادة تطوير واجهات المستخدم المتقدمة</h3>
+                        <p class="certificate-institution">المؤسسة: Udemy</p>
+                        <p class="certificate-date">تاريخ الحصول: مارس 2024</p>
+                        <a href="#" class="btn btn-sm">عرض الشهادة</a>
+                    </div>
+                </div>
+                
+                <div class="certificate-card">
+                    <div class="certificate-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>دورة تصميم تجربة المستخدم (UX)</h3>
+                        <p class="certificate-institution">المؤسسة: Google</p>
+                        <p class="certificate-date">تاريخ الحصول: يناير 2024</p>
+                        <a href="#" class="btn btn-sm">عرض الشهادة</a>
+                    </div>
+                </div>
+                
+                <div class="certificate-card">
+                    <div class="certificate-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>شهادة Python للمطورين</h3>
+                        <p class="certificate-institution">المؤسسة: Coursera</p>
+                        <p class="certificate-date">تاريخ الحصول: ديسمبر 2023</p>
+                        <a href="#" class="btn btn-sm">عرض الشهادة</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">تواصل معي</h2>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>معلومات التواصل</h3>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>البريد الإلكتروني</h4>
+                            <p>a7mdsalhab9@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>رقم الهاتف</h4>
+                            <p>+963 940-630-928</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-social">
+                        <h4>تابعني على</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                            <a href="https://www.facebook.com/tech.hand.as" class="social-link"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>هل لديك مشروع أو استفسار؟ أحب أن أسمع منك!</h3>
+                    
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">الاسم *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">رسالتك *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            إرسال الرسالة
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#home">الرئيسية</a>
+                    <a href="#about">نبذة عني</a>
+                    <a href="#services">خدماتي</a>
+                    <a href="#portfolio">أعمالي</a>
+                    <a href="#skills">مهاراتي</a>
+                    <a href="#education">التعليم</a>
+                    <a href="#contact">تواصل معي</a>
+                </div>
+                
+                <div class="footer-copyright">
+                    <p>&copy; 2024 أحمد صلحاب. جميع الحقوق محفوظة.</p>
+                </div>
+            </div>
+        </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-    <script>
-      // في ملف JavaScript الرئيسي
-gsap.registerPlugin(ScrollTrigger);
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-// تأثيرات للعناصر الرئيسية
-gsap.utils.toArray('.section').forEach(section => {
-  gsap.from(section, {
-    scrollTrigger: {
-      trigger: section,
-      start: "top 80%",
-      toggleActions: "play none none none"
-    },
-    opacity: 0,
-    y: 50,
-    duration: 1
-  });
-});
+    <!-- Loading Spinner -->
+    <div id="loading-spinner" class="loading-spinner">
+        <div class="spinner"></div>
+    </div>
 
-// تأثيرات للمشاريع
-gsap.utils.toArray('.portfolio-item').forEach(item => {
-  gsap.from(item, {
-    scrollTrigger: {
-      trigger: item,
-      start: "top 85%",
-      toggleActions: "play none none none"
-    },
-    opacity: 0,
-    scale: 0.9,
-    duration: 0.8
-  });
-});
-
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
-});
-
-      window.onscroll = function() {
-  const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  const scrolled = (winScroll / height) * 100;
-  document.getElementById("progressBar").style.width = scrolled + "%";
-};
-      // --- Initialize AOS ---
-      AOS.init({
-        duration: 800,
-        once: false,
-      });
-
-      // --- Navigation Active State and Mobile Menu ---
-      const navLinks = document.querySelectorAll(".nav-link");
-      const mobileNavLinks = document.querySelectorAll(".nav-link-mobile");
-      const mobileMenuButton = document.getElementById("mobile-menu-button");
-      const mobileMenu = document.getElementById("mobile-menu");
-      const sections = document.querySelectorAll(".page-section");
-
-      // Function to set the active link style
-      function setActiveLink(targetId) {
-        navLinks.forEach((link) => {
-          link.classList.remove("active");
-          if (link.getAttribute("data-target") === targetId) {
-            link.classList.add("active");
-          }
-        });
-      }
-
-      // Add click listeners to desktop links
-      navLinks.forEach((link) => {
-        link.addEventListener("click", (e) => {
-          const targetId = link.getAttribute("data-target");
-          setActiveLink(targetId);
-        });
-      });
-
-      // Add click listeners to mobile links
-      mobileNavLinks.forEach((link) => {
-        link.addEventListener("click", (e) => {
-          const targetId = link.getAttribute("data-target");
-          setActiveLink(targetId);
-          mobileMenu.classList.add("hidden");
-        });
-      });
-
-      // Mobile menu toggle
-      mobileMenuButton.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
-
-      // --- Active link highlighting on scroll ---
-      const observerOptions = {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.4,
-      };
-
-      const observerCallback = (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const targetId = entry.target.id;
-            const correspondingLink = document.querySelector(
-              `.nav-link[data-target="${targetId}"]`
-            );
-            if (correspondingLink) {
-              setActiveLink(targetId);
-            }
-          }
-        });
-      };
-
-      const observer = new IntersectionObserver(
-        observerCallback,
-        observerOptions
-      );
-
-      sections.forEach((section) => {
-        observer.observe(section);
-      });
-
-      // Set active link on initial page load based on hash (if any)
-      function handlePageLoad() {
-        const hash = window.location.hash.substring(1);
-        if (hash) {
-          const targetSection = document.getElementById(hash);
-          const correspondingLink = document.querySelector(
-            `.nav-link[data-target="${hash}"]`
-          );
-          if (targetSection && correspondingLink) {
-            setActiveLink(hash);
-          } else {
-            setActiveLink("home");
-            history.replaceState(null, null, " ");
-          }
-        } else {
-          setActiveLink("home");
-        }
-      }
-
-      window.addEventListener("DOMContentLoaded", handlePageLoad);
-
-      // --- Footer Year ---
-      document.getElementById("current-year").textContent =
-        new Date().getFullYear();
-
-      // --- Contact Form Handling (Basic) ---
-      const contactForm = document.getElementById("contact-form");
-      const formMessage = document.getElementById("form-message");
-
-      contactForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-
-        formMessage.textContent = "Sending...";
-        formMessage.classList.remove("text-red-600", "text-green-600");
-        formMessage.classList.add("text-[#4CAF50]"); // Use new primary color
-
-        setTimeout(() => {
-          formMessage.textContent =
-            "Thank you! Your message has been received successfully.";
-          formMessage.classList.remove("text-red-600", "text-[#4CAF50]");
-          formMessage.classList.add("text-[#4CAF50]"); // Use new primary color
-          contactForm.reset();
-
-          setTimeout(() => {
-            formMessage.textContent = "";
-          }, 4000);
-        }, 1500);
-      });
-
-      // --- Refresh AOS on window resize (optional, good practice) ---
-      window.addEventListener("resize", () => {
-        AOS.refresh();
-      });
-
-      const themeToggle = document.getElementById('theme-toggle');
-const currentTheme = localStorage.getItem('theme');
-
-if (currentTheme) {
-  document.body.classList.add(currentTheme);
-  if (currentTheme === 'dark-mode') {
-    themeToggle.checked = true;
-  }
-}
-
-themeToggle.addEventListener('change', function() {
-  if (this.checked) {
-    document.body.classList.add('dark-mode');
-    localStorage.setItem('theme', 'dark-mode');
-  } else {
-    document.body.classList.remove('dark-mode');
-    localStorage.setItem('theme', 'light-mode');
-  }
-});
-    </script>
-  </body>
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+</body>
 </html>
