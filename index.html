@@ -1,196 +1,563 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" data-theme="light">
+<html lang="ar" dir="rtl" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أحمد صلحاب - مطور ويب وخبير تقني</title>
+    <meta name="description" content="أحمد صلحاب - مطور ويب ومختص دعم تقني">
+    <meta name="keywords" content="مطور ويب, Python, دعم تقني, تصميم, أحمد صلحاب">
+    <title>أحمد صلحاب - مطور ويب ومختص دعم تقني</title>
     
-    <!-- Meta Tags for SEO -->
-    <meta name="description" content="أحمد صلحاب، مطور ويب متخصص في Python و JavaScript، ومصمم تجارب مستخدم. استكشف أعمالي وتواصل معي لتحويل فكرتك إلى حقيقة.">
-    <meta name="keywords" content="مطور ويب, Full-Stack, Python, JavaScript, React, Node.js, UX/UI, أحمد صلحاب">
-    <meta name="author" content="أحمد صلحاب">
-    <meta property="og:title" content="أحمد صلحاب - مطور ويب وخبير تقني"/>
-    <meta property="og:description" content="مطور ويب متخصص في بناء حلول رقمية مبتكرة وعالية الأداء."/>
-    <meta property="og:image" content="assets/images/og-image.jpg"/>
-    <meta property="og:url" content="https://your-domain.com"/>
-    <meta name="twitter:card" content="summary_large_image"/>
-
-    <!-- Favicon -->
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
-
-    <!-- Libraries -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#058C42',
+                        'secondary': '#046B4E',
+                        'accent': '#FFC420',
+                        'dark': '#1A1A1A',
+                        'light-gray': '#F5F5F5',
+                        'medium-gray': '#E0E0E0',
+                        'dark-gray': '#333333',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'progress-fill': 'progressFill 1.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(20px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
+                        },
+                        progressFill: {
+                            '0%': { width: '0%' },
+                            '100%': { width: 'var(--progress-width)' },
+                        }
+                    },
+                }
+            }
+        }
+    </script>
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom Styles for animations and overrides -->
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f8f8f8;
+            color: #1A1A1A;
+            overflow-x: hidden;
+        }
 
+        /* Dark Mode */
+        .dark-mode body {
+            background-color: #1A1A1A;
+            color: #E0E0E0;
+        }
+        .dark-mode .bg-white {
+            background-color: #333333;
+        }
+        .dark-mode .text-dark-gray {
+            color: #E0E0E0;
+        }
+        .dark-mode .border-medium-gray {
+            border-color: #444;
+        }
+        .dark-mode .service-card {
+            background-color: #2a2a2a;
+        }
+        .dark-mode .portfolio-item {
+            background-color: #2a2a2a;
+        }
+        .dark-mode input, .dark-mode textarea {
+            background-color: #444;
+            color: #E0E0E0;
+            border-color: #555;
+        }
+        .dark-mode .footer {
+            background-color: #1a1a1a;
+            color: #E0E0E0;
+            border-top-color: #333;
+        }
+        .dark-mode .header {
+            background-color: rgba(26, 26, 26, 0.9);
+            backdrop-filter: blur(10px);
+        }
+
+        .animated-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .skill-progress {
+            width: 0;
+            animation: none;
+        }
+
+        .skill-progress.visible {
+            animation: progressFill 1.5s ease-out forwards;
+        }
+        
+        #loading-spinner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease-out;
+        }
+        .dark-mode #loading-spinner {
+            background-color: #1A1A1A;
+        }
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 5px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            border-top-color: #058C42;
+            animation: spin 1s ease-in-out infinite;
+        }
+        .dark-mode .spinner {
+             border: 5px solid rgba(255, 255, 255, 0.1);
+             border-top-color: #058C42;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+
+<body class="font-cairo transition-colors duration-500">
     <!-- Loading Spinner -->
-    <div id="loading-spinner" class="loading-spinner active">
+    <div id="loading-spinner">
         <div class="spinner"></div>
     </div>
 
-    <!-- Header -->
-    <header class="header">
-        <nav class="navbar container">
-            <a href="#home" class="nav-logo">أحمد صلحاب</a>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="#home" class="nav-link active">الرئيسية</a></li>
-                <li><a href="#about" class="nav-link">عني</a></li>
-                <li><a href="#services" class="nav-link">خدماتي</a></li>
-                <li><a href="#portfolio" class="nav-link">أعمالي</a></li>
-                <li><a href="#skills" class="nav-link">مهاراتي</a></li>
-                <li><a href="#contact" class="nav-link">تواصل</a></li>
-            </ul>
-            <div class="nav-actions">
-                <button id="theme-toggle" class="theme-toggle-btn" aria-label="تبديل الوضع">
-                    <i class="fas fa-sun"></i>
-                    <i class="fas fa-moon"></i>
+    <!-- Header & Navbar -->
+    <header class="header bg-white/90 dark:bg-dark/90 fixed w-full z-50 shadow-md backdrop-blur-md transition-all duration-300">
+        <nav class="navbar container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="nav-logo text-2xl font-bold text-primary">
+                <h2>أحمد صلحاب</h2>
+            </div>
+            
+            <div class="flex items-center space-x-4 space-x-reverse">
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-light-gray dark:hover:bg-dark-gray transition-colors duration-300 focus:outline-none">
+                    <i class="fas fa-moon text-dark dark:text-light-gray text-xl"></i>
                 </button>
-                <div class="hamburger" id="hamburger" aria-label="فتح القائمة">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                
+                <!-- Visitor Counter -->
+                <div class="flex items-center text-sm text-dark-gray dark:text-medium-gray p-2 bg-light-gray dark:bg-dark-gray rounded-full">
+                    <i class="fas fa-eye ml-2 text-primary"></i>
+                    <span id="visitor-count" class="font-bold">0</span>
+                    <span>زائر</span>
                 </div>
+            </div>
+            
+            <ul class="nav-menu hidden md:flex space-x-6 space-x-reverse text-dark-gray dark:text-medium-gray">
+                <li><a href="#home" class="nav-link relative after:content-[''] after:absolute after:h-0.5 after:bg-primary after:rounded-full after:w-0 hover:after:w-full after:transition-all after:duration-300 after:-bottom-1 after:right-0">الرئيسية</a></li>
+                <li><a href="#about" class="nav-link relative after:content-[''] after:absolute after:h-0.5 after:bg-primary after:rounded-full after:w-0 hover:after:w-full after:transition-all after:duration-300 after:-bottom-1 after:right-0">نبذة عني</a></li>
+                <li><a href="#services" class="nav-link relative after:content-[''] after:absolute after:h-0.5 after:bg-primary after:rounded-full after:w-0 hover:after:w-full after:transition-all after:duration-300 after:-bottom-1 after:right-0">خدماتي</a></li>
+                <li><a href="#portfolio" class="nav-link relative after:content-[''] after:absolute after:h-0.5 after:bg-primary after:rounded-full after:w-0 hover:after:w-full after:transition-all after:duration-300 after:-bottom-1 after:right-0">أعمالي</a></li>
+                <li><a href="#skills" class="nav-link relative after:content-[''] after:absolute after:h-0.5 after:bg-primary after:rounded-full after:w-0 hover:after:w-full after:transition-all after:duration-300 after:-bottom-1 after:right-0">مهاراتي</a></li>
+                <li><a href="#contact" class="nav-link relative after:content-[''] after:absolute after:h-0.5 after:bg-primary after:rounded-full after:w-0 hover:after:w-full after:transition-all after:duration-300 after:-bottom-1 after:right-0">تواصل معي</a></li>
+            </ul>
+            
+            <div class="hamburger md:hidden p-2 text-dark dark:text-light-gray cursor-pointer" id="hamburger">
+                <i class="fas fa-bars text-xl"></i>
             </div>
         </nav>
     </header>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white dark:bg-dark shadow-lg z-50 transform translate-x-full transition-transform duration-300 ease-in-out">
+        <div class="flex justify-between items-center p-4 border-b dark:border-dark-gray">
+            <h3 class="font-bold text-lg text-primary">القائمة</h3>
+            <button id="close-menu" class="text-dark dark:text-light-gray focus:outline-none">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <ul class="flex flex-col p-4 space-y-4 text-dark-gray dark:text-medium-gray">
+            <li><a href="#home" class="mobile-nav-link text-lg block p-2 rounded-md hover:bg-light-gray dark:hover:bg-dark-gray transition-colors">الرئيسية</a></li>
+            <li><a href="#about" class="mobile-nav-link text-lg block p-2 rounded-md hover:bg-light-gray dark:hover:bg-dark-gray transition-colors">نبذة عني</a></li>
+            <li><a href="#services" class="mobile-nav-link text-lg block p-2 rounded-md hover:bg-light-gray dark:hover:bg-dark-gray transition-colors">خدماتي</a></li>
+            <li><a href="#portfolio" class="mobile-nav-link text-lg block p-2 rounded-md hover:bg-light-gray dark:hover:bg-dark-gray transition-colors">أعمالي</a></li>
+            <li><a href="#skills" class="mobile-nav-link text-lg block p-2 rounded-md hover:bg-light-gray dark:hover:bg-dark-gray transition-colors">مهاراتي</a></li>
+            <li><a href="#contact" class="mobile-nav-link text-lg block p-2 rounded-md hover:bg-light-gray dark:hover:bg-dark-gray transition-colors">تواصل معي</a></li>
+        </ul>
+    </div>
 
     <main>
         <!-- Hero Section -->
-        <section id="home" class="hero">
-            <div id="particles-js"></div>
-            <div class="hero-container container">
-                <div class="hero-content">
-                    <h1 class="hero-title">أحمد صلحاب</h1>
-                    <p class="hero-subtitle">مطور ويب ومختص دعم تقني</p>
-                    <p class="hero-description">أقوم ببناء حلول رقمية مبتكرة تركز على تجربة المستخدم والأداء العالي. متخصص في Python, JavaScript, وتصميم الواجهات الحديثة.</p>
-                    <div class="hero-buttons">
-                        <a href="#portfolio" class="btn btn-primary">استكشف أعمالي <i class="fas fa-arrow-left"></i></a>
-                        <a href="assets/cv.pdf" download class="btn btn-secondary">تحميل السيرة الذاتية <i class="fas fa-download"></i></a>
+        <section id="home" class="min-h-screen pt-24 pb-12 flex items-center bg-light-gray dark:bg-dark-gray transition-colors duration-500">
+            <div class="container mx-auto px-4 animated-section">
+                <div class="flex flex-col md:flex-row-reverse items-center justify-between gap-12">
+                    <div class="hero-content text-center md:text-right md:w-1/2 animate-fade-in-up">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-dark dark:text-white leading-tight">أحمد صلحاب</h1>
+                        <p class="text-lg md:text-xl text-primary font-semibold mt-2">مختص دعم تقني | مطور Python | مصمم Canva</p>
+                        <p class="text-dark-gray dark:text-medium-gray mt-4 max-w-lg mx-auto md:mx-0">
+                            مطور ويب شغوف بخبرة واسعة في تحويل التحديات إلى حلول مبتكرة. أؤمن بقوة التصميم الجيد والكود النظيف والمحتوى الهادف لتحقيق نتائج ملموسة.
+                        </p>
+                        
+                        <div class="flex justify-center md:justify-end items-center space-x-4 space-x-reverse mt-6">
+                            <a href="#" class="social-link w-10 h-10 flex items-center justify-center bg-medium-gray dark:bg-dark-gray text-dark dark:text-white rounded-full hover:bg-primary hover:text-white transition-all duration-300"><i class="fab fa-linkedin text-xl"></i></a>
+                            <a href="#" class="social-link w-10 h-10 flex items-center justify-center bg-medium-gray dark:bg-dark-gray text-dark dark:text-white rounded-full hover:bg-primary hover:text-white transition-all duration-300"><i class="fab fa-github text-xl"></i></a>
+                            <a href="https://www.facebook.com/tech.hand.as" class="social-link w-10 h-10 flex items-center justify-center bg-medium-gray dark:bg-dark-gray text-dark dark:text-white rounded-full hover:bg-primary hover:text-white transition-all duration-300"><i class="fab fa-facebook text-xl"></i></a>
+                        </div>
+                        
+                        <div class="flex justify-center md:justify-end items-center gap-4 mt-6">
+                            <a href="#portfolio" class="btn btn-primary bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-secondary transition-colors duration-300 shadow-lg">شاهد أعمالي</a>
+                            <a href="#contact" class="btn btn-secondary border-2 border-primary text-primary font-bold py-3 px-6 rounded-lg hover:bg-primary hover:text-white transition-colors duration-300">تواصل معي</a>
+                        </div>
                     </div>
-                    <div class="hero-social">
-                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    
+                    <div class="hero-image flex-shrink-0 relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden bg-white dark:bg-dark-gray p-4 shadow-xl animate-fade-in-up md:animate-delay-300">
+                         <!-- placeholder image -->
+                         <img src="https://placehold.co/500x500/058C42/FFFFFF?text=Ahmad" alt="Ahmad Salhab" class="rounded-full w-full h-full object-cover">
                     </div>
-                </div>
-                <div class="hero-image">
-                    <img src="https://via.placeholder.com/400" alt="أحمد صلحاب">
                 </div>
             </div>
         </section>
-
+        
         <!-- About Section -->
-        <section id="about" class="about section">
-            <div class="container">
-                <h2 class="section-title">نبذة عني</h2>
-                <div class="about-content">
-                    <div class="about-image">
-                        <img src="https://via.placeholder.com/350" alt="صورة شخصية">
-                    </div>
-                    <div class="about-text">
-                        <h3>مطور شغوف ومبدع</h3>
-                        <p>أنا أحمد، مطور ويب أجمع بين الشغف التقني والإبداع لتقديم حلول رقمية استثنائية. بخبرة في تطوير الواجهات الأمامية والخلفية، أسعى دائمًا لكتابة كود نظيف وقابل للتطوير.</p>
-                        <div class="about-stats">
-                            <div class="stat-item">
-                                <span class="stat-number">3+</span>
-                                <span class="stat-label">سنوات خبرة</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">20+</span>
-                                <span class="stat-label">مشروع مكتمل</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">15+</span>
-                                <span class="stat-label">عميل سعيد</span>
+        <section id="about" class="py-16 bg-white dark:bg-dark transition-colors duration-500">
+            <div class="container mx-auto px-4 animated-section">
+                <h2 class="section-title text-3xl font-bold text-center mb-12 text-dark-gray dark:text-light-gray">نبذة عني</h2>
+                
+                <div class="about-content flex flex-col md:flex-row items-center gap-12">
+                    <div class="about-text text-center md:text-right md:w-2/3">
+                        <p class="text-lg text-dark-gray dark:text-medium-gray mb-4">أنا أحمد صلحاب، مطور ويب شغوف بخبرة واسعة في تحويل التحديات إلى حلول مبتكرة. أؤمن بقوة التصميم الجيد والكود النظيف والمحتوى الهادف لتحقيق نتائج ملموسة.</p>
+                        <p class="text-lg text-dark-gray dark:text-medium-gray mb-6">أسعى دائماً لتعلم أحدث التقنيات وتطبيق أفضل الممارسات في عملي، مع التركيز على تقديم قيمة حقيقية للعملاء والمستخدمين.</p>
+                        
+                        <div class="core-values bg-light-gray dark:bg-dark-gray p-6 rounded-xl shadow-inner border border-medium-gray dark:border-dark-gray mb-6">
+                            <h3 class="text-xl font-bold text-primary mb-4">القيم الأساسية</h3>
+                            <div class="flex flex-wrap justify-center md:justify-end gap-4 text-dark-gray dark:text-medium-gray">
+                                <span class="flex items-center gap-2"><i class="fas fa-lightbulb text-primary"></i> الابتكار</span>
+                                <span class="flex items-center gap-2"><i class="fas fa-star text-primary"></i> الجودة</span>
+                                <span class="flex items-center gap-2"><i class="fas fa-handshake text-primary"></i> التعاون</span>
+                                <span class="flex items-center gap-2"><i class="fas fa-eye text-primary"></i> الشفافية</span>
+                                <span class="flex items-center gap-2"><i class="fas fa-heart text-primary"></i> الالتزام</span>
                             </div>
                         </div>
-                        <a href="#contact" class="btn btn-primary">تواصل معي</a>
+                        
+                        <div class="flex justify-center md:justify-end gap-4 mt-6">
+                            <button id="print-cv-btn" class="btn btn-outline border-2 border-secondary text-secondary font-bold py-3 px-6 rounded-lg hover:bg-secondary hover:text-white transition-colors duration-300">
+                                <i class="fas fa-print ml-2"></i> طباعة السيرة الذاتية
+                            </button>
+                            <a href="#" class="btn btn-primary bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-secondary transition-colors duration-300 shadow-lg" download>
+                                <i class="fas fa-download ml-2"></i> تحميل السيرة الذاتية
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-
+        
         <!-- Services Section -->
-        <section id="services" class="services section">
-            <div class="container">
-                <h2 class="section-title">خدماتي</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-code"></i></div>
-                        <h3>تطوير الواجهات الأمامية</h3>
-                        <p>بناء واجهات مستخدم تفاعلية وسريعة باستخدام أحدث التقنيات مثل React و Vue.js.</p>
+        <section id="services" class="py-16 bg-light-gray dark:bg-dark-gray transition-colors duration-500">
+            <div class="container mx-auto px-4 animated-section">
+                <h2 class="section-title text-3xl font-bold text-center mb-12 text-dark-gray dark:text-light-gray">خدماتي</h2>
+                
+                <div class="services-grid grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service Card Template -->
+                    <div class="service-card p-8 bg-white dark:bg-dark shadow-xl rounded-xl text-center hover:scale-105 transition-transform duration-300">
+                        <div class="service-icon w-16 h-16 mx-auto bg-primary text-white rounded-full flex items-center justify-center mb-4 text-2xl">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark dark:text-light-gray mb-2">تطوير الواجهات الأمامية</h3>
+                        <p class="text-sm text-dark-gray dark:text-medium-gray">بناء واجهات مستخدم تفاعلية ومتجاوبة باستخدام أحدث التقنيات مثل React و Vue.</p>
+                        <div class="service-price font-semibold text-accent mt-4">ابتداءً من \$50</div>
+                        <a href="https://khamsat.com/user/zakria_naser/services" class="btn btn-sm mt-4 inline-block px-4 py-2 bg-primary text-white text-sm font-bold rounded-full hover:bg-secondary transition-colors">عرض الخدمة</a>
                     </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-server"></i></div>
-                        <h3>تطوير الواجهات الخلفية</h3>
-                        <p>تطوير أنظمة خلفية قوية وآمنة باستخدام Node.js و Python (Django/Flask ).</p>
+                    
+                    <div class="service-card p-8 bg-white dark:bg-dark shadow-xl rounded-xl text-center hover:scale-105 transition-transform duration-300">
+                        <div class="service-icon w-16 h-16 mx-auto bg-primary text-white rounded-full flex items-center justify-center mb-4 text-2xl">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark dark:text-light-gray mb-2">تصميم UX/UI</h3>
+                        <p class="text-sm text-dark-gray dark:text-medium-gray">تصميم تجارب مستخدم بديهية وجذابة بصرياً تركز على تحقيق الأهداف التجارية.</p>
+                        <div class="service-price font-semibold text-accent mt-4">ابتداءً من \$75</div>
+                        <a href="https://mostaql.com/u/Zakria_Naser" class="btn btn-sm mt-4 inline-block px-4 py-2 bg-primary text-white text-sm font-bold rounded-full hover:bg-secondary transition-colors">عرض الخدمة</a>
                     </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
-                        <h3>تصميم UX/UI</h3>
-                        <p>تصميم تجارب مستخدم بديهية وجذابة تركز على تحقيق أهدافك.</p>
+                    
+                    <div class="service-card p-8 bg-white dark:bg-dark shadow-xl rounded-xl text-center hover:scale-105 transition-transform duration-300">
+                        <div class="service-icon w-16 h-16 mx-auto bg-primary text-white rounded-full flex items-center justify-center mb-4 text-2xl">
+                            <i class="fab fa-wordpress"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark dark:text-light-gray mb-2">تطوير WordPress</h3>
+                        <p class="text-sm text-dark-gray dark:text-medium-gray">إنشاء وتخصيص مواقع WordPress قوية وسهلة الإدارة للشركات والأفراد.</p>
+                        <div class="service-price font-semibold text-accent mt-4">ابتداءً من \$100</div>
+                        <a href="https://www.facebook.com/tech.hand.as" class="btn btn-sm mt-4 inline-block px-4 py-2 bg-primary text-white text-sm font-bold rounded-full hover:bg-secondary transition-colors">عرض الخدمة</a>
+                    </div>
+                    
+                    <div class="service-card p-8 bg-white dark:bg-dark shadow-xl rounded-xl text-center hover:scale-105 transition-transform duration-300">
+                        <div class="service-icon w-16 h-16 mx-auto bg-primary text-white rounded-full flex items-center justify-center mb-4 text-2xl">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark dark:text-light-gray mb-2">تطوير Python</h3>
+                        <p class="text-sm text-dark-gray dark:text-medium-gray">تطوير تطبيقات وسكريبتات Python لأتمتة المهام وتحليل البيانات.</p>
+                        <div class="service-price font-semibold text-accent mt-4">ابتداءً من \$60</div>
+                        <a href="https://khamsat.com/user/zakria_naser/services" class="btn btn-sm mt-4 inline-block px-4 py-2 bg-primary text-white text-sm font-bold rounded-full hover:bg-secondary transition-colors">عرض الخدمة</a>
+                    </div>
+                    
+                    <div class="service-card p-8 bg-white dark:bg-dark shadow-xl rounded-xl text-center hover:scale-105 transition-transform duration-300">
+                        <div class="service-icon w-16 h-16 mx-auto bg-primary text-white rounded-full flex items-center justify-center mb-4 text-2xl">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark dark:text-light-gray mb-2">الدعم التقني</h3>
+                        <p class="text-sm text-dark-gray dark:text-medium-gray">تقديم الدعم التقني المتخصص وحل المشاكل التقنية للأنظمة والتطبيقات.</p>
+                        <div class="service-price font-semibold text-accent mt-4">ابتداءً من \$25</div>
+                        <a href="https://mostaql.com/u/Zakria_Naser" class="btn btn-sm mt-4 inline-block px-4 py-2 bg-primary text-white text-sm font-bold rounded-full hover:bg-secondary transition-colors">عرض الخدمة</a>
+                    </div>
+                    
+                    <div class="service-card p-8 bg-white dark:bg-dark shadow-xl rounded-xl text-center hover:scale-105 transition-transform duration-300">
+                        <div class="service-icon w-16 h-16 mx-auto bg-primary text-white rounded-full flex items-center justify-center mb-4 text-2xl">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark dark:text-light-gray mb-2">تصميم Canva</h3>
+                        <p class="text-sm text-dark-gray dark:text-medium-gray">إنشاء تصاميم إبداعية ومهنية للوسائل الاجتماعية والمواد التسويقية.</p>
+                        <div class="service-price font-semibold text-accent mt-4">ابتداءً من \$15</div>
+                        <a href="https://www.facebook.com/tech.hand.as" class="btn btn-sm mt-4 inline-block px-4 py-2 bg-primary text-white text-sm font-bold rounded-full hover:bg-secondary transition-colors">عرض الخدمة</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Portfolio Section -->
-        <section id="portfolio" class="portfolio section">
-            <div class="container">
-                <h2 class="section-title">أعمالي</h2>
-                <div class="portfolio-filters">
-                    <button class="filter-btn active" data-filter="all">الكل</button>
-                    <button class="filter-btn" data-filter="web">تطوير ويب</button>
-                    <button class="filter-btn" data-filter="ui-ux">تصميم</button>
-                    <button class="filter-btn" data-filter="python">Python</button>
+        <section id="portfolio" class="py-16 bg-white dark:bg-dark transition-colors duration-500">
+            <div class="container mx-auto px-4 animated-section">
+                <h2 class="section-title text-3xl font-bold text-center mb-12 text-dark-gray dark:text-light-gray">أعمالي السابقة</h2>
+                
+                <div class="flex justify-center flex-wrap gap-4 mb-8">
+                    <button class="filter-btn bg-primary text-white py-2 px-6 rounded-full text-sm font-bold transition-all duration-300 hover:scale-105" data-filter="all">الكل</button>
+                    <button class="filter-btn bg-medium-gray dark:bg-dark-gray dark:text-light-gray text-dark-gray py-2 px-6 rounded-full text-sm font-bold transition-all duration-300 hover:scale-105" data-filter="web">تطوير ويب</button>
+                    <button class="filter-btn bg-medium-gray dark:bg-dark-gray dark:text-light-gray text-dark-gray py-2 px-6 rounded-full text-sm font-bold transition-all duration-300 hover:scale-105" data-filter="design">تصميم</button>
+                    <button class="filter-btn bg-medium-gray dark:bg-dark-gray dark:text-light-gray text-dark-gray py-2 px-6 rounded-full text-sm font-bold transition-all duration-300 hover:scale-105" data-filter="python">Python</button>
                 </div>
-                <div class="portfolio-grid">
-                    <!-- Portfolio items will be injected by JavaScript -->
+                
+                <div class="portfolio-grid grid sm:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+                    <!-- Portfolio items will be loaded dynamically by JS -->
+                </div>
+                
+                <div class="text-center mt-12" id="load-more-container">
+                    <button id="load-more-btn" class="btn btn-primary bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-secondary transition-colors duration-300">عرض المزيد</button>
                 </div>
             </div>
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="skills section">
-            <div class="container">
-                <h2 class="section-title">مهاراتي</h2>
-                <div class="skills-container">
-                    <div class="skills-category">
-                        <h3>الواجهات الأمامية</h3>
-                        <div class="skills-list">
-                            <div class="skill-item"><i class="fab fa-html5"></i> HTML5</div>
-                            <div class="skill-item"><i class="fab fa-css3-alt"></i> CSS3</div>
-                            <div class="skill-item"><i class="fab fa-js"></i> JavaScript</div>
-                            <div class="skill-item"><i class="fab fa-react"></i> React</div>
-                            <div class="skill-item"><i class="fab fa-vuejs"></i> Vue.js</div>
-                            <div class="skill-item"><i class="fab fa-bootstrap"></i> Bootstrap</div>
+        <section id="skills" class="py-16 bg-light-gray dark:bg-dark-gray transition-colors duration-500">
+            <div class="container mx-auto px-4 animated-section">
+                <h2 class="section-title text-3xl font-bold text-center mb-12 text-dark-gray dark:text-light-gray">مهاراتي وخبراتي</h2>
+                
+                <div class="grid lg:grid-cols-3 gap-12">
+                    <!-- Technical Skills -->
+                    <div class="skills-category p-8 bg-white dark:bg-dark shadow-xl rounded-xl">
+                        <h3 class="text-xl font-bold text-primary mb-4 flex items-center gap-2"><i class="fas fa-code"></i> المهارات التقنية</h3>
+                        <div class="space-y-6">
+                            <div class="skill-item">
+                                <span class="text-dark-gray dark:text-medium-gray">HTML5</span>
+                                <div class="skill-bar h-2 bg-medium-gray dark:bg-dark-gray rounded-full mt-2 overflow-hidden">
+                                    <div class="skill-progress h-full bg-primary rounded-full transition-all duration-1000" style="--progress-width: 95%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="text-dark-gray dark:text-medium-gray">CSS3 (Tailwind, Bootstrap)</span>
+                                <div class="skill-bar h-2 bg-medium-gray dark:bg-dark-gray rounded-full mt-2 overflow-hidden">
+                                    <div class="skill-progress h-full bg-primary rounded-full transition-all duration-1000" style="--progress-width: 90%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="text-dark-gray dark:text-medium-gray">JavaScript (ES6+)</span>
+                                <div class="skill-bar h-2 bg-medium-gray dark:bg-dark-gray rounded-full mt-2 overflow-hidden">
+                                    <div class="skill-progress h-full bg-primary rounded-full transition-all duration-1000" style="--progress-width: 85%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="text-dark-gray dark:text-medium-gray">React / Vue.js</span>
+                                <div class="skill-bar h-2 bg-medium-gray dark:bg-dark-gray rounded-full mt-2 overflow-hidden">
+                                    <div class="skill-progress h-full bg-primary rounded-full transition-all duration-1000" style="--progress-width: 80%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="text-dark-gray dark:text-medium-gray">Python</span>
+                                <div class="skill-bar h-2 bg-medium-gray dark:bg-dark-gray rounded-full mt-2 overflow-hidden">
+                                    <div class="skill-progress h-full bg-primary rounded-full transition-all duration-1000" style="--progress-width: 88%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="text-dark-gray dark:text-medium-gray">Node.js / Express</span>
+                                <div class="skill-bar h-2 bg-medium-gray dark:bg-dark-gray rounded-full mt-2 overflow-hidden">
+                                    <div class="skill-progress h-full bg-primary rounded-full transition-all duration-1000" style="--progress-width: 75%;"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="skills-category">
-                        <h3>الواجهات الخلفية</h3>
-                        <div class="skills-list">
-                            <div class="skill-item"><i class="fab fa-node-js"></i> Node.js</div>
-                            <div class="skill-item"><i class="fab fa-python"></i> Python</div>
-                            <div class="skill-item"><i class="fas fa-database"></i> SQL</div>
-                            <div class="skill-item"><i class="fas fa-fire"></i> Firebase</div>
+
+                    <!-- Tools -->
+                    <div class="skills-category p-8 bg-white dark:bg-dark shadow-xl rounded-xl">
+                        <h3 class="text-xl font-bold text-primary mb-4 flex items-center gap-2"><i class="fas fa-tools"></i> الأدوات</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="tool-item flex items-center gap-2 text-dark-gray dark:text-medium-gray">
+                                <i class="fas fa-code text-primary"></i>
+                                <span>VS Code</span>
+                            </div>
+                            <div class="tool-item flex items-center gap-2 text-dark-gray dark:text-medium-gray">
+                                <i class="fab fa-figma text-primary"></i>
+                                <span>Figma</span>
+                            </div>
+                            <div class="tool-item flex items-center gap-2 text-dark-gray dark:text-medium-gray">
+                                <i class="fab fa-git-alt text-primary"></i>
+                                <span>Git & GitHub</span>
+                            </div>
+                            <div class="tool-item flex items-center gap-2 text-dark-gray dark:text-medium-gray">
+                                <i class="fab fa-docker text-primary"></i>
+                                <span>Docker</span>
+                            </div>
+                            <div class="tool-item flex items-center gap-2 text-dark-gray dark:text-medium-gray">
+                                <i class="fas fa-database text-primary"></i>
+                                <span>Postman</span>
+                            </div>
+                            <div class="tool-item flex items-center gap-2 text-dark-gray dark:text-medium-gray">
+                                <i class="fas fa-tasks text-primary"></i>
+                                <span>Jira / Trello</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="skills-category">
-                        <h3>أدوات</h3>
-                        <div class="skills-list">
-                            <div class="skill-item"><i class="fab fa-git-alt"></i> Git & GitHub</div>
-                            <div class="skill-item"><i class="fab fa-figma"></i> Figma</div>
-                            <div class="skill-item"><i class="fab fa-docker"></i> Docker</div>
-                            <div class="skill-item"><i class="fas fa-tasks"></i> Jira</div>
+
+                    <!-- Personal Skills -->
+                    <div class="skills-category p-8 bg-white dark:bg-dark shadow-xl rounded-xl">
+                        <h3 class="text-xl font-bold text-primary mb-4 flex items-center gap-2"><i class="fas fa-user"></i> المهارات الشخصية</h3>
+                        <div class="space-y-4">
+                            <div class="personal-skill flex items-center gap-2 text-dark-gray dark:text-medium-gray">
+                                <i class="fas fa-comments text-primary"></i>
+                                <span>التواصل الفعال</span>
+                            </div>
+                            <div class="personal-skill flex items-center gap-2 text-dark-gray dark:text-medium-gray">
+                                <i class="fas fa-puzzle-piece text-primary"></i>
+                                <span>حل المشكلات</span>
+                            </div>
+                            <div class="personal-skill flex items-center gap-2 text-dark-gray dark:text-medium-gray">
+                                <i class="fas fa-users text-primary"></i>
+                                <span>العمل الجماعي</span>
+                            </div>
+                            <div class="personal-skill flex items-center gap-2 text-dark-gray dark:text-medium-gray">
+                                <i class="fas fa-clock text-primary"></i>
+                                <span>إدارة الوقت</span>
+                            </div>
+                            <div class="personal-skill flex items-center gap-2 text-dark-gray dark:text-medium-gray">
+                                <i class="fas fa-graduation-cap text-primary"></i>
+                                <span>التعلم المستمر</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="py-16 bg-white dark:bg-dark transition-colors duration-500">
+            <div class="container mx-auto px-4 animated-section">
+                <h2 class="section-title text-3xl font-bold text-center mb-12 text-dark-gray dark:text-light-gray">التعليم</h2>
+                
+                <div class="education-timeline relative">
+                    <div class="absolute right-1 md:right-1/2 h-full w-0.5 bg-medium-gray dark:bg-dark-gray transform translate-x-1/2"></div>
+                    
+                    <div class="timeline-item flex items-center mb-8 last:mb-0 relative">
+                        <div class="timeline-marker w-4 h-4 bg-primary rounded-full absolute right-0 md:right-1/2 transform translate-x-1/2"></div>
+                        <div class="timeline-content p-6 bg-light-gray dark:bg-dark-gray rounded-xl shadow-md w-full md:w-1/2 ml-auto text-center md:text-right">
+                            <h3 class="text-xl font-bold text-dark dark:text-light-gray">بكالوريوس في علوم الحاسوب</h3>
+                            <h4 class="text-primary font-semibold">جامعة البعث</h4>
+                            <span class="timeline-date text-sm text-dark-gray dark:text-medium-gray">2020 - 2024</span>
+                            <p class="mt-2 text-dark-gray dark:text-medium-gray">تخصص في تطوير البرمجيات وأنظمة المعلومات مع التركيز على تقنيات الويب الحديثة.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item flex items-center mb-8 last:mb-0 relative">
+                        <div class="timeline-marker w-4 h-4 bg-primary rounded-full absolute right-0 md:right-1/2 transform translate-x-1/2"></div>
+                        <div class="timeline-content p-6 bg-light-gray dark:bg-dark-gray rounded-xl shadow-md w-full md:w-1/2 mr-auto text-center md:text-right">
+                            <h3 class="text-xl font-bold text-dark dark:text-light-gray">دبلوم في الدعم التقني</h3>
+                            <h4 class="text-primary font-semibold">معهد التقنيات المتقدمة</h4>
+                            <span class="timeline-date text-sm text-dark-gray dark:text-medium-gray">2019 - 2020</span>
+                            <p class="mt-2 text-dark-gray dark:text-medium-gray">دراسة متخصصة في صيانة الأنظمة والشبكات وحل المشاكل التقنية.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section id="certificates" class="py-16 bg-light-gray dark:bg-dark-gray transition-colors duration-500">
+            <div class="container mx-auto px-4 animated-section">
+                <h2 class="section-title text-3xl font-bold text-center mb-12 text-dark-gray dark:text-light-gray">الشهادات والدورات</h2>
+                
+                <div class="certificates-grid grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Certificate Card Template -->
+                    <div class="certificate-card p-6 bg-white dark:bg-dark shadow-xl rounded-xl flex flex-col items-center text-center">
+                        <div class="certificate-icon w-16 h-16 flex items-center justify-center bg-primary text-white rounded-full text-2xl mb-4">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="certificate-content">
+                            <h3 class="text-lg font-bold text-dark dark:text-light-gray mb-1">شهادة تطوير واجهات المستخدم المتقدمة</h3>
+                            <p class="certificate-institution text-sm text-dark-gray dark:text-medium-gray">المؤسسة: Udemy</p>
+                            <p class="certificate-date text-sm text-dark-gray dark:text-medium-gray mt-1">تاريخ الحصول: مارس 2024</p>
+                            <a href="#" class="btn btn-sm mt-4 inline-block px-4 py-2 bg-secondary text-white text-sm font-bold rounded-full hover:bg-primary transition-colors">عرض الشهادة</a>
+                        </div>
+                    </div>
+                    
+                    <div class="certificate-card p-6 bg-white dark:bg-dark shadow-xl rounded-xl flex flex-col items-center text-center">
+                        <div class="certificate-icon w-16 h-16 flex items-center justify-center bg-primary text-white rounded-full text-2xl mb-4">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="certificate-content">
+                            <h3 class="text-lg font-bold text-dark dark:text-light-gray mb-1">دورة تصميم تجربة المستخدم (UX)</h3>
+                            <p class="certificate-institution text-sm text-dark-gray dark:text-medium-gray">المؤسسة: Google</p>
+                            <p class="certificate-date text-sm text-dark-gray dark:text-medium-gray mt-1">تاريخ الحصول: يناير 2024</p>
+                            <a href="#" class="btn btn-sm mt-4 inline-block px-4 py-2 bg-secondary text-white text-sm font-bold rounded-full hover:bg-primary transition-colors">عرض الشهادة</a>
+                        </div>
+                    </div>
+                    
+                    <div class="certificate-card p-6 bg-white dark:bg-dark shadow-xl rounded-xl flex flex-col items-center text-center">
+                        <div class="certificate-icon w-16 h-16 flex items-center justify-center bg-primary text-white rounded-full text-2xl mb-4">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="certificate-content">
+                            <h3 class="text-lg font-bold text-dark dark:text-light-gray mb-1">شهادة Python للمطورين</h3>
+                            <p class="certificate-institution text-sm text-dark-gray dark:text-medium-gray">المؤسسة: Coursera</p>
+                            <p class="certificate-date text-sm text-dark-gray dark:text-medium-gray mt-1">تاريخ الحصول: ديسمبر 2023</p>
+                            <a href="#" class="btn btn-sm mt-4 inline-block px-4 py-2 bg-secondary text-white text-sm font-bold rounded-full hover:bg-primary transition-colors">عرض الشهادة</a>
                         </div>
                     </div>
                 </div>
@@ -198,65 +565,292 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="contact section">
-            <div class="container">
-                <h2 class="section-title">تواصل معي</h2>
-                <div class="contact-container">
-                    <div class="contact-info">
-                        <h3>لنتحدث عن مشروعك!</h3>
-                        <p>هل لديك فكرة رائعة؟ أنا هنا لمساعدتك في تحويلها إلى حقيقة. لا تتردد في التواصل معي.</p>
-                        <div class="info-item">
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:a7mdsalhab9@gmail.com">a7mdsalhab9@gmail.com</a>
+        <section id="contact" class="py-16 bg-white dark:bg-dark transition-colors duration-500">
+            <div class="container mx-auto px-4 animated-section">
+                <h2 class="section-title text-3xl font-bold text-center mb-12 text-dark-gray dark:text-light-gray">تواصل معي</h2>
+                
+                <div class="contact-content flex flex-col md:flex-row gap-12 items-start">
+                    <div class="contact-info md:w-1/2 p-8 bg-light-gray dark:bg-dark-gray rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-primary mb-4">معلومات التواصل</h3>
+                        
+                        <div class="contact-item flex items-center gap-4 mb-6">
+                            <div class="icon-circle w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full text-xl">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark dark:text-light-gray">البريد الإلكتروني</h4>
+                                <p class="text-dark-gray dark:text-medium-gray">a7mdsalhab9@gmail.com</p>
+                            </div>
                         </div>
-                        <div class="info-item">
-                            <i class="fas fa-phone"></i>
-                            <a href="tel:+963940630928">+963 940 630 928</a>
+                        
+                        <div class="contact-item flex items-center gap-4 mb-6">
+                            <div class="icon-circle w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full text-xl">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark dark:text-light-gray">رقم الهاتف</h4>
+                                <p class="text-dark-gray dark:text-medium-gray">+963 940-630-928</p>
+                            </div>
                         </div>
-                        <div class="contact-social">
-                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        
+                        <div class="contact-social mt-8">
+                            <h4 class="text-lg font-bold text-dark dark:text-light-gray mb-2">تابعني على</h4>
+                            <div class="flex items-center gap-4">
+                                <a href="#" class="social-link w-10 h-10 flex items-center justify-center bg-medium-gray dark:bg-dark text-dark dark:text-white rounded-full hover:bg-primary hover:text-white transition-all duration-300"><i class="fab fa-linkedin text-xl"></i></a>
+                                <a href="#" class="social-link w-10 h-10 flex items-center justify-center bg-medium-gray dark:bg-dark text-dark dark:text-white rounded-full hover:bg-primary hover:text-white transition-all duration-300"><i class="fab fa-github text-xl"></i></a>
+                                <a href="https://www.facebook.com/tech.hand.as" class="social-link w-10 h-10 flex items-center justify-center bg-medium-gray dark:bg-dark text-dark dark:text-white rounded-full hover:bg-primary hover:text-white transition-all duration-300"><i class="fab fa-facebook text-xl"></i></a>
+                                <a href="#" class="social-link w-10 h-10 flex items-center justify-center bg-medium-gray dark:bg-dark text-dark dark:text-white rounded-full hover:bg-primary hover:text-white transition-all duration-300"><i class="fab fa-twitter text-xl"></i></a>
+                            </div>
                         </div>
                     </div>
-                    <form id="contact-form" class="contact-form">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" required placeholder="الاسم الكامل">
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" required placeholder="البريد الإلكتروني">
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" rows="5" required placeholder="رسالتك"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">إرسال الرسالة <i class="fas fa-paper-plane"></i></button>
-                    </form>
+                    
+                    <div class="contact-form md:w-1/2 p-8 bg-light-gray dark:bg-dark-gray rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-primary mb-4">هل لديك مشروع أو استفسار؟ أحب أن أسمع منك!</h3>
+                        
+                        <form id="contact-form" class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-dark-gray dark:text-medium-gray mb-2">الاسم *</label>
+                                <input type="text" id="name" name="name" required class="w-full p-3 rounded-lg border border-medium-gray dark:border-dark-gray focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300 bg-white dark:bg-dark-gray text-dark-gray dark:text-light-gray">
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-dark-gray dark:text-medium-gray mb-2">البريد الإلكتروني *</label>
+                                <input type="email" id="email" name="email" required class="w-full p-3 rounded-lg border border-medium-gray dark:border-dark-gray focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300 bg-white dark:bg-dark-gray text-dark-gray dark:text-light-gray">
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-dark-gray dark:text-medium-gray mb-2">رسالتك *</label>
+                                <textarea id="message" name="message" rows="5" required class="w-full p-3 rounded-lg border border-medium-gray dark:border-dark-gray focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300 bg-white dark:bg-dark-gray text-dark-gray dark:text-light-gray"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary w-full bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-secondary transition-colors duration-300 shadow-lg">
+                                <i class="fas fa-paper-plane ml-2"></i> إرسال الرسالة
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <!-- Contact confirmation modal -->
+                <div id="confirmation-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-[100]">
+                    <div class="bg-white dark:bg-dark p-8 rounded-xl shadow-2xl text-center max-w-sm">
+                        <i id="modal-icon" class="fas text-5xl mb-4 text-primary"></i>
+                        <h3 id="modal-title" class="text-2xl font-bold text-dark dark:text-light-gray mb-2"></h3>
+                        <p id="modal-message" class="text-dark-gray dark:text-medium-gray mb-4"></p>
+                        <button id="close-modal" class="btn bg-primary text-white py-2 px-6 rounded-full hover:bg-secondary transition-colors">إغلاق</button>
+                    </div>
                 </div>
             </div>
         </section>
+
+        <!-- Footer -->
+        <footer class="footer bg-dark-gray dark:bg-dark text-light-gray py-8 mt-12 transition-colors duration-500">
+            <div class="container mx-auto px-4 text-center">
+                <div class="flex flex-wrap justify-center gap-4 mb-4">
+                    <a href="#home" class="hover:text-primary transition-colors duration-300">الرئيسية</a>
+                    <a href="#about" class="hover:text-primary transition-colors duration-300">نبذة عني</a>
+                    <a href="#services" class="hover:text-primary transition-colors duration-300">خدماتي</a>
+                    <a href="#portfolio" class="hover:text-primary transition-colors duration-300">أعمالي</a>
+                    <a href="#skills" class="hover:text-primary transition-colors duration-300">مهاراتي</a>
+                    <a href="#education" class="hover:text-primary transition-colors duration-300">التعليم</a>
+                    <a href="#contact" class="hover:text-primary transition-colors duration-300">تواصل معي</a>
+                </div>
+                
+                <div class="footer-copyright text-sm text-medium-gray">
+                    <p>&copy; 2024 أحمد صلحاب. جميع الحقوق محفوظة.</p>
+                </div>
+            </div>
+        </footer>
     </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 أحمد صلحاب. كل الحقوق محفوظة.</p>
-        </div>
-    </footer>
-
+    
     <!-- Back to Top Button -->
-    <a href="#" id="back-to-top" class="back-to-top" aria-label="العودة للأعلى"><i class="fas fa-arrow-up"></i></a>
+    <button id="back-to-top" class="back-to-top fixed bottom-6 right-6 p-4 bg-primary text-white rounded-full shadow-lg opacity-0 transition-opacity duration-300 z-40 hover:scale-110">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loadingSpinner = document.getElementById('loading-spinner');
+            const hamburger = document.getElementById('hamburger');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const closeMenu = document.getElementById('close-menu');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            const backToTopBtn = document.getElementById('back-to-top');
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const body = document.body;
+            const visitorCountEl = document.getElementById('visitor-count');
+            const animatedSections = document.querySelectorAll('.animated-section');
+            const skillProgressBars = document.querySelectorAll('.skill-progress');
+            const portfolioGrid = document.getElementById('portfolio-grid');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const loadMoreBtn = document.getElementById('load-more-btn');
+            const contactForm = document.getElementById('contact-form');
+            const confirmationModal = document.getElementById('confirmation-modal');
+            const closeModalBtn = document.getElementById('close-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalMessage = document.getElementById('modal-message');
+            const modalIcon = document.getElementById('modal-icon');
 
-    <!-- Portfolio Modal -->
-    <div id="portfolio-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal-btn">&times;</span>
-            <div id="modal-body"></div>
-        </div>
-    </div>
+            // --- Loading Spinner
+            window.addEventListener('load', () => {
+                loadingSpinner.style.opacity = '0';
+                setTimeout(() => {
+                    loadingSpinner.style.display = 'none';
+                }, 500);
+            });
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="assets/js/main.js"></script>
+            // --- Dark Mode
+            const toggleTheme = () => {
+                body.classList.toggle('dark-mode');
+                localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
+            };
+
+            themeToggleBtn.addEventListener('click', toggleTheme);
+
+            const storedTheme = localStorage.getItem('theme');
+            if (storedTheme === 'dark') {
+                body.classList.add('dark-mode');
+            }
+
+            // --- Mobile Menu
+            const toggleMobileMenu = () => {
+                mobileMenu.classList.toggle('translate-x-full');
+            };
+            
+            hamburger.addEventListener('click', toggleMobileMenu);
+            closeMenu.addEventListener('click', toggleMobileMenu);
+            mobileNavLinks.forEach(link => link.addEventListener('click', toggleMobileMenu));
+            
+            // --- Back to Top Button
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTopBtn.style.opacity = '1';
+                } else {
+                    backToTopBtn.style.opacity = '0';
+                }
+            });
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // --- Visitor Counter (simple local storage)
+            const updateVisitorCount = () => {
+                let count = localStorage.getItem('visitorCount');
+                if (count === null) {
+                    count = 0;
+                }
+                count++;
+                localStorage.setItem('visitorCount', count);
+                visitorCountEl.textContent = count;
+            };
+            updateVisitorCount();
+
+            // --- Scroll Animations (IntersectionObserver)
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            animatedSections.forEach(section => {
+                observer.observe(section);
+            });
+            
+            // --- Skill Bar Animations
+            const skillsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.querySelectorAll('.skill-progress').forEach(bar => {
+                            bar.style.animationName = 'progressFill';
+                        });
+                        skillsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            document.querySelectorAll('#skills').forEach(section => {
+                skillsObserver.observe(section);
+            });
+            
+            // --- Portfolio Section (Mock Data & Filtering)
+            const portfolioItems = [
+                { id: 1, title: 'مشروع متجر إلكتروني', category: 'web', image: 'https://placehold.co/400x300/F4B400/fff?text=متجر+إلكتروني' },
+                { id: 2, title: 'تصميم تطبيق جوال', category: 'design', image: 'https://placehold.co/400x300/4285F4/fff?text=تطبيق+جوال' },
+                { id: 3, title: 'برنامج تحليل بيانات', category: 'python', image: 'https://placehold.co/400x300/DB4437/fff?text=تحليل+بيانات' },
+                { id: 4, title: 'موقع شركة عقارية', category: 'web', image: 'https://placehold.co/400x300/0F9D58/fff?text=شركة+عقارية' },
+                { id: 5, title: 'هوية بصرية لعلامة تجارية', category: 'design', image: 'https://placehold.co/400x300/607D8B/fff?text=هوية+بصرية' },
+                { id: 6, title: 'أتمتة مهام إدارية', category: 'python', image: 'https://placehold.co/400x300/9C27B0/fff?text=أتمتة+مهام' },
+                { id: 7, title: 'تطوير مدونة شخصية', category: 'web', image: 'https://placehold.co/400x300/FF5722/fff?text=مدونة' },
+                { id: 8, title: 'تصميم واجهة مستخدم', category: 'design', image: 'https://placehold.co/400x300/3F51B5/fff?text=واجهة+مستخدم' },
+                { id: 9, title: 'سكربت لتجميع البيانات', category: 'python', image: 'https://placehold.co/400x300/00BCD4/fff?text=تجميع+بيانات' },
+            ];
+
+            const renderPortfolio = (items) => {
+                portfolioGrid.innerHTML = items.map(item => `
+                    <div class="portfolio-item p-6 bg-white dark:bg-dark rounded-xl shadow-md transition-all duration-300 transform hover:scale-105" data-category="${item.category}">
+                        <img src="${item.image}" alt="${item.title}" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <h3 class="text-lg font-bold text-dark dark:text-light-gray">${item.title}</h3>
+                        <p class="text-sm text-dark-gray dark:text-medium-gray mt-1">تصنيف: ${item.category === 'web' ? 'تطوير ويب' : item.category === 'design' ? 'تصميم' : 'Python'}</p>
+                    </div>
+                `).join('');
+            };
+
+            const filterPortfolio = (filter) => {
+                const filteredItems = filter === 'all' ? portfolioItems : portfolioItems.filter(item => item.category === filter);
+                renderPortfolio(filteredItems);
+                // Update active button
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('bg-primary', 'text-white', 'dark:bg-dark-gray', 'dark:text-light-gray');
+                    btn.classList.add('bg-medium-gray', 'text-dark-gray', 'dark:bg-dark-gray', 'dark:text-light-gray');
+                    if (btn.dataset.filter === filter) {
+                         btn.classList.add('bg-primary', 'text-white');
+                         btn.classList.remove('bg-medium-gray', 'text-dark-gray');
+                    }
+                });
+            };
+
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', () => filterPortfolio(btn.dataset.filter));
+            });
+            
+            // Initial render
+            renderPortfolio(portfolioItems);
+
+            // Contact Form Submission
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                // Simulate form submission
+                showConfirmationModal(true);
+            });
+            
+            // Modal functions (to replace alert())
+            const showConfirmationModal = (success, message = '') => {
+                if (success) {
+                    modalIcon.className = 'fas fa-check-circle text-5xl mb-4 text-green-500';
+                    modalTitle.textContent = 'تم الإرسال بنجاح';
+                    modalMessage.textContent = 'شكراً لتواصلك معي. سأقوم بالرد عليك في أقرب وقت ممكن.';
+                } else {
+                    modalIcon.className = 'fas fa-times-circle text-5xl mb-4 text-red-500';
+                    modalTitle.textContent = 'فشل الإرسال';
+                    modalMessage.textContent = message || 'عذراً، حدث خطأ ما. الرجاء المحاولة مرة أخرى لاحقاً.';
+                }
+                confirmationModal.classList.remove('hidden');
+                confirmationModal.classList.add('flex');
+            };
+            
+            closeModalBtn.addEventListener('click', () => {
+                confirmationModal.classList.add('hidden');
+                confirmationModal.classList.remove('flex');
+            });
+            
+            // Print CV functionality
+            const printCvBtn = document.getElementById('print-cv-btn');
+            printCvBtn.addEventListener('click', () => {
+                window.print();
+            });
+        });
+    </script>
 </body>
 </html>
